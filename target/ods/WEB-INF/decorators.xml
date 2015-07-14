@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/freemarker/">
+    <excludes>
+        <pattern>/js/*</pattern>
+    </excludes>
+    <!-- 定义装饰器要过滤的页面 -->
+    <decorator name="user_decorate" page="user_decorate.ftl">
+        <!-- 默认目录下(/WEB-INF/freemarker) 的所有请求 -->
+          <pattern>/*</pattern>
+    </decorator>
+</decorators>
