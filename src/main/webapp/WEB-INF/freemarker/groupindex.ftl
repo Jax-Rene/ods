@@ -20,15 +20,15 @@
 <!-- 订餐div -->
 <div>
     <hr/>
-    <form id="order" method="post" action="/createOrder?userId=${group.id}">
+    <form id="order" method="post" action="/createOrder?groupId=${group.id}">
     订餐网站URL:<input type="text" id="orderurl" name="orderUrl"/>
     订餐消息备注:<input type="text" id="ordermark" name="orderMark"/>
-        订餐类型:<input type="radio" name="ordertype"/>早餐
+        订餐类型:<input type="radio" name="ordertype" checked="true"/>早餐
         <input type="radio" name="ordertype"/>午餐
         <input type="radio" name="ordertype"/>晚餐
         <input type="radio" name="ordertype"/>其他
 
-    <input type="submit" value="提交订单"/>
+    <input type="submit" value="提交"/>
     </form>
 </div>
 

@@ -56,7 +56,7 @@ public class UserJDBCTemplate {
     }
 
     public String getUserName(int userId){
-        String sql = "select user_id from ods.user where user_id = ?";
+        String sql = "select user_name from ods.user where user_id = ?";
         return jdbcTemplateObject.queryForObject(sql,new Object[]{userId},String.class);
     }
 
@@ -116,11 +116,10 @@ public class UserJDBCTemplate {
 
     //判断是否激活成功 可以的话激活
     public boolean isAct(String username, final String validkey) {
-        try{
             User user = getUser(username);
             //如果不为空则返回错误
+            if(user!=null)
             return false;
-        }catch (EmptyResultDataAccessException e) {
             String sql = "SELECT id, user_name, user_pass, location, valid_key, out_date FROM ods.test_register where user_name= ? ORDER BY id DESC";
             Boolean judge = jdbcTemplateObject.query(sql, new Object[]{username}, new ResultSetExtractor<Boolean>() {
                 @Override
@@ -144,7 +143,6 @@ public class UserJDBCTemplate {
                 }
             });
             return judge;
-        }
     }
 
 

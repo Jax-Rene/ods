@@ -31,7 +31,7 @@ public class OrderJDBCTemplate {
      * @param orderGroup
      */
     public void createOrder(int orderType,Timestamp orderTime,String orderUrl,String orderMark,int orderGroup){
-        String sql = "insert into table ods.order VALUES(?,?,?,?,?)";
+        String sql = "insert into  ods.order(order_type,order_time,order_url,order_mark,order_group) VALUES(?,?,?,?,?)";
         jdbcTemplateObject.update(sql,orderGroup,orderTime,orderUrl,orderMark,orderGroup);
         return;
     }
@@ -43,7 +43,7 @@ public class OrderJDBCTemplate {
     }
 
     public int getOrderId(int groupId){
-        String sql = "select order_id from ods.order where order_group=? order desc";
+        String sql = "select order_id from ods.order where order_group=? order by order_id desc";
         return jdbcTemplateObject.query(sql,new Object[]{groupId},new ResultSetExtractor<Integer>() {
             @Override
             public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {

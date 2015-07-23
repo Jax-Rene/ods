@@ -19,7 +19,7 @@ $(document).ready(function () {
         });
     });
 
-    $('#order').submit(function(){
+    $('#order').submit(function () {
         if(confirm('是否要提交订单,系统将为所有组员发送邮件消息!')){
             //获取订餐类型
             var values = $("[name='ordertype']");
@@ -27,11 +27,11 @@ $(document).ready(function () {
                 if(values[i].checked)
                     var orderType = i;
             }
-            var url = $(this).attr('action') + "?orderType=" + orderType;
+            var url = $(this).attr('action') + "&orderType=" + orderType;
             $(this).attr('action',url);
             return true;
+        }else{
+            return false;
         }
     });
-
-
 });

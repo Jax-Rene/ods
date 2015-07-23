@@ -42,6 +42,8 @@ public class OrderController {
     public boolean createOrder(int groupId,int orderType,String orderUrl,String orderMark,HttpSession session){
         Group group = groupJDBCTemplate.getGroup(groupId);
         User user = (User)session.getAttribute("curUser");
+        //获取组长nickName
+        String nickName = groupJDBCTemplate.getNickName(user.getId(),groupId);
         //创建订单
         orderJDBCTemplate.createOrder(orderType,new Timestamp(System.currentTimeMillis()),orderUrl,orderMark,groupId);
         //获取订单ID ： 通过获取该组最近的订单
@@ -53,20 +55,33 @@ public class OrderController {
         List<String> memberEmail = new ArrayList<String>();
         for(Integer t:memberIds)
             memberEmail.add(userJDBCTemplate.getUserName(t));
+        String typeName = null;
+        switch (orderType){
+            case 0:
+                typeName = "早餐";
+                break;
+            case 1:
+                typeName = "午餐";
+                break;
+            case 3:
+                typeName = "晚餐";
+                break;
+            default:
+                typeName = "其他";
+        }
         //订餐信息
         String subject = "来自" + group.getGroupName() + "的订餐订单";
-        String content = "<h1>小组:" + group.getGroupName() + "</h1>\n" +
-                "<h2>组长:" + user.getUserName() + "</h2>\n" +
-                "<hr/>\n" +
-                "<ul>\n" +
-                "<li>\n" +
-                "<h4><a href=startOrder?orderId='" + orderId +"'>点击进入今天的订餐地址</a></h4>\n" +
-                "</li>\n" +
-                "<li>\n" +
-                "<h4>来自组长的备注:</h4>\n" +
-                "<h5>" + orderMark + "</h5>\n" +
+        String content = "<h2>小组:" + group.getGroupName() + "</h2><h2>组长:" + nickName + "</h2><h2>订餐类型:" + typeName +"</h2>" +
+                "<hr/>" +
+                "<ul>" +
+                "<li>" +
+                "<a href='http://localhost:8080/startOrder?orderId="+orderId +"'>点击进入今天的订餐地址</a>" +
+                "</li>" +
+                "<li>" +
+                "<h4>来自组长的备注:</h4>" +
+                "<h5>" + orderMark + "</h5>" +
                 "</li>";
-        //发送给组内所有成员
+        //发送给组内所有成员 localhost:8080/startOrder?orderId="+orderId +"
         SimpleMailSender simpleMailSender = new SimpleMailSender("249602015@qq.com", "joy-zhuang");
         try {
             simpleMailSender.send(memberEmail,subject,content);
@@ -83,4 +98,6 @@ public class OrderController {
         model.addAttribute("order",order);
         return "order_detail";
     }
+
+
 }

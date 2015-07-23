@@ -89,12 +89,12 @@ public class LoginController {
 
     @RequestMapping(value = "/inputRegister",method = RequestMethod.POST)
     public String Register(@ModelAttribute User user,ModelMap model){
-        try{
             User t = userJDBCTemplate.getUser(user.getUserName());
             //如果搜索到结果不为空则出错
+        if (t != null) {
             model.addAttribute("error", "邮箱已被注册,请登录!");
             return "register";
-        }catch (EmptyResultDataAccessException empty){ //为空则表示正常
+        }
                 SimpleMailSender sms = new SimpleMailSender("249602015@qq.com", "joy-zhuang");
                 String recipient = user.getUserName();
                 java.sql.Timestamp ts = new GetTime().getOutTime();
@@ -110,7 +110,6 @@ public class LoginController {
                 }
                 model.addAttribute("content","请登录邮箱点击链接激活该账户!该页面将在5秒后自动关闭!");
                 return "transient";
-            }
     }
 
     @RequestMapping(value = "/activateAccount",method = RequestMethod.GET)

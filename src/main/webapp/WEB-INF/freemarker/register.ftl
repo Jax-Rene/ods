@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>注册账号</title>
-        <script src="/js/register.js"></script>
+        <script src="${absoluteContextPath}/js/register.js"></script>
     </head>
     <body>
     <form id="registerForm" action="inputRegister" method="post">

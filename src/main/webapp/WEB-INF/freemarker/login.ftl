@@ -13,7 +13,7 @@
     <a href="javascript:void(0)"><img src="PictureCheckCode" id="validcheck"></a>
 <#-- 如果账号密码错误输出如下 -->
     <a href="/forgetPassword">忘记密码</a>
-    <input type="submit"/>
+    <input type="submit" value="登录"/>
     <input type="button" value="注册" id="register"/>
     ${passError!""}
 </form>

@@ -12,6 +12,9 @@ public class Order {
     private String orderMark;
     private int orderGroup;
     private double orderPrice;
+    private String orderUrl;
+
+
 
     public int getOrderId() {
         return orderId;
@@ -59,6 +62,14 @@ public class Order {
 
     public void setOrderPrice(double orderPrice) {
         this.orderPrice = orderPrice;
+    }
+
+    public String getOrderUrl() {
+        return orderUrl;
+    }
+
+    public void setOrderUrl(String orderUrl) {
+        this.orderUrl = orderUrl;
     }
 
     public Order() {
