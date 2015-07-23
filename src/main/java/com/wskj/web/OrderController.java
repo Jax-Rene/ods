@@ -100,4 +100,27 @@ public class OrderController {
     }
 
 
+    @RequestMapping(value = "/submitOrder" , method = RequestMethod.GET)
+    @ResponseBody
+    public boolean submitOrder(int orderId,String orderName,double orderPrice,int orderNumber,HttpSession session){
+        System.out.println("进来了!");
+        User user = (User)session.getAttribute("curUser");
+        //创建个人表单
+        orderJDBCTemplate.createPersonOrder(orderId,user.getId(),orderName,orderNumber,orderPrice);
+        //更改总表单的价格
+        orderJDBCTemplate.updateOrderPrice(orderId, 0, orderPrice);
+        //获取小组信息
+        int groupId  = orderJDBCTemplate.getGroupIdFromOrder(orderId);
+        Group group = groupJDBCTemplate.getGroup(groupId);
+        //获取bossId
+        int bossId = group.getGroupBossId();
+        //获取昵称
+        String nickName = groupJDBCTemplate.getNickName(user.getId(),groupId);
+        //告知组长,XX订了一份餐
+        String content = nickName +"订了" + orderNumber + "份" + orderName + "总共<font color='red'>" + orderPrice + "</font>元";
+        messageJDBCTemplate.createMessage(bossId,content,0);
+        return true;
+    }
+
+
 }

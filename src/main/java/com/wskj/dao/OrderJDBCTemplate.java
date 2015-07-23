@@ -52,4 +52,36 @@ public class OrderJDBCTemplate {
             }
         });
     }
+
+    //创建个人订单
+    public void createPersonOrder(int orderId,int userId,String orderName,int orderNumber,double orderPrice){
+        String sql = "insert into ods.order_user(order_id,user_id,order_name,order_number,order_price) VALUES(?,?,?,?,?)";
+        jdbcTemplateObject.update(sql,orderId,userId,orderName,orderNumber,orderPrice);
+        return;
+    }
+
+    /**
+     * 更改总表的价格
+     * @param orderId
+     * @param method 0为增加 1为减去
+     * @param num 增加/减去的价格
+     */
+    public void updateOrderPrice(int orderId,int method,double num){
+        String sql = "select order_price from ods.order where order_id = ?";
+        double price = jdbcTemplateObject.queryForObject(sql,new Object[]{orderId},Integer.class);
+        if(method == 0)
+            price += num;
+        else
+            price -= num;
+        sql = "update ods.order set order_price = ? where order_id = ?";
+        jdbcTemplateObject.update(sql,price,orderId);
+        return;
+    }
+
+    public int getGroupIdFromOrder(int orderId){
+        String sql = "select order_group from ods.order where order_id = ?";
+        return jdbcTemplateObject.queryForObject(sql,new Object[]{orderId},Integer.class);
+    }
+
+
 }

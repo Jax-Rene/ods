@@ -27,11 +27,19 @@ $(document).ready(function () {
                 if(values[i].checked)
                     var orderType = i;
             }
-            var url = $(this).attr('action') + "&orderType=" + orderType;
-            $(this).attr('action',url);
-            return true;
-        }else{
-            return false;
+            var url = "createOrder";
+            $.post(url,{
+                groupId:$('#groupid').val(),
+                orderType:orderType,
+                orderUrl:$('#orderurl').val(),
+                orderMark:$('#ordermark').val()
+            },function(data){
+                if(data==true)
+                    alert('成功向所有组员发送邮件!请耐心等待组员选择!');
+                else
+                    alert('未知错误,请联系管理员!');
+            });
         }
+            return false;
     });
 });
