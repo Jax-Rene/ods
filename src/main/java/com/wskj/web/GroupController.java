@@ -1,9 +1,9 @@
 package com.wskj.web;
 
 
-import com.wskj.dao.GroupJDBCTemplate;
-import com.wskj.dao.MessageJDBCTemplate;
-import com.wskj.dao.UserJDBCTemplate;
+import com.wskj.dao.GroupDao;
+import com.wskj.dao.MessageDao;
+import com.wskj.dao.UserDao;
 import com.wskj.model.Group;
 import com.wskj.model.Message;
 import com.wskj.model.User;
@@ -16,11 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.ArrayList;
@@ -32,10 +29,10 @@ import java.util.UUID;
  */
 @Controller
 public class GroupController {
-    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-    UserJDBCTemplate userJDBCTemplate = (UserJDBCTemplate) context.getBean("userJDBCTemplate");
-    GroupJDBCTemplate groupJDBCTemplate = (GroupJDBCTemplate) context.getBean("groupJDBCTemplate");
-    MessageJDBCTemplate messageJDBCTemplate = (MessageJDBCTemplate) context.getBean("messageJDBCTemplate");
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+    UserDao userDao = (UserDao) ctx.getBean("userDao");
+    GroupDao groupDao = (GroupDao) ctx.getBean("groupDao");
+    MessageDao messageDao = (MessageDao) ctx.getBean("messageDao");
 
     @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(ModelMap model, HttpServletRequest request,
@@ -49,7 +46,7 @@ public class GroupController {
                 (icon.getOriginalFilename().lastIndexOf("."));
         String name = multipartRequest.getParameter("newGroupName");
 
-        Group newGroup = groupJDBCTemplate.getGroup(name);
+        Group newGroup = groupDao.getGroup(name);
         if (newGroup != null) { //组名已经存在了
             model.addAttribute("newGroupError", "对不起，组名已经存在，请输入新的组名");
             return "groupindex";
@@ -62,7 +59,7 @@ public class GroupController {
             //如果没有上传图片，直接将group_name，group_boss_id写入数据库
             if (icon.isEmpty()) {
                 System.out.println("这里没有上传图像");
-                Group curGroup = groupJDBCTemplate.createGroup(userId, name);
+                Group curGroup = groupDao.createGroup(userId, name);
             } else {
                 //如果有上传头像，将头像存在服务器中，并重命名，然后将group_name，group_boss_id，group_icon写入数据库
                 //限制上传的类型
@@ -90,14 +87,14 @@ public class GroupController {
                     System.out.println(fileName);
                     System.out.println(logImageName);
                     //文件上传结束，写入数据库
-                    groupJDBCTemplate.createGroup(userId, name, logImageName);
+                    groupDao.createGroup(userId, name, logImageName);
                 }
             }
             //创建组完将自己加入这个小组的关联默认nickname为用户名
-            Group curGroup = groupJDBCTemplate.getGroup(name);
-            groupJDBCTemplate.joinGroup(user.getId(), curGroup.getId(), user.getUserName());
+            Group curGroup = groupDao.getGroup(name);
+            groupDao.joinGroup(user.getId(), curGroup.getId(), user.getUserName());
             //消息通知 - 创建成功
-            messageJDBCTemplate.createMessage(userId, "恭喜您创建小组<font color='red'>" + name + "</font>成功!", 0);
+            messageDao.createMessage(userId, "恭喜您创建小组<font color='red'>" + name + "</font>成功!", 0);
             //获取group并且加入request中
             model.addAttribute("group", curGroup);
             //标志为组长
@@ -118,18 +115,18 @@ public class GroupController {
     public String getGroupInfo(String groupId,HttpSession session,ModelMap model){
         User curUser = (User)session.getAttribute("curUser");
         int gId = Integer.parseInt(groupId);
-        Group curGroup = groupJDBCTemplate.getGroup(gId);
+        Group curGroup = groupDao.getGroup(gId);
         if(curGroup.getGroupBossId().equals(curUser.getId())){
             model.addAttribute("boss","true"); //是组长
         }
         model.addAttribute("group",curGroup);
         //获取组内成员
-        List<Integer> userIds = groupJDBCTemplate.getMemberIds(gId);
+        List<Integer> userIds = groupDao.getMemberIds(gId);
         List<User> users = new ArrayList<User>();
         List<String> nickNames = new ArrayList<String>();
         for(Integer t:userIds){
-            users.add(userJDBCTemplate.getUser(t));
-            nickNames.add(groupJDBCTemplate.getNickName(t,gId));
+            users.add(userDao.getUser(t));
+            nickNames.add(groupDao.getNickName(t,gId));
         }
 
         model.addAttribute("nicknames",nickNames);
@@ -143,7 +140,7 @@ public class GroupController {
     public boolean changeNickName(String newName, int groupId, HttpSession session) {
         User curUser = (User) session.getAttribute("curUser");
         try {
-            groupJDBCTemplate.setNickName(curUser.getId(), groupId, newName);
+            groupDao.setNickName(curUser.getId(), groupId, newName);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -163,11 +160,11 @@ public class GroupController {
     public boolean inviteMember(String memberName, int groupId, HttpSession session) {
         try {
             User curUser = (User) session.getAttribute("curUser");
-            User targetUser = userJDBCTemplate.getUser(memberName);
-            String groupName = groupJDBCTemplate.getGroupName(groupId);
-            String nickName = groupJDBCTemplate.getNickName(curUser.getId(), groupId);
+            User targetUser = userDao.getUser(memberName);
+            String groupName = groupDao.getGroupName(groupId);
+            String nickName = groupDao.getNickName(curUser.getId(), groupId);
             String message = "邀请您进入小组<font color='red'>" + groupName + "</font>";
-            messageJDBCTemplate.createMessage(targetUser.getId(), message, 1, groupId, nickName,curUser.getId());
+            messageDao.createMessage(targetUser.getId(), message, 1, groupId, nickName,curUser.getId());
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -181,12 +178,12 @@ public class GroupController {
     public boolean acceptJohn(HttpSession session,int groupId,String nickName,int messageId){
         try {
             User user = (User) session.getAttribute("curUser");
-            groupJDBCTemplate.joinGroup(user.getId(),groupId,nickName);
+            groupDao.joinGroup(user.getId(),groupId,nickName);
             //设置消息结果
-            messageJDBCTemplate.setResult(messageId,1);
+            messageDao.setResult(messageId,1);
             //告知组长，XXX加入了
-            Group group = groupJDBCTemplate.getGroup(groupId);
-            messageJDBCTemplate.createMessage(group.getGroupBossId(),nickName + "已经加入" + group.getGroupName() +"了",0);
+            Group group = groupDao.getGroup(groupId);
+            messageDao.createMessage(group.getGroupBossId(),nickName + "已经加入" + group.getGroupName() +"了",0);
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -199,11 +196,11 @@ public class GroupController {
     public boolean refuseJoin(HttpSession session,int groupId,String nickName,int messageId){
         try {
             User user = (User) session.getAttribute("curUser");
-            groupJDBCTemplate.joinGroup(user.getId(),groupId,nickName);
-            messageJDBCTemplate.setResult(messageId, -1);
+            groupDao.joinGroup(user.getId(),groupId,nickName);
+            messageDao.setResult(messageId, -1);
             //告知邀请者，XX拒绝加入
-            Group group = groupJDBCTemplate.getGroup(groupId);
-            messageJDBCTemplate.createMessage(group.getGroupBossId(),user.getUserName() + "拒绝加入您的小组:" + group.getGroupName(),0);
+            Group group = groupDao.getGroup(groupId);
+            messageDao.createMessage(group.getGroupBossId(),user.getUserName() + "拒绝加入您的小组:" + group.getGroupName(),0);
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -222,12 +219,12 @@ public class GroupController {
     @RequestMapping(value = "/searchGroup" ,method = RequestMethod.GET)
     @ResponseBody
     public boolean searchGroup(String groupName,HttpSession session,String nickName) {
-        Group group = (Group) groupJDBCTemplate.getGroupByName(groupName);
+        Group group = (Group) groupDao.getGroupByName(groupName);
         User user = (User) session.getAttribute("curUser");
         if (group == null) //找不到该组
             return false;
         //将加入小组的请求发向组长
-        messageJDBCTemplate.createMessage(group.getGroupBossId(), "请求加入您的小组:" + groupName, 2, group.getId(), nickName ,user.getId());
+        messageDao.createMessage(group.getGroupBossId(), "请求加入您的小组:" + groupName, 2, group.getId(), nickName ,user.getId());
         return true;
     }
 
@@ -243,16 +240,16 @@ public class GroupController {
         try {
             //接受请求的是BOSS
             User Boss = (User) session.getAttribute("curUser");
-            Message message = messageJDBCTemplate.getMessage(messageId);
+            Message message = messageDao.getMessage(messageId);
             int userId = message.getMessageFromId(); // 获取请求加入小组的人的ID
             String nickName = message.getMessageFrom();
             int groupId = message.getMessageGroupId();
-            String groupName = groupJDBCTemplate.getGroupName(groupId);
-            groupJDBCTemplate.joinGroup(userId, groupId, nickName);
+            String groupName = groupDao.getGroupName(groupId);
+            groupDao.joinGroup(userId, groupId, nickName);
             //设置消息结果
-            messageJDBCTemplate.setResult(messageId,1);
+            messageDao.setResult(messageId,1);
             //通知对方已经加入小组
-            messageJDBCTemplate.createMessage(userId,"恭喜您已经加入小组:<font color='red'>" + groupName + "</font>",0);
+            messageDao.createMessage(userId,"恭喜您已经加入小组:<font color='red'>" + groupName + "</font>",0);
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -264,14 +261,14 @@ public class GroupController {
     @ResponseBody
     public boolean disagreeJoin(int messageId){
         try {
-            messageJDBCTemplate.setResult(messageId, -1);
+            messageDao.setResult(messageId, -1);
             //告知申请者被拒绝
-            Message message = messageJDBCTemplate.getMessage(messageId);
+            Message message = messageDao.getMessage(messageId);
             int userId = message.getMessageFromId();
             int groupId = message.getMessageGroupId();
             System.out.println(groupId);
-            String groupName = groupJDBCTemplate.getGroupName(groupId);
-            messageJDBCTemplate.createMessage(userId, "很遗憾您已被拒绝加入组<font color='red'>" + groupName + "</font>", 0);
+            String groupName = groupDao.getGroupName(groupId);
+            messageDao.createMessage(userId, "很遗憾您已被拒绝加入组<font color='red'>" + groupName + "</font>", 0);
             return true;
         }catch (Exception e){
             e.printStackTrace();
