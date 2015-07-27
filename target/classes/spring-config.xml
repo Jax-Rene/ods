@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入 -->
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
-
-    <context:component-scan base-package="com.wskj.dao" />
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 配置Spring JDBC -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -18,9 +11,23 @@
         <property name="password" value="root"/>
     </bean>
     <!-- Definition for studentJDBCTemplate bean -->
+    <bean id="userJDBCTemplate"
+          class="com.wskj.dao.UserJDBCTemplate">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
 
-    <bean id="jdbcTemplate"
-          class="org.springframework.jdbc.core.JdbcTemplate">
+    <bean id="groupJDBCTemplate"
+          class="com.wskj.dao.GroupJDBCTemplate">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
+    <bean id="messageJDBCTemplate"
+          class="com.wskj.dao.MessageJDBCTemplate">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
+    <bean id="orderJDBCTemplate"
+          class="com.wskj.dao.OrderJDBCTemplate">
         <property name="dataSource"  ref="dataSource" />
     </bean>
 </beans>

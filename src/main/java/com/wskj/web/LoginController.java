@@ -1,25 +1,29 @@
 package com.wskj.web;
 
-import com.wskj.dao.GroupDao;
-import com.wskj.dao.UserDao;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.wskj.dao.GroupJDBCTemplate;
+import com.wskj.dao.UserJDBCTemplate;
+import com.wskj.model.Group;
 import com.wskj.model.User;
 import com.wskj.tools.GetTime;
 import com.wskj.tools.MD5Util;
 import com.wskj.tools.SimpleMailSender;
 import com.wskj.tools.VerifyCodeUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.soap.SOAPBinding;
 import javax.mail.MessagingException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -28,8 +32,11 @@ import java.util.Random;
 @Controller
 @SessionAttributes("curUser")
 public class LoginController {
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
-    UserDao userDao = (UserDao) ctx.getBean("userDao");
+    private ApplicationContext context =
+            new ClassPathXmlApplicationContext("spring-config.xml");
+    UserJDBCTemplate userJDBCTemplate =
+            (UserJDBCTemplate)context.getBean("userJDBCTemplate");
+    GroupJDBCTemplate groupJDBCTemplate = (GroupJDBCTemplate) context.getBean("groupJDBCTemplate");
 
     @RequestMapping(value ="/gotoLogin",method = RequestMethod.GET)
     public String returnLogin(){
@@ -56,7 +63,7 @@ public class LoginController {
             model.addAttribute("passError", "验证码出错!");
             return "login";
         }
-        user = userDao.judgeAccount(user.getUserName(),user.getPassWord());
+        user = userJDBCTemplate.judgeAccount(user.getUserName(),user.getPassWord());
         if(user!=null){
             model.addAttribute("curUser",user); //加入seession
             System.out.println("登录成功");
@@ -82,7 +89,7 @@ public class LoginController {
 
     @RequestMapping(value = "/inputRegister",method = RequestMethod.POST)
     public String Register(@ModelAttribute User user,ModelMap model){
-            User t = userDao.getUser(user.getUserName());
+            User t = userJDBCTemplate.getUser(user.getUserName());
             //如果搜索到结果不为空则出错
         if (t != null) {
             model.addAttribute("error", "邮箱已被注册,请登录!");
@@ -94,7 +101,7 @@ public class LoginController {
                 Random random = new Random();
                 String key = user.getUserName() + "|" + ts + "|" + random.nextInt();
                 String signature = MD5Util.MD5(key);
-                userDao.insertAct(user.getUserName(), user.getPassWord(), signature, user.getLocation(), ts);
+                userJDBCTemplate.insertAct(user.getUserName(), user.getPassWord(), signature, user.getLocation(), ts);
                 String url = "localhost:8080/activateAccount" + "?uid=" + user.getUserName() + "&amp;validkey=" + signature;
                 try {
                     sms.send(recipient, "欢迎注册ods系统", url);
@@ -107,11 +114,11 @@ public class LoginController {
 
     @RequestMapping(value = "/activateAccount",method = RequestMethod.GET)
     public String activateAccount(String uid,String validkey,ModelMap model){
-        boolean judge = userDao.isAct(uid,validkey);
+        boolean judge = userJDBCTemplate.isAct(uid,validkey);
         if(judge){ //激活成功，并且获取加入session
             //获取用户
-            User curUser = userDao.getUser(uid);
-            model.addAttribute("curUser", userDao.getUser(uid));
+            User curUser = userJDBCTemplate.getUser(uid);
+            model.addAttribute("curUser", userJDBCTemplate.getUser(uid));
             return "index";
         }else {
             model.addAttribute("content", "激活失败,请重新注册!");
@@ -140,7 +147,7 @@ public class LoginController {
         public String findPassword(String userName, ModelMap model) throws MessagingException {
             System.out.println("用户名为:" + userName);
             //判断用户是否存在
-            User user = userDao.getUser(userName);
+            User user = userJDBCTemplate.getUser(userName);
             if(user!=null) {
                 SimpleMailSender sms = new SimpleMailSender("249602015@qq.com", "joy-zhuang");
                 String recipient = user.getUserName();
@@ -149,7 +156,7 @@ public class LoginController {
                 String key = user.getUserName() + "|" + ts + "|" + random.nextInt();
                 String signature = MD5Util.MD5(key);
                 //插入数据库表
-                userDao.insertInfor(userName,ts,signature);
+                userJDBCTemplate.insertInfor(userName,ts,signature);
                 String url = "http://localhost:8080/gotoResetPassword" + "?userName=" + userName + "&amp;validKey=" + signature;
                 sms.send(recipient, "ods找回密码", url);
                 model.addAttribute("content","请登录邮箱点击邮箱链接认证身份,本页面将在5秒后转向首页!");
@@ -164,7 +171,7 @@ public class LoginController {
         @RequestMapping(value = "/gotoResetPassword", method = RequestMethod.GET)
         public String gotoResetPassword(String userName,String validKey, ModelMap model) {
             //判断是否有权限修改密码
-            if(userDao.isChangePass(userName,validKey)) {
+            if(userJDBCTemplate.isChangePass(userName,validKey)) {
                 model.addAttribute("username",userName);
                 return "resetpassword";
             }else {
@@ -176,7 +183,7 @@ public class LoginController {
         //重置密码
         @RequestMapping(value = "/resetPassWord" , method = RequestMethod.POST)
         public  String resetPassWord(String userName,String passWord,ModelMap model){
-            userDao.resetPassWord(userName,passWord);
+            userJDBCTemplate.resetPassWord(userName,passWord);
             model.addAttribute("content","恭喜您修改密码成功,请重新登录,该页面将在5秒后关闭!");
             return "transient";
         }

@@ -1,10 +1,9 @@
 package com.wskj.web;
 
-import com.wskj.dao.GroupDao;
-import com.wskj.dao.UserDao;
+import com.wskj.dao.GroupJDBCTemplate;
+import com.wskj.dao.UserJDBCTemplate;
 import com.wskj.model.Group;
 import com.wskj.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -12,6 +11,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -21,8 +21,11 @@ import java.util.List;
  */
 @Controller
 public class IndexController{
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
-    GroupDao groupDao = (GroupDao) ctx.getBean("groupDao");
+    private ApplicationContext context =
+            new ClassPathXmlApplicationContext("spring-config.xml");
+    UserJDBCTemplate userJDBCTemplate =
+            (UserJDBCTemplate)context.getBean("userJDBCTemplate");
+    GroupJDBCTemplate groupJDBCTemplate = (GroupJDBCTemplate) context.getBean("groupJDBCTemplate");
 
 
     @RequestMapping(value = "/getMyGroup", method = RequestMethod.GET)
@@ -30,7 +33,7 @@ public class IndexController{
     public List<Group> getMyGroup(ModelMap model,HttpSession session){
         User user = (User)session.getAttribute("curUser");
         //获取所在组以及
-        List<Group> myGroup = groupDao.getMyGroup(user.getId());
+        List<Group> myGroup = groupJDBCTemplate.getMyGroup(user.getId());
         if(myGroup.isEmpty()){//没有小组
             model.addAttribute("noMyGroup","您还未创建过任何小组");
             return null;
@@ -42,7 +45,7 @@ public class IndexController{
     @ResponseBody
     public List<Group> getAllGroup(ModelMap model ,HttpSession session){
         User user = (User)session.getAttribute("curUser");
-        List<Group> allGroup = groupDao.getUnderGroup(user.getId());
+        List<Group> allGroup = groupJDBCTemplate.getUnderGroup(user.getId());
         if(allGroup.isEmpty()){ //没有小组
             model.addAttribute("noGroup","暂无小组");
             return null;

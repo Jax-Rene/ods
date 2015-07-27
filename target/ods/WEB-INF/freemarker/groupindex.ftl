@@ -17,12 +17,9 @@
 </#list>
 <input type="hidden" id="groupid" value="${group.id}"/>
 
-
-
-<#if boss?exists>
-<hr/>
 <!-- 订餐div -->
 <div>
+    <hr/>
     <form id="order">
     订餐网站URL:<input type="text" id="orderurl" name="orderUrl"/>
     订餐消息备注:<input type="text" id="ordermark" name="orderMark"/>
@@ -30,16 +27,10 @@
         <input type="radio" name="ordertype"/>午餐
         <input type="radio" name="ordertype"/>晚餐
         <input type="radio" name="ordertype"/>其他
+
     <input type="submit" value="提交"/>
     </form>
 </div>
-</#if>
-
-<hr/>
-查看最近的订单:
-
-
-
 
 
 </body>
