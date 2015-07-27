@@ -8,27 +8,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
-import javax.sql.DataSource;
-
 import com.wskj.dao.handler.UserMapper;
 import com.wskj.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.stereotype.Component;
 
-public class UserJDBCTemplate {
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplateObject;
+@Component
+public class UserDao {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
-    }
-
-    public void create(String username, String password,String location) {
+    public  void create(String username, String password,String location) {
         String sql ="INSERT INTO ods.user(user_name, user_pass, location) VALUES (?, ?, ?)";
-        jdbcTemplateObject.update(sql, username, password, location);
+        jdbcTemplate.update(sql, username, password, location);
         System.out.println("创建成功!");
         return;
     }
@@ -36,7 +32,7 @@ public class UserJDBCTemplate {
     public User getUser(Integer id) {
         String sql = "select * from ods.user where user_id = ?";
         try {
-            User user = jdbcTemplateObject.queryForObject(sql,
+            User user = jdbcTemplate.queryForObject(sql,
                     new Object[]{id}, new UserMapper());
             return user;
         }catch(EmptyResultDataAccessException e){
@@ -47,7 +43,7 @@ public class UserJDBCTemplate {
     public User getUser(String username) {
         String sql = "select * from ods.user where user_name =?";
         try {
-            User user = jdbcTemplateObject.queryForObject(sql, new Object[]{username}, new UserMapper());
+            User user = jdbcTemplate.queryForObject(sql, new Object[]{username}, new UserMapper());
             System.out.println("找到" + user.getUserName());
             return user;
         }catch (EmptyResultDataAccessException e){
@@ -57,26 +53,26 @@ public class UserJDBCTemplate {
 
     public String getUserName(int userId){
         String sql = "select user_name from ods.user where user_id = ?";
-        return jdbcTemplateObject.queryForObject(sql,new Object[]{userId},String.class);
+        return jdbcTemplate.queryForObject(sql,new Object[]{userId},String.class);
     }
 
     public List<User> listUsers() {
         String sql = "select * from ods.user";
-        List<User> users = jdbcTemplateObject.query(sql,
+        List<User> users = jdbcTemplate.query(sql,
                 new UserMapper());
         return users;
     }
 
     public void delete(Integer id) {
         String sql = "delete from ods.user where user_id = ?";
-        jdbcTemplateObject.update(sql, id);
+        jdbcTemplate.update(sql, id);
         System.out.println("Deleted Record with ID = " + id);
         return;
     }
 
     public void resetPassWord(String userName,String passWord){
         String sql = "update ods.user set user_pass=? where user_name=?";
-        jdbcTemplateObject.update(sql,passWord,userName);
+        jdbcTemplate.update(sql,passWord,userName);
         return;
     }
 
@@ -84,7 +80,7 @@ public class UserJDBCTemplate {
     //update password
     public void update(Integer id, String password) {
         String sql = "update ods.user set user_pass = ? where user_id = ?";
-        jdbcTemplateObject.update(sql, password, id);
+        jdbcTemplate.update(sql, password, id);
         System.out.println("Updated Record with ID = " + id);
         return;
     }
@@ -109,7 +105,7 @@ public class UserJDBCTemplate {
     public void insertAct(String username,String password,String signature,String location,Timestamp ts){
         String sql  = "INSERT INTO ods.test_register(user_name, user_pass, location, valid_key, out_date) VALUES ( ?, ?, ?, ?, ?)";
 
-        jdbcTemplateObject.update(sql, username, password, location, signature, ts);
+        jdbcTemplate.update(sql, username, password, location, signature, ts);
         System.out.println("创建成功!");
         return;
     }
@@ -121,7 +117,7 @@ public class UserJDBCTemplate {
             if(user!=null)
             return false;
             String sql = "SELECT id, user_name, user_pass, location, valid_key, out_date FROM ods.test_register where user_name= ? ORDER BY id DESC";
-            Boolean judge = jdbcTemplateObject.query(sql, new Object[]{username}, new ResultSetExtractor<Boolean>() {
+            Boolean judge = jdbcTemplate.query(sql, new Object[]{username}, new ResultSetExtractor<Boolean>() {
                 @Override
                 public Boolean extractData(ResultSet rs) throws SQLException, DataAccessException {
                     if (rs.next()) {
@@ -149,7 +145,7 @@ public class UserJDBCTemplate {
     //插入到数据库表findpassword中
     public void insertInfor(String email, Timestamp date, String signature) {
         String sql = "insert into ods.findpassword(email,out_date,valid_key) values(?,?,?)";
-        jdbcTemplateObject.update(sql,email,date,signature);
+        jdbcTemplate.update(sql,email,date,signature);
         System.out.println("插入到数据库表findpassword中");
         return;
     }
@@ -157,7 +153,7 @@ public class UserJDBCTemplate {
     //判断是否有权限修改密码
     public boolean isChangePass(String email, final String validKey){
         String sql = "select * from ods.findpassword where email =?  order by out_date desc";
-        return jdbcTemplateObject.query(sql,new Object[]{email},new ResultSetExtractor<Boolean>() {
+        return jdbcTemplate.query(sql,new Object[]{email},new ResultSetExtractor<Boolean>() {
                 @Override
                 public Boolean extractData(ResultSet rs) throws SQLException, DataAccessException {
                     if(rs.next()) {
@@ -181,5 +177,4 @@ public class UserJDBCTemplate {
                 }
         });
     }
-
 }
