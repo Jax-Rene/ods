@@ -5,15 +5,17 @@ $(document).ready(function () {
           if(data==true){
               alert('恭喜您,修改昵称成功!');
           }else
-            alert('很抱歉由于未知错误,更改失败!');
+            alert('修改失败!小组中存在重复的昵称');
        });
    });
 
     $('#addmember').click(function () {
         var url = 'inviteMember?memberName=' + $('#membername').val() + '&groupId=' + $('#groupid').val();
         $.get(url, function (data) {
-             if(data==true){
+             if(data==0){
                  alert('已向该用户发送邀请通知,请等待对方回应');
+             }else if(data==1) {
+                 alert('目标用户已经在小组中,请勿重新邀请!');
              }else
                 alert('邀请失败,请检查所输入用户名是否存在!');
         });
@@ -42,4 +44,6 @@ $(document).ready(function () {
         }
             return false;
     });
+
+
 });

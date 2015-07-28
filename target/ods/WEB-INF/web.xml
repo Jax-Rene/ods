@@ -16,6 +16,17 @@
     </context-param>
 
 
+    <!-- 登陆权限验证 -->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.wskj.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
     <!-- 过滤编码 -->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>

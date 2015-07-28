@@ -23,6 +23,7 @@
 <hr/>
 <!-- 订餐div -->
 <div>
+    <h2>发布新的订单</h2>
     <form id="order">
     订餐网站URL:<input type="text" id="orderurl" name="orderUrl"/>
     订餐消息备注:<input type="text" id="ordermark" name="orderMark"/>
@@ -37,7 +38,6 @@
 
 <hr/>
 查看最近的订单:
-
 
 
 

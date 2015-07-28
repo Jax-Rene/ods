@@ -70,6 +70,10 @@ public class GroupDao {
         return;
     }
 
+
+
+
+
     public void joinGroup(Integer userId,Integer groupId,String nickName){ //加入小组
         String sql = "insert into ods.user_group(user_id,group_id,nick_name) values(?,?,?)";
         jdbcTemplate.update(sql,userId,groupId,nickName);
@@ -107,6 +111,22 @@ public class GroupDao {
     public String getNickName(int userId , int groupId){
         String sql = "select nick_name from ods.user_group where user_id=? and group_id=?";
         return jdbcTemplate.queryForObject(sql, new Object[]{userId, groupId}, String.class);
+    }
+
+    //获取小组中所有的昵称
+    public List<String> getNickNames(int groupId){
+        String sql = "select nick_name from ods.user_group where group_id=?";
+        return jdbcTemplate.queryForList(sql,String.class,new Object[]{groupId});
+    }
+
+    //判断该昵称在这组中是否已经存在
+    public boolean judgeNickNameExist(String nickName,int groupId){
+        List<Integer> userId = getMemberIds(groupId);
+        List<String> nickNames = getNickNames(groupId);
+        if(nickNames.indexOf(nickName)!=-1){ //已经存在
+            return false;
+        }
+        return true;
     }
 
 

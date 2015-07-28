@@ -16,8 +16,6 @@
     <input type="submit" value="登录"/>
     <input type="button" value="注册" id="register"/>
     ${passError!""}
-
-    <a href="/j_spring_security_logout"
 </form>
 </body>
 </html>
