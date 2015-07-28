@@ -6,7 +6,6 @@ import com.wskj.dao.OrderDao;
 import com.wskj.dao.UserDao;
 import com.wskj.model.Group;
 import com.wskj.model.Order;
-import com.wskj.model.PersonOrder;
 import com.wskj.model.User;
 import com.wskj.tools.SimpleMailSender;
 import org.springframework.context.ApplicationContext;
@@ -21,9 +20,7 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by zhuangjy on 2015/7/22.
@@ -36,16 +33,6 @@ public class OrderController {
     MessageDao messageDao = (MessageDao) ctx.getBean("messageDao");
     OrderDao orderDao = (OrderDao) ctx.getBean("orderDao");
 
-
-    /**
-     * 组长发布消息
-     * @param groupId
-     * @param orderType
-     * @param orderUrl
-     * @param orderMark
-     * @param session
-     * @return
-     */
     @RequestMapping(value = "/createOrder" , method = RequestMethod.POST)
     @ResponseBody
     public boolean createOrder(int groupId,int orderType,String orderUrl,String orderMark,HttpSession session){
@@ -101,14 +88,6 @@ public class OrderController {
         return true;
     }
 
-
-    /**
-     * 进入订单详细页
-     * @param orderId
-     * @param model
-     * @return
-     */
-
     @RequestMapping(value = "/startOrder" ,method = RequestMethod.GET)
     public String startOrder(int orderId,ModelMap model){
         Order order = orderDao.getOrder(orderId);
@@ -117,20 +96,10 @@ public class OrderController {
     }
 
 
-    /**
-     * 提交自己的订单
-     * @param orderId
-     * @param orderName
-     * @param orderPrice
-     * @param orderNumber
-     * @param session
-     * @return
-     */
     @RequestMapping(value = "/submitOrder" , method = RequestMethod.GET)
     @ResponseBody
     public boolean submitOrder(int orderId,String orderName,double orderPrice,int orderNumber,HttpSession session){
-
-        orderName = orderName.trim(); //去除空格
+        System.out.println("进来了!");
         User user = (User)session.getAttribute("curUser");
         //创建个人表单
         orderDao.createPersonOrder(orderId,user.getId(),orderName,orderNumber,orderPrice);
@@ -150,35 +119,4 @@ public class OrderController {
     }
 
 
-    @RequestMapping(value = "/getOrder" , method = RequestMethod.GET)
-    @ResponseBody
-    public List<Order> getOrder(Timestamp start,Timestamp end,
-                                int orderGroup,String url,int groupId){
-        return orderDao.searchOrder(start,end,groupId,url);
-    }
-
-
-    @RequestMapping(value = "/getDetailInfo" , method = RequestMethod.GET)
-    @ResponseBody
-    public List<PersonOrder> getDetailInfo(int orderId,int groupId){
-        List<PersonOrder> personOrders =  orderDao.getDetailInfo(orderId);
-        for(PersonOrder t:personOrders) //设置所有昵称
-            groupDao.getNickName(t.getUserId(),groupId);
-        return personOrders;
-    }
-
-    @RequestMapping(value = "/countResult", method = RequestMethod.GET)
-    @ResponseBody
-    public Map<String,Integer> countResult(int orderId){
-        Map<String,Integer> map = new HashMap<String, Integer>();
-        List<PersonOrder> personOrders = orderDao.getDetailInfo(orderId);
-        for(PersonOrder t:personOrders){
-            String name = t.getOrderName();
-            if(map.get(name) != null)
-                map.put(name,map.get(name) + 1);
-            else
-                map.put(name,1);
-        }
-        return map;
-    }
 }

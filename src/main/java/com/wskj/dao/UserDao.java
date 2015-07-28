@@ -89,7 +89,7 @@ public class UserDao {
     public  User judgeAccount(String username, String password) {
         try {
             User user = getUser(username);
-            if(user==null || !user.getPassWord().equals(password))//密码错误
+            if(!user.getPassWord().equals(password))//密码错误
                 return null;
             else
                 return user;

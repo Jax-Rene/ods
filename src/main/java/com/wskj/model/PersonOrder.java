@@ -6,7 +6,6 @@ package com.wskj.model;
 public class PersonOrder {
     private int orderId;
     private int userId;
-    private String nickName;
     private String orderName;
     private int orderNumber;
     private double orderPrice;

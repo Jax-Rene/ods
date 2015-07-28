@@ -34,13 +34,10 @@ $(document).ready(function() {
         }
         var url = 'searchGroup?groupName=' + $('#searchGroup').val() +'&nickName=' + name;
         $.get(url, function (data) {
-            alert(data);
-            if(data==0){
-                alert('您已经在该组中,请勿重复操作!');
-            }else if(data==1)
-                alert('没有找到小组,请重新输入!');
-            else
+            if(data==true){
                 alert('已提交加入小组的申请,请等待小组组长回应!');
+            }else
+                alert('没有找到小组,请重新输入!');
         });
     });
 

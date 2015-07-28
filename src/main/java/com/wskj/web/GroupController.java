@@ -9,7 +9,6 @@ import com.wskj.model.Message;
 import com.wskj.model.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,13 +42,14 @@ public class GroupController {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile icon = multipartRequest.getFile("newGroupIcon");
         /**获取文件的后缀**/
+        String suffix = icon.getOriginalFilename().substring
+                (icon.getOriginalFilename().lastIndexOf("."));
         String name = multipartRequest.getParameter("newGroupName");
 
         Group newGroup = groupDao.getGroup(name);
         if (newGroup != null) { //组名已经存在了
-            System.out.println("组名存在");
             model.addAttribute("newGroupError", "对不起，组名已经存在，请输入新的组名");
-            return "index";
+            return "groupindex";
         } else {
             //没有的话，就要通过session传过来的username，通过usertable查找到对应的id。
             //即获得登录用户对应的id
@@ -61,9 +61,6 @@ public class GroupController {
                 System.out.println("这里没有上传图像");
                 Group curGroup = groupDao.createGroup(userId, name);
             } else {
-                /**获取文件的后缀**/
-                String suffix = icon.getOriginalFilename().substring
-                        (icon.getOriginalFilename().lastIndexOf("."));
                 //如果有上传头像，将头像存在服务器中，并重命名，然后将group_name，group_boss_id，group_icon写入数据库
                 //限制上传的类型
                 if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif"))) {
@@ -142,11 +139,13 @@ public class GroupController {
     @ResponseBody
     public boolean changeNickName(String newName, int groupId, HttpSession session) {
         User curUser = (User) session.getAttribute("curUser");
-        if(groupDao.judgeNickNameExist(newName,groupId)){ //判断是否重名
+        try {
             groupDao.setNickName(curUser.getId(), groupId, newName);
             return true;
-        }else
-        return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     /**
@@ -158,20 +157,19 @@ public class GroupController {
      */
     @RequestMapping(value = "/inviteMember", method = RequestMethod.GET)
     @ResponseBody
-    public Integer inviteMember(String memberName, int groupId, HttpSession session) {
+    public boolean inviteMember(String memberName, int groupId, HttpSession session) {
+        try {
             User curUser = (User) session.getAttribute("curUser");
             User targetUser = userDao.getUser(memberName);
-            if(targetUser == null)
-                return 2; //找不到用户
-            //先检查对方是否已经是组员
-            if(groupDao.getMemberIds(groupId).indexOf(targetUser.getId()) != -1){
-                return 1; //目标用户已经在小组中 抛出1
-            }
             String groupName = groupDao.getGroupName(groupId);
             String nickName = groupDao.getNickName(curUser.getId(), groupId);
             String message = "邀请您进入小组<font color='red'>" + groupName + "</font>";
             messageDao.createMessage(targetUser.getId(), message, 1, groupId, nickName,curUser.getId());
-            return  0; //成功返回0
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 
@@ -220,18 +218,14 @@ public class GroupController {
      */
     @RequestMapping(value = "/searchGroup" ,method = RequestMethod.GET)
     @ResponseBody
-    public int searchGroup(String groupName,HttpSession session,String nickName) {
-        //检查自己是否已经属于该小组了
+    public boolean searchGroup(String groupName,HttpSession session,String nickName) {
         Group group = (Group) groupDao.getGroupByName(groupName);
         User user = (User) session.getAttribute("curUser");
         if (group == null) //找不到该组
-            return 1;
-        if(groupDao.getMemberIds(group.getId()).indexOf(user.getId()) != -1){
-            return 0; //已经在组中
-        }
+            return false;
         //将加入小组的请求发向组长
         messageDao.createMessage(group.getGroupBossId(), "请求加入您的小组:" + groupName, 2, group.getId(), nickName ,user.getId());
-        return 2;
+        return true;
     }
 
     /**

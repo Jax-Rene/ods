@@ -88,4 +88,5 @@ $(document).ready(function(){
         //ajax异步传输后，设置href为空不跳转
         $(this).attr('href','javascript:void(0)');
     });
+
 });

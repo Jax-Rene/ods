@@ -1,20 +1,17 @@
 package com.wskj.dao;
 
 import com.wskj.dao.handler.OrderMapper;
-import com.wskj.dao.handler.PersonOrderMapper;
 import com.wskj.model.Order;
-import com.wskj.model.PersonOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by zhuangjy on 2015/7/22.
@@ -83,36 +80,6 @@ public class OrderDao {
         String sql = "select order_group from ods.order where order_id = ?";
         return jdbcTemplate.queryForObject(sql,new Object[]{orderId},Integer.class);
     }
-
-
-    /**
-     * 搜索订单
-     * @param start
-     * @param end
-     * @param url
-     * @return
-     */
-    public List<Order> searchOrder(Timestamp start,Timestamp end,int orderGroup,String url){
-        if(url == null){
-            String sql = "select * from ods.order where order_time between ? and ? and order_group = ?";
-            return jdbcTemplate.query(sql,new Object[]{start,end,orderGroup},new OrderMapper());
-        }else{
-            String sql = "select * from ods.order where order_time between ? and ? and order_url = ? and order_group=?";
-            return jdbcTemplate.query(sql,new Object[]{start,end,url,orderGroup},new OrderMapper());
-        }
-    }
-
-    /**
-     * 获取订单的详细信息
-     * @param orderId
-     * @return
-     */
-    public List<PersonOrder> getDetailInfo(int orderId){
-        String sql = "select * from ods.order_user where order_id = ?";
-        return jdbcTemplate.query(sql,new Object[]{orderId},new PersonOrderMapper());
-    }
-
-
 
 
 }
