@@ -28,7 +28,7 @@ public class LoginFilter extends OncePerRequestFilter{
         //设置不过滤的URI
         String[] unFilter = {"/","/gotoLogin","redirect_index.jsp","/inputLogin","/gotoRegister",
                 "/inputRegister","/activateAccount","/PictureCheckCode","/forgetPassword",
-                "/findPassword","/gotoResetPassword","/resetPassWord","/js/","/image/","/css/"
+                "/findPassword","/gotoResetPassword","/resetPassWord","/js/","/img/","/css/"
         };
         boolean flag = true; //判断是否过滤
         for(String s:unFilter){

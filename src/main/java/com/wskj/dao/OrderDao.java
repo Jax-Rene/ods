@@ -31,9 +31,9 @@ public class OrderDao {
      * @param orderMark
      * @param orderGroup
      */
-    public void createOrder(int orderType,Timestamp orderTime,String orderUrl,String orderMark,int orderGroup){
-        String sql = "insert into  ods.order(order_type,order_time,order_url,order_mark,order_group) VALUES(?,?,?,?,?)";
-        jdbcTemplate.update(sql,orderGroup,orderTime,orderUrl,orderMark,orderGroup);
+    public void createOrder(int orderType,Timestamp orderTime,String orderUrl,String orderMark,int orderGroup,Timestamp orderEnd){
+        String sql = "insert into  ods.order(order_type,order_time,order_url,order_mark,order_group,order_end) VALUES(?,?,?,?,?,?)";
+        jdbcTemplate.update(sql,orderGroup,orderTime,orderUrl,orderMark,orderGroup,orderEnd);
         return;
     }
 
@@ -92,13 +92,23 @@ public class OrderDao {
      * @param url
      * @return
      */
-    public List<Order> searchOrder(Timestamp start,Timestamp end,int orderGroup,String url){
-        if(url == null){
-            String sql = "select * from ods.order where order_time between ? and ? and order_group = ?";
-            return jdbcTemplate.query(sql,new Object[]{start,end,orderGroup},new OrderMapper());
-        }else{
-            String sql = "select * from ods.order where order_time between ? and ? and order_url = ? and order_group=?";
-            return jdbcTemplate.query(sql,new Object[]{start,end,url,orderGroup},new OrderMapper());
+    public List<Order> searchOrder(Timestamp start,Timestamp end,int orderGroup,String url) {
+        String sql = "select * from ods.order where order_group=? ";
+        if (start != null && end != null) {
+            sql += "and order_time between ? and ? ";
+            if (url == "")
+                return jdbcTemplate.query(sql, new Object[]{orderGroup, start, end}, new OrderMapper());
+            else {
+                sql += "and order_url = ?";
+                return jdbcTemplate.query(sql, new Object[]{orderGroup, start, end, url}, new OrderMapper());
+            }
+        } else {
+            if (url == "") {
+                return jdbcTemplate.query(sql, new Object[]{orderGroup}, new OrderMapper());
+            } else {
+                sql += "and order_url = ?";
+                return jdbcTemplate.query(sql, new Object[]{orderGroup, url},new OrderMapper());
+            }
         }
     }
 
@@ -113,6 +123,21 @@ public class OrderDao {
     }
 
 
-
-
+    public List<PersonOrder> getLastOrder(int groupId){
+        String sql = "select * from ods.order where order_group = ? order by order_id desc";
+        Order order = jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Order>() {
+            @Override
+            public Order extractData(ResultSet rs) throws SQLException, DataAccessException {
+                if (rs.next()) {
+                    return new Order(rs.getInt("order_id"), rs.getInt("order_type"), rs.getTimestamp("order_time"),
+                            rs.getString("order_mark"),rs.getInt("order_group"),rs.getDouble("order_price"),rs.getString("order_url"),
+                            rs.getTimestamp("order_end"));
+                }else
+                    return null;
+            }});
+        if(order != null || order.getOrderEnd().getTime() > System.currentTimeMillis()){
+            return getDetailInfo(order.getOrderId());
+        }else
+        return null;
+    }
 }

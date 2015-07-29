@@ -8,9 +8,11 @@ import com.wskj.model.Group;
 import com.wskj.model.Order;
 import com.wskj.model.PersonOrder;
 import com.wskj.model.User;
+import com.wskj.tools.GetTime;
 import com.wskj.tools.SimpleMailSender;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,13 +51,14 @@ public class OrderController {
      */
     @RequestMapping(value = "/createOrder" , method = RequestMethod.POST)
     @ResponseBody
-    public boolean createOrder(int groupId,int orderType,String orderUrl,String orderMark,HttpSession session){
+    public boolean createOrder(int groupId,int orderType,String orderUrl,String orderMark,String orderEnd,HttpSession session)throws Exception{
         Group group = groupDao.getGroup(groupId);
         User user = (User)session.getAttribute("curUser");
         //获取组长nickName
         String nickName = groupDao.getNickName(user.getId(),groupId);
         //创建订单
-        orderDao.createOrder(orderType,new Timestamp(System.currentTimeMillis()),orderUrl,orderMark,groupId);
+        orderDao.createOrder(orderType,new Timestamp(System.currentTimeMillis()),
+                orderUrl,orderMark,groupId,new GetTime().convertToTimeStamp(orderEnd));
         //获取订单ID ： 通过获取该组最近的订单
         int orderId = orderDao.getOrderId(groupId);
 
@@ -150,12 +154,13 @@ public class OrderController {
     }
 
 
-    @RequestMapping(value = "/getOrder" , method = RequestMethod.GET)
+    @RequestMapping(value = "/getOrder" , method = RequestMethod.POST)
     @ResponseBody
-    public List<Order> getOrder(Timestamp start,Timestamp end,
-                                int orderGroup,String url,int groupId){
-        return orderDao.searchOrder(start,end,groupId,url);
+    public List<Order> getOrder(String start,String end,String url,int groupId) throws ParseException {
+        GetTime gt = new GetTime();
+        return orderDao.searchOrder(gt.convertToTimeStamp(start),gt.convertToTimeStamp(end),groupId,url);
     }
+
 
 
     @RequestMapping(value = "/getDetailInfo" , method = RequestMethod.GET)
@@ -163,7 +168,7 @@ public class OrderController {
     public List<PersonOrder> getDetailInfo(int orderId,int groupId){
         List<PersonOrder> personOrders =  orderDao.getDetailInfo(orderId);
         for(PersonOrder t:personOrders) //设置所有昵称
-            groupDao.getNickName(t.getUserId(),groupId);
+            t.setNickName(groupDao.getNickName(t.getUserId(), groupId));
         return personOrders;
     }
 
@@ -181,4 +186,16 @@ public class OrderController {
         }
         return map;
     }
+
+    @RequestMapping(value = "/currentOrder" ,method = RequestMethod.GET)
+    @ResponseBody
+    public List<PersonOrder> currentOrder(int groupId){
+        List<PersonOrder> personOrders = orderDao.getLastOrder(groupId);
+        if(personOrders!=null){ //设置别名
+            for(PersonOrder t:personOrders) //设置所有昵称
+                t.setNickName(groupDao.getNickName(t.getUserId(),groupId));
+        }
+        return personOrders;
+    }
+
 }

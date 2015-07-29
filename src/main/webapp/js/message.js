@@ -4,7 +4,7 @@ $(document).ready(function(){
     function notifyMessage(){
     var url = '/notifyMessage';
     $.get(url, function(data) {
-        $('#newsMessage').val(data);
+        $('#newsMessageNum').text(data);
     });}
 
     $('#newsMessage').click(function(){
@@ -59,7 +59,7 @@ $(document).ready(function(){
     });
 
     //监视接受、拒绝操作
-    $('#message a').live("click",function(){
+    $('#message a').on("click",function(){
         //判断是接受的还是拒绝的
         var url = $(this).attr('href');
         if(url.indexOf('acceptJoin') == 0) { //这个方法必须要有昵称

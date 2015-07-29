@@ -21,14 +21,8 @@
     </form>
 
     加入小组:<input type="text" id="searchGroup"/><input type="button" id="search" value="搜索小组"/>
-
-    <!-- 创建小组失败提示 -->
-    ${newGroupError!""}
+    <!-- 搜索小组失败提示 -->
     <span id="mygroup"></span>
 </div>
-
-
-
-
 </body>
 </html>

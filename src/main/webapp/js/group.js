@@ -30,11 +30,13 @@ $(document).ready(function () {
                     var orderType = i;
             }
             var url = "createOrder";
+            alert($('#orderend').val());
             $.post(url,{
                 groupId:$('#groupid').val(),
                 orderType:orderType,
                 orderUrl:$('#orderurl').val(),
-                orderMark:$('#ordermark').val()
+                orderMark:$('#ordermark').val(),
+                orderEnd:$('#orderend').val()
             },function(data){
                 if(data==true)
                     alert('成功向所有组员发送邮件!请耐心等待组员选择!');
@@ -45,5 +47,12 @@ $(document).ready(function () {
             return false;
     });
 
-
+    //获取最新的订单 AJAX
+    $.get('currentOrder?groupId=' + $('#groupid').val(), function (data) {
+        var obj = eval(data); //解析json
+        $(obj).each(function (index) {
+            var val = obj[index];
+            alert(val.nickName);
+        });
+    });
 });

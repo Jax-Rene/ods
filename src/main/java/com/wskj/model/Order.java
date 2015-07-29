@@ -13,8 +13,7 @@ public class Order {
     private int orderGroup;
     private double orderPrice;
     private String orderUrl;
-
-
+    private Timestamp orderEnd;
 
     public int getOrderId() {
         return orderId;
@@ -72,6 +71,25 @@ public class Order {
         this.orderUrl = orderUrl;
     }
 
+    public Timestamp getOrderEnd() {
+        return orderEnd;
+    }
+
+    public void setOrderEnd(Timestamp orderEnd) {
+        this.orderEnd = orderEnd;
+    }
+
     public Order() {
+    }
+
+    public Order(int orderId, int orderType, Timestamp orderTime, String orderMark, int orderGroup, double orderPrice, String orderUrl, Timestamp orderEnd) {
+        this.orderId = orderId;
+        this.orderType = orderType;
+        this.orderTime = orderTime;
+        this.orderMark = orderMark;
+        this.orderGroup = orderGroup;
+        this.orderPrice = orderPrice;
+        this.orderUrl = orderUrl;
+        this.orderEnd = orderEnd;
     }
 }

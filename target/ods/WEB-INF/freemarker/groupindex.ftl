@@ -31,14 +31,41 @@
         <input type="radio" name="ordertype"/>午餐
         <input type="radio" name="ordertype"/>晚餐
         <input type="radio" name="ordertype"/>其他
+        下单时间:<input type="text" id="orderend"/>
     <input type="submit" value="提交"/>
     </form>
 </div>
 </#if>
 
 <hr/>
-查看最近的订单:
-
+<h2>最近的订单:</h2>
+<div class="search-rules">
+    <form id="search-form">
+				<span>
+					<div class="control-group">
+                        <label class="control-label">日期范围：</label>
+                        <div class="bui-form-group controls" data-rules="{dateRange : true}">
+                            <input name="start" type="text" class="calendar" id="start"/> - <input name="end" type="text" class="calendar" id="end"/>
+                        </div>
+                    </div>
+		           	<div class="control-group">
+                        <label class="control-label">订单网址：</label>
+                        <div class="controls">
+                            <input name="website" type="text" class="input-large" id="url">
+                        </div>
+                    </div>
+			       	<div class="control-group">
+                        <button type="button" class="button button-primary" id="selectOrder">查询</button>
+                    </div>
+			    </span>
+    </form>
+    <hr/>
+    <div id = "grid"></div>
+    <h1>今日订单</h1>
+    <div id = "today-order"></div>
+</div>
+<div class="search-results">
+</div>
 
 
 
