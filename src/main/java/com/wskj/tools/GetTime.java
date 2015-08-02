@@ -18,7 +18,8 @@ public class GetTime {
     }
 
     public  Timestamp convertToTimeStamp(String time) throws ParseException {
-        System.out.println(time);
+        if(time == null || time.equals(""))
+            return null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date = sdf.parse(time);

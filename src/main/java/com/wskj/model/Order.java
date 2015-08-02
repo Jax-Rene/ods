@@ -1,5 +1,8 @@
 package com.wskj.model;
 
+import com.wskj.tools.CustomDateSerializer;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
 import java.sql.Timestamp;
 
 /**
@@ -31,6 +34,7 @@ public class Order {
         this.orderType = orderType;
     }
 
+    @JsonSerialize(using = CustomDateSerializer.class)
     public Timestamp getOrderTime() {
         return orderTime;
     }
@@ -71,6 +75,7 @@ public class Order {
         this.orderUrl = orderUrl;
     }
 
+    @JsonSerialize(using = CustomDateSerializer.class)
     public Timestamp getOrderEnd() {
         return orderEnd;
     }

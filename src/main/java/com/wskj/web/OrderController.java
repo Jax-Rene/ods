@@ -12,7 +12,6 @@ import com.wskj.tools.GetTime;
 import com.wskj.tools.SimpleMailSender;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,7 +59,7 @@ public class OrderController {
         orderDao.createOrder(orderType,new Timestamp(System.currentTimeMillis()),
                 orderUrl,orderMark,groupId,new GetTime().convertToTimeStamp(orderEnd));
         //获取订单ID ： 通过获取该组最近的订单
-        int orderId = orderDao.getOrderId(groupId);
+        int orderId = orderDao.getLastOrderId(groupId);
 
         //获取小组中所有成员id
         List<Integer> memberIds = groupDao.getMemberIds(groupId);
@@ -156,9 +155,10 @@ public class OrderController {
 
     @RequestMapping(value = "/getOrder" , method = RequestMethod.POST)
     @ResponseBody
-    public List<Order> getOrder(String start,String end,String url,int groupId) throws ParseException {
+    public List<Order> getOrder(String startTime,String endTime,String url,int groupId,int start,int limit) throws ParseException {
         GetTime gt = new GetTime();
-        return orderDao.searchOrder(gt.convertToTimeStamp(start),gt.convertToTimeStamp(end),groupId,url);
+        return orderDao.searchOrder(gt.convertToTimeStamp(startTime),
+                gt.convertToTimeStamp(endTime),groupId,url);
     }
 
 
@@ -191,11 +191,28 @@ public class OrderController {
     @ResponseBody
     public List<PersonOrder> currentOrder(int groupId){
         List<PersonOrder> personOrders = orderDao.getLastOrder(groupId);
-        if(personOrders!=null){ //设置别名
-            for(PersonOrder t:personOrders) //设置所有昵称
+        if(personOrders!=null) //设置别名
+            for(PersonOrder t:personOrders)//设置所有昵称
                 t.setNickName(groupDao.getNickName(t.getUserId(),groupId));
-        }
         return personOrders;
     }
 
+    @RequestMapping(value = "/currentOrderCount", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String,Object> currentOrderCount(int groupId){
+        int orderId = orderDao.getLastOrderId(groupId);
+        Map<String,Object> map = new HashMap<String, Object>();
+        List<PersonOrder> personOrders = orderDao.getDetailInfo(orderId);
+        for(PersonOrder t:personOrders){
+            String name = t.getOrderName();
+            if(map.get(name) != null)
+                map.put(name,(Integer)map.get(name) + 1);
+            else
+                map.put(name,1);
+        }
+        //获取订单的总价
+        double price = orderDao.getOrderPrice(orderId);
+        map.put("price",price);
+        return map;
+    }
 }

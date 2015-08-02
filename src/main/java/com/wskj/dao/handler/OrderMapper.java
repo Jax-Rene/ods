@@ -20,6 +20,7 @@ public class OrderMapper implements RowMapper<Order> {
         order.setOrderGroup(rs.getInt("order_group"));
         order.setOrderPrice(rs.getDouble("order_price"));
         order.setOrderUrl(rs.getString("order_url"));
+        order.setOrderEnd(rs.getTimestamp("order_end"));
         return order;
     }
 }

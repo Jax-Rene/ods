@@ -3,6 +3,7 @@
     <excludes>
         <pattern>/js/*</pattern>
         <pattern>/css/*</pattern>
+        <pattern>/img/*</pattern>
     </excludes>
     <!-- 定义装饰器要过滤的页面 -->
     <decorator name="user_decorate" page="user_decorate.ftl">
