@@ -18,6 +18,7 @@ public class Order {
     private String orderUrl;
     private Timestamp orderEnd;
 
+
     public int getOrderId() {
         return orderId;
     }
@@ -87,7 +88,8 @@ public class Order {
     public Order() {
     }
 
-    public Order(int orderId, int orderType, Timestamp orderTime, String orderMark, int orderGroup, double orderPrice, String orderUrl, Timestamp orderEnd) {
+    public Order(int orderId, int orderType, Timestamp orderTime, String orderMark, int orderGroup, double orderPrice,
+                 String orderUrl, Timestamp orderEnd) {
         this.orderId = orderId;
         this.orderType = orderType;
         this.orderTime = orderTime;

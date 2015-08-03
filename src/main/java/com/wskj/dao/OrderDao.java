@@ -69,6 +69,11 @@ public class OrderDao {
         return;
     }
 
+    public double getPersonPrice(int id){
+        String sql = "select order_price from ods.order_user where id = ?";
+        return jdbcTemplate.queryForObject(sql,new Object[]{id},Double.class);
+    }
+
     /**
      * 更改总表的价格
      *
@@ -78,7 +83,7 @@ public class OrderDao {
      */
     public void updateOrderPrice(int orderId, int method, double num) {
         String sql = "select order_price from ods.order where order_id = ?";
-        double price = jdbcTemplate.queryForObject(sql, new Object[]{orderId}, Integer.class);
+        double price = jdbcTemplate.queryForObject(sql, new Object[]{orderId}, Double.class);
         if (method == 0)
             price += num;
         else
@@ -145,5 +150,46 @@ public class OrderDao {
         } else
             return null;
     }
+
+    /**
+     * 编辑个人订单
+     */
+    public void editPersonOrder(PersonOrder curOrder){
+        String sql = "update ods.order_user set user_id=? , order_name=? , order_number=? , order_price =? where id = ? ";
+        double prePrice = getPersonPrice(curOrder.getId());
+        //先更改总表的总价 ,先获取原来的价格然后
+        updateOrderPrice(curOrder.getOrderId(), 0, curOrder.getOrderPrice() - prePrice);
+        jdbcTemplate.update(sql,curOrder.getUserId(),curOrder.getOrderName(),curOrder.getOrderNumber(),curOrder.getOrderPrice(),curOrder.getId());
+        return;
+    }
+
+
+    /**
+     * 添加个人订单
+     */
+
+    public void insertPersonOrder(PersonOrder order){
+        String sql = "insert into ods.order_user(order_id,user_id,order_name,order_number,order_price) values(?,?,?,?,?)";
+        //更新总表的价格
+        updateOrderPrice(order.getOrderId(),0,order.getOrderPrice());
+        jdbcTemplate.update(sql,order.getOrderId(),order.getUserId(),order.getOrderName(),order.getOrderNumber(),order.
+                getOrderPrice());
+        return;
+    }
+
+    /**
+     * 删除个人订单
+     */
+
+    public void deletePersonOrder(int id,int orderId){
+        double orderPrice = getPersonPrice(id);
+        //更新订单金额
+        updateOrderPrice(orderId,1,orderPrice);
+        String sql = "delete from ods.order_user where id=?";
+        jdbcTemplate.update(sql,id);
+        return;
+    }
+
+
 
 }

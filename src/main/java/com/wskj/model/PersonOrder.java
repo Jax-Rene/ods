@@ -4,12 +4,21 @@ package com.wskj.model;
  * Created by zhuangjy on 2015/7/23.
  */
 public class PersonOrder {
+    private int id;
     private int orderId;
     private int userId;
     private String nickName;
     private String orderName;
     private int orderNumber;
     private double orderPrice;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getOrderId() {
         return orderId;
@@ -57,5 +66,25 @@ public class PersonOrder {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public PersonOrder() {
+    }
+
+    public PersonOrder(int id, int orderId,int userId, String orderName, int orderNumber, double orderPrice) {
+        this.id = id;
+        this.orderId = orderId;
+        this.userId = userId;
+        this.orderName = orderName;
+        this.orderNumber = orderNumber;
+        this.orderPrice = orderPrice;
+    }
+
+    public PersonOrder(int userId, double orderPrice, int orderNumber, String orderName, int orderId) {
+        this.userId = userId;
+        this.orderPrice = orderPrice;
+        this.orderNumber = orderNumber;
+        this.orderName = orderName;
+        this.orderId = orderId;
     }
 }

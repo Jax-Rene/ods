@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class PersonOrderMapper implements RowMapper<PersonOrder> {
     public PersonOrder mapRow(ResultSet rs,int rowNum)throws SQLException {
         PersonOrder personOrder = new PersonOrder();
+        personOrder.setId(rs.getInt("id"));
         personOrder.setOrderId(rs.getInt("order_id"));
         personOrder.setUserId(rs.getInt("user_id"));
         personOrder.setOrderName(rs.getString("order_name"));

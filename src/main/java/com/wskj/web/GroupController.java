@@ -121,7 +121,18 @@ public class GroupController {
         Group curGroup = groupDao.getGroup(gId);
         if(curGroup.getGroupBossId().equals(curUser.getId())){
             model.addAttribute("boss","true"); //是组长
+        }else{ //不是组长判断是不是组员
+            if(groupDao.getMemberIds(gId).indexOf(curUser.getId()) != -1)
+                model.addAttribute("member","true");
         }
+        //获取昵称
+        try {
+            String nickName = groupDao.getNickName(curUser.getId(), gId);
+            model.addAttribute("nickName", nickName);
+        }catch (EmptyResultDataAccessException e){
+            System.out.println("不是组员");
+        }
+
         model.addAttribute("group",curGroup);
         //获取组内成员
         List<Integer> userIds = groupDao.getMemberIds(gId);
@@ -281,6 +292,23 @@ public class GroupController {
             return false;
         }
     }
+
+    @RequestMapping(value = "/addGroup" , method = RequestMethod.GET)
+    @ResponseBody
+    public boolean addGroup(int groupId,String nickName,HttpSession session){
+        //检查昵称是否已经存在
+        if(groupDao.judgeNickNameExist(nickName,groupId)){
+            User user = (User)session.getAttribute("curUser");
+            Group group = groupDao.getGroup(groupId);
+            groupDao.joinGroup(user.getId(),groupId,nickName);
+            //将加入小组的请求发向组长
+            messageDao.createMessage(group.getGroupBossId(), "请求加入您的小组:" + group.getGroupName(), 2, group.getId(),
+                    nickName ,user.getId());
+            return true;
+        }else
+            return false;
+    }
+
 
 
 }
