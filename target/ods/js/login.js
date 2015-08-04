@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
 
     $('#loginForm').submit(function (){ //检查是否要自动登录
-        if($('#autologin').attr('checked')=='checked'){
+        if($('#autologin').val()=='on'){
             $.cookie('username',$('#username').val(),{expires:30,path:'/'});
             $.cookie('password',$('#password').val(),{expires:30,path:'/'});
         }

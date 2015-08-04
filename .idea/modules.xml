@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Desktop/ods/ods.iml" filepath="$USER_HOME$/Desktop/ods/ods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ods.iml" filepath="$PROJECT_DIR$/ods.iml" />
     </modules>
   </component>
 </project>

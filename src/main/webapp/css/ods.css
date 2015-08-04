@@ -55,7 +55,7 @@
 #banner {
 	width: 100%;
 	height: 500px;
-	background: url(../../img/bg.jpg) center center fixed;
+	background: url(/img/bg.jpg) center center fixed;
 	position: relative;
 }
 #banner .container {
@@ -87,7 +87,7 @@
 	position: absolute;
 	top: 0px;
 	text-align: center;
-	background:#dbd3c0 url(../../img/noisy.png) repeat;
+	background:#dbd3c0 url(/img/noisy.png) repeat;
 }
 .orders .order-header span {
 	position: absolute;

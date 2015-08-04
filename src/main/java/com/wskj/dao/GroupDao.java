@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -72,16 +71,12 @@ public class GroupDao {
     public void setNickName(Integer userId, Integer groupId, String nickName) { //设置组昵称
         String sql = "update ods.user_group set nick_name=? where user_id=? and group_id=?";
         jdbcTemplate.update(sql, nickName, userId, groupId);
-        System.out.println("更改昵称为 - " + nickName);
-        return;
     }
 
 
     public void joinGroup(Integer userId, Integer groupId, String nickName) { //加入小组
         String sql = "insert into ods.user_group(user_id,group_id,nick_name) values(?,?,?)";
         jdbcTemplate.update(sql, userId, groupId, nickName);
-        System.out.println(userId + "加入小组:" + groupId + "成功！");
-        return;
     }
 
     public List<Group> getMyGroup(Integer userId) {//获取我创建的组
@@ -97,6 +92,11 @@ public class GroupDao {
         for (Integer t : groupIds)
             groups.add(getGroup(t));
         return groups;
+    }
+
+    public List<Group> getAllGroup(){
+        String sql = "select * from ods.group";
+        return jdbcTemplate.query(sql,new Object[]{},new GroupMapper());
     }
 
 
@@ -149,7 +149,6 @@ public class GroupDao {
     public Map<Integer, String> getMemberIdAndName(int groupId) {
         String sql = "select user_id,nick_name from ods.user_group where group_id = ?";
         return jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Map<Integer, String>>() {
-            @Override
             public Map<Integer, String> extractData(ResultSet rs) throws SQLException, DataAccessException {
                 Map<Integer, String> map = new HashMap<Integer, String>();
                 while (rs.next()) {

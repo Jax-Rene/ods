@@ -6,10 +6,9 @@ $(document).ready(function(){
     $.get(url, function(data) {
         $('#newsMessageNum').text(data);
     });}
-
     $('.message').on('click', function () {
         $('.message-show').empty(); //删除div内的表、重建
-        $('.message-show').slideToggle('slow');
+        $('.message-show').slideToggle('fast');
             var url = '/getRencentMessage';
             $.get(url,function(data){
                 var table=$("<table border=\"0\">");

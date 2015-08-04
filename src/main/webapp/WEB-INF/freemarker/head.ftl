@@ -6,6 +6,7 @@
                 <li class="active"><a href="#">我的小组</a></li>
             </ul>
             <ul class="navbar-right">
+                <li>早上好,${curUser.userName!""}</li>
                 <li><a href="#">个人中心</a></li>
                 <li class="message"><a href="#">消息<span class="badge" id="newsMessageNum"></span></a>
                     <div class="message-show">

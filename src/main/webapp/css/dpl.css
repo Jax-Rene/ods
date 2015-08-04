@@ -1421,8 +1421,8 @@ fieldset[disabled] .x-icon-question.active {
 }
 @font-face {
   font-family: 'bui-iconfont';
-  src: url('../../img/iconfont/iconfont.eot');
-  src: url('../../img/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../img/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */ url('../../img/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../img/iconfont/iconfont.svg#iconfont') format('svg');
+  src: url('/img/iconfont/iconfont.eot');
+  src: url('/img/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/img/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */ url('/img/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('/img/iconfont/iconfont.svg#iconfont') format('svg');
   
   /* IE9*/
   /* iOS 4.1- */
@@ -1447,7 +1447,7 @@ fieldset[disabled] .x-icon-question.active {
   height: 14px;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../../img/sprite-469-300.png");
+  background-image: url("/img/sprite-469-300.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   *margin-right: .3em;
@@ -1475,7 +1475,7 @@ fieldset[disabled] .x-icon-question.active {
   height: 14px;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../../img/sprite-469-300.png");
+  background-image: url("/img/sprite-469-300.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   *margin-right: .3em;
@@ -1497,7 +1497,7 @@ fieldset[disabled] .x-icon-question.active {
   display: inline-block;
 }
 .icon-white {
-  background-image: url("../../img/white_sprite-469-300.png");
+  background-image: url("/img/white_sprite-469-300.png");
 }
 .icon-glass {
   background-position: 0      0;

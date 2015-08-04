@@ -2,27 +2,79 @@
 <head>
     <title>ods首页</title>
     <script src="${absoluteContextPath}/js/index.js" type="text/javascript"></script>
+    <script src="${absoluteContextPath}/js/bui.js" type="text/javascript"></script>
+    <script src="${absoluteContextPath}/js/photo_wall.js" type="text/javascript"></script>
 </head>
 <body>
-<div>
-    你好! ${curUser.userName!""}
+<script>
+    json={"img":[{"img_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example4.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example5.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example6.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example1.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example5.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example6.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example4.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example1.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example5.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example4.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example6.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example1.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"}]};
+</script>
+<div id="banner">
+    <div class="container">
+        <div id="orders">
+            <div class="orders">
+                <div class="order-header">
+                    <div class="order-details">
+                        <h1>今日订单</h1>
+							<span>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+								<div class="triangle"></div>
+							</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="my_groups">
+            <div class="my-groups span8 offset14">
+                <h1>我的小组</h1>
+
+                <div class="my-group"><a href="#">我的第1个小组</a></div>
+                <div class="my-group"><a href="#">我的第2个小组</a></div>
+                <div class="my-group"><a href="#">我的第3个小组</a></div>
+                <div class="my-group"><a href="#">我的第4个小组</a></div>
+                <div class="my-group"><a href="#">我的第5个小组</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="groups-header">
+    <div class="container">
+        <h1>所有的小组</h1>
+    </div>
+</div>
+<div id="groups">
+    <div class="container">
+        <div class="img-container">
+            <div class="img-table">
+                <div class="next"><img src="/img/right.png"></div>
+                <div class="pre"><img src="/img/left.png"></div>
+            </div>
+            <div class="page">
+            </div>
+        </div>
+    </div>
 </div>
 
 
-<#-- 这里显示小组信息 分为我创建的组 以及 我所归属的组(包含自己创建的)-->
-<div id="group">
-    <a href="#">创建小组</a>
-    <!-- 点击后出现下面内容的窗口 -->
-    <form action="/createGroup" method="POST"
-          enctype="multipart/form-data" >
-        请输入组名：<input type="text" name="newGroupName" /><br/>
-        您可以选择是否上传小组头像:<input type="file" name="newGroupIcon"/><br/>
-        <input type="submit" value="确认"/>${newGroupError !""}
-    </form>
-
-    加入小组:<input type="text" id="searchGroup"/><input type="button" id="search" value="搜索小组"/>
-    <!-- 搜索小组失败提示 -->
-    <span id="mygroup"></span>
-</div>
 </body>
 </html>
