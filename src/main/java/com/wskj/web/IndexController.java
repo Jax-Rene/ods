@@ -16,7 +16,7 @@ import java.util.*;
 /**
  * Created by zhuangjy on 2015/7/15.
  */
-@Controller(value = "/index")
+@Controller
 public class IndexController{
     ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
     GroupDao groupDao = (GroupDao) ctx.getBean("groupDao");

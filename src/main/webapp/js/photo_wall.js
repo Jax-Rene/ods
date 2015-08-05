@@ -21,15 +21,18 @@ function setPictureWall() {
     /*img-show*/
     for (var i = 0; (i < col_num * row_num) && (i < groupNum); i++) {
         var content =
-            '<div class=\"img-cell\">'
-            + '<img src=\"img\\' + allGroup[i].groupIcon + '\">'
+            '<a href=\'getGroupInfo?groupId='+ allGroup[i].id + '\'><div class=\"img-cell\">'
+            //+ '<img src=\"img\\' + allGroup[i].groupIcon + '\">'
+            + '<img src=\'img\\example1.jpg\'/>'
             + '<div class=\"img-details\">'
             + '<div class="text-details">'
-            + '<p>姓名：' + allGroup[i].groupName + '</p>'
-            + '<p>组长：' + allBossName[i] + '</p>'
+            + '<p>' + allGroup[i].groupName + '</p>'
+            + '<div>'
+            + '<span class=\"congratulation\">' + allBossName[i] + '</span>'
             + '</div>'
             + '</div>'
-            + '</div>';
+            + '</div>'
+            + '</div></a>';
 
         $('.img-table').append(content);
     }

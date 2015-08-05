@@ -58,4 +58,12 @@ $(document).ready(function() {
         });
     });
 
+    $('#createGroup').click(function(){
+        $('#group').toggle('slow');
+    });
+
+
+
+
+
 });

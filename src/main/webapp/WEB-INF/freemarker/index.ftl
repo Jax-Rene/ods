@@ -6,9 +6,6 @@
     <script src="${absoluteContextPath}/js/photo_wall.js" type="text/javascript"></script>
 </head>
 <body>
-<script>
-    json={"img":[{"img_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example4.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example5.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example6.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example1.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example5.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example6.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example4.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example1.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example5.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example4.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example6.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example1.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example2.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"},{"img_url":"./img/example3.jpg","details_url":"./img/example1.jpg","name":"zzz","company":"hehe","congratulation":"hello,world!"}]};
-</script>
 <div id="banner">
     <div class="container">
         <div id="orders">
@@ -60,6 +57,7 @@
 <div class="groups-header">
     <div class="container">
         <h1>所有的小组</h1>
+        <span><a href="javascript:void(0)" id="createGroup">创建小组</a> </span>
     </div>
 </div>
 <div id="groups">
@@ -75,6 +73,14 @@
     </div>
 </div>
 
+<div class="hide" id="group">
+    <form action="/createGroup" method="POST"
+          enctype="multipart/form-data" id="group" >
+        请输入组名：<input type="text" name="newGroupName" /><br/>
+        您可以选择是否上传小组头像:<input type="file" name="newGroupIcon"/><br/>
+        <input type="submit" value="确认"/>${newGroupError !""}
+    </form>
+</div>
 
 </body>
 </html>

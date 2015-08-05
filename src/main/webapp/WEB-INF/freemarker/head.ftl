@@ -6,6 +6,8 @@
                 <li class="active"><a href="#">我的小组</a></li>
             </ul>
             <ul class="navbar-right">
+                <li><input type="text" id="searchGroup" placeholder="输入搜索小组的名字"/>
+                    <input type="button" id="search" value="搜索小组"/></li>
                 <li>早上好,${curUser.userName!""}</li>
                 <li><a href="#">个人中心</a></li>
                 <li class="message"><a href="#">消息<span class="badge" id="newsMessageNum"></span></a>

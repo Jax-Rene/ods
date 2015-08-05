@@ -2,137 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a4b38e6-aeef-4f10-a452-8f1f72fcf582" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/dot.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/example1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/example2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/example3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/example4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/example5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/example6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/noisy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_6_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_acl_3_0_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_3_0_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_3_0_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_taglibs_3_0_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_3_0_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_3_0_6_RELEASE.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_javamail_1_4_spec_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_6_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/GroupController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/IndexController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/08ca70f4-d0fc-4b12-888b-f7c6c47f5b00.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/43db0b91-7b8c-4bb4-a27f-8df9f3744c31.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/4731754e-f8dc-491e-a063-f893aa11d0c7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/6bd9b998-3a1e-4ce2-9ee0-97eca3703eb2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/722cf0d9-5e68-4eb2-9b3f-6e552a6ae4f7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/82769eb0-5f43-48c4-9b07-d0199ab60ef7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/8e561257-7dd6-47d0-874a-cecf74436733.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/9e749a69-79f3-4f38-864e-42f03cfd4fb5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/a10d3cb5-ddbd-49f5-88e3-248feb08e599.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/ae10f484-b9e5-4e21-9c7f-8aea0cc2c3ea.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/b381a059-1b08-403f-a5f7-6e1d67dfb7cb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ods/image/icon/e6a8542f-82f4-4d17-ae40-5c7d9a20546d.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/interceptor/AbsolutelyPathInterceptor.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/interceptor/AbsolutelyPathInterceptor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/interceptor/AbsolutelyPathInterceptor.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/interceptor/AbsolutelyPathInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/tools/CustomDateSerializer.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/tools/CustomDateSerializer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/CustomDateSerializer.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/CustomDateSerializer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/tools/FindPasswordUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/tools/FindPasswordUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/FindPasswordUtil.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/FindPasswordUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/tools/GetTime.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/tools/GetTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/GetTime.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/GetTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/Group.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/Group.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/Group.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/Group.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/GroupController.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/web/GroupController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/GroupController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/GroupController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/GroupDao$1.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/GroupDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/GroupDao$1.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/GroupDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/GroupDao.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/GroupDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/GroupDao.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/GroupDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/GroupMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/GroupMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/GroupMapper.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/GroupMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/web/IndexController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/IndexController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/IndexController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/web/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/LoginController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/filter/LoginFilter.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/filter/LoginFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/filter/LoginFilter.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/filter/LoginFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/tools/MD5Util.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/tools/MD5Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/MD5Util.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/MD5Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/MailAuthenticator.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/MailAuthenticator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/MailAuthenticator.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/MailAuthenticator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/Message.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/Message.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/Message.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/Message.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/MessageController.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/web/MessageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/MessageController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/MessageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/MessageDao$1.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/MessageDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/MessageDao$1.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/MessageDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/MessageDao.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/MessageDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/MessageDao.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/MessageDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/MessageMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/MessageMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/MessageMapper.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/MessageMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/Order.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/Order.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/web/OrderController.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/web/OrderController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/OrderController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/OrderController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/OrderDao$1.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/OrderDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/OrderDao$1.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/OrderDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/OrderDao.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/OrderDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/OrderDao.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/OrderDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/OrderMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/OrderMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/OrderMapper.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/OrderMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/PersonOrder.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/PersonOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/PersonOrder.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/PersonOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/PersonOrderMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/PersonOrderMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/PersonOrderMapper.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/PersonOrderMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/SimpleMail.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/SimpleMail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/SimpleMail.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/SimpleMail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/tools/SimpleMailSender.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/tools/SimpleMailSender.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/SimpleMailSender.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/SimpleMailSender.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/TestDao.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/TestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/TestDao.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/TestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/User.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/UserDao$1.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/UserDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/UserDao$1.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/UserDao$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/UserDao$2.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/UserDao$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/UserDao$2.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/UserDao$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/UserMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/dao/handler/UserMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/UserMapper.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/dao/handler/UserMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/tools/VerifyCodeUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/tools/VerifyCodeUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/VerifyCodeUtil.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/VerifyCodeUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/web/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/web/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/ods/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/bui.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/bui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/css/bui.css" afterPath="$PROJECT_DIR$/target/ods/css/bui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/dpl.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/dpl.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/css/dpl.css" afterPath="$PROJECT_DIR$/target/ods/css/dpl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/groupindex.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/groupindex.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/head.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/head.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/index.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/index.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/index.js" afterPath="$PROJECT_DIR$/target/ods/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/login.js" afterPath="$PROJECT_DIR$/target/ods/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/message.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/message.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/message.js" afterPath="$PROJECT_DIR$/target/ods/js/message.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/ods.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/ods.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/css/ods.css" afterPath="$PROJECT_DIR$/target/ods/css/ods.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ods.iml" afterPath="$PROJECT_DIR$/ods.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ods_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ods_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/photo_wall.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/photo_wall.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/photo_wall.js" afterPath="$PROJECT_DIR$/target/ods/js/photo_wall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/redirect_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/redirect_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/redirect_index.jsp" afterPath="$PROJECT_DIR$/target/ods/redirect_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ods.iws" />
@@ -155,112 +64,7 @@
     <favorites_list name="ods" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photo_wall.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/photo_wall.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/model/Group.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/web/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
-              <folding>
-                <element signature="e#2085#2101#0" expanded="true" />
-                <element signature="e#2157#2165#0" expanded="true" />
-                <element signature="e#2222#2230#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupDao.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48351648">
-              <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
-              <folding>
-                <element signature="e#5678#6171#0" expanded="true" />
-                <element signature="e#6170#6171#0" expanded="true" />
-                <marker date="1438700841000" expanded="true" signature="788:828" placeholder="select * fro..group..." />
-                <marker date="1438700841000" expanded="true" signature="1030:1081" placeholder="select group..group..." />
-                <marker date="1438700841000" expanded="true" signature="1288:1332" placeholder="select * fro..group..." />
-                <marker date="1438700841000" expanded="true" signature="1674:1725" placeholder="select group..group..." />
-                <marker date="1438700841000" expanded="true" signature="1916:1978" placeholder="insert into ..." />
-                <marker date="1438700841000" expanded="true" signature="2242:2317" placeholder="insert into ..." />
-                <marker date="1438700841000" expanded="true" signature="2598:2666" placeholder="update ods.u..." />
-                <marker date="1438700841000" expanded="true" signature="2845:2913" placeholder="insert into ..." />
-                <marker date="1438700841000" expanded="true" signature="3067:3113" placeholder="select * fro..group..." />
-                <marker date="1438700841000" expanded="true" signature="3335:3386" placeholder="select group..user_group..." />
-                <marker date="1438700841000" expanded="true" signature="3692:3715" placeholder="select * fro..group..." />
-                <marker date="1438700841000" expanded="true" signature="3882:3925" placeholder="select * fro..group..." />
-                <marker date="1438700841000" expanded="true" signature="4239:4306" placeholder="select nick_..user_group..." />
-                <marker date="1438700841000" expanded="true" signature="4501:4554" placeholder="select nick_..user_group..." />
-                <marker date="1438700841000" expanded="true" signature="5050:5104" placeholder="select group..group..." />
-                <marker date="1438700841000" expanded="true" signature="5289:5340" placeholder="select user_..user_group..." />
-                <marker date="1438700841000" expanded="true" signature="5550:5613" placeholder="select user_..user_group..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.03125">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/message.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -275,16 +79,20 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/redirect_index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/login.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/bui.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/dpl.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/ods.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/message.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/web/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/photo_wall.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wskj/model/Group.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wskj/interceptor/AbsolutelyPathInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/groupindex.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/photo_wall.js" />
       </list>
     </option>
   </component>
@@ -310,7 +118,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="38" />
+    <option name="x" value="51" />
     <option name="y" value="23" />
     <option name="width" value="1237" />
     <option name="height" value="777" />
@@ -425,58 +233,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -552,15 +308,37 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/js/photo_wall.js" />
+    <property name="SearchEverywhereHistoryKey" value="GroupCon&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/java/com/wskj/web/GroupController.java&#10;Group&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/WEB-INF/freemarker/groupindex.ftl&#10;Index&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/java/com/wskj/web/IndexController.java&#10;phot&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/js/photo_wall.js&#10;index.f&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/WEB-INF/freemarker/index.ftl&#10;abs&#9;PSI&#9;JAVA://com.wskj.interceptor.AbsolutelyPathInterceptor&#10;GroupC&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/java/com/wskj/web/GroupController.java&#10;head.&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/WEB-INF/freemarker/head.ftl" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/target/ods/img" />
       <recent name="$PROJECT_DIR$/src/main/webapp/js" />
       <recent name="$PROJECT_DIR$/src/main/webapp/img" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.24">
+    <configuration default="false" name="Group" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wskj.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.wskj.model.Group" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ods" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -889,9 +667,15 @@
         </option>
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 8.0.24" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Group" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Group" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -905,74 +689,52 @@
       <updated>1438616620392</updated>
       <workItem from="1438616622038" duration="479000" />
       <workItem from="1438688222543" duration="2688000" />
-      <workItem from="1438694476209" duration="8200000" />
+      <workItem from="1438694476209" duration="18052000" />
     </task>
+    <task id="LOCAL-00001" summary="整合index中">
+      <created>1438703282883</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1438703282883</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11367000" />
+    <option name="totallyTimeSpent" value="21219000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="23" width="1237" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="51" y="23" width="1237" height="777" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2489895" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31779662" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489895" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31779662" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42937854" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -985,8 +747,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="整合index中" />
+    <option name="LAST_COMMIT_MESSAGE" value="整合index中" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="12" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1090,14 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43498817">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bui.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -1138,14 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/groupindex.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16312057">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1175,17 +930,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.03125">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5793451">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
           <folding />
         </state>
@@ -1196,38 +943,98 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/model/Group.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="31" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+        <state vertical-scroll-proportion="-3.5">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/web/IndexController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/img/example1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/ods/img/calendar-200-300.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.7959698">
+          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
           <folding>
-            <element signature="e#2085#2101#0" expanded="true" />
-            <element signature="e#2157#2165#0" expanded="true" />
-            <element signature="e#2222#2230#0" expanded="true" />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select group..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select group..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="update ods.u..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select group..user_group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select nick_..user_group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select nick_..user_group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select group..group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select user_..user_group..." />
+            <marker date="1438700841000" expanded="true" signature="-1:-1" placeholder="select user_..user_group..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/photo_wall.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/interceptor/AbsolutelyPathInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.31428573">
+          <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/ods/img/icon/0.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7582418">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/ods/img/example1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.0625">
+          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1235,36 +1042,61 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+          <folding>
+            <element signature="e#758#770#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0797873">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/web/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48351648">
-          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.41489363">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
           <folding>
-            <element signature="e#5678#6171#0" expanded="true" />
-            <element signature="e#6170#6171#0" expanded="true" />
-            <marker date="1438700841000" expanded="true" signature="788:828" placeholder="select * fro..group..." />
-            <marker date="1438700841000" expanded="true" signature="1030:1081" placeholder="select group..group..." />
-            <marker date="1438700841000" expanded="true" signature="1288:1332" placeholder="select * fro..group..." />
-            <marker date="1438700841000" expanded="true" signature="1674:1725" placeholder="select group..group..." />
-            <marker date="1438700841000" expanded="true" signature="1916:1978" placeholder="insert into ..." />
-            <marker date="1438700841000" expanded="true" signature="2242:2317" placeholder="insert into ..." />
-            <marker date="1438700841000" expanded="true" signature="2598:2666" placeholder="update ods.u..." />
-            <marker date="1438700841000" expanded="true" signature="2845:2913" placeholder="insert into ..." />
-            <marker date="1438700841000" expanded="true" signature="3067:3113" placeholder="select * fro..group..." />
-            <marker date="1438700841000" expanded="true" signature="3335:3386" placeholder="select group..user_group..." />
-            <marker date="1438700841000" expanded="true" signature="3692:3715" placeholder="select * fro..group..." />
-            <marker date="1438700841000" expanded="true" signature="3882:3925" placeholder="select * fro..group..." />
-            <marker date="1438700841000" expanded="true" signature="4239:4306" placeholder="select nick_..user_group..." />
-            <marker date="1438700841000" expanded="true" signature="4501:4554" placeholder="select nick_..user_group..." />
-            <marker date="1438700841000" expanded="true" signature="5050:5104" placeholder="select group..group..." />
-            <marker date="1438700841000" expanded="true" signature="5289:5340" placeholder="select user_..user_group..." />
-            <marker date="1438700841000" expanded="true" signature="5550:5613" placeholder="select user_..user_group..." />
+            <element signature="e#2139#2147#0" expanded="true" />
+            <element signature="e#2204#2212#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/model/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30585107">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/group.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/photo_wall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/groupindex.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6715117">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

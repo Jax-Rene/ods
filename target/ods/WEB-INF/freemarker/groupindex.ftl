@@ -8,7 +8,6 @@
     <hr/>
 
 <#if boss?exists>
-    <input type="text" id="membername"/> <input type="button" id="addmember" value="邀请好友"/>
     <input type="hidden" id="boss" value="true"/>
 </#if>
 <#if boss?exists || member?exists>
@@ -25,9 +24,7 @@
     <div class="search-results">
         <div id="memberGrid"></div>
     </div>
-<#list members as user>
-    <p> ${user.userName} - ${nicknames[user_index]}</p>
-</#list>
+
     <input type="hidden" id="groupid" value="${group.id}"/>
 <#if boss?exists>
     <hr/>
