@@ -22,8 +22,7 @@ function setPictureWall() {
     for (var i = 0; (i < col_num * row_num) && (i < groupNum); i++) {
         var content =
             '<a href=\'getGroupInfo?groupId='+ allGroup[i].id + '\'><div class=\"img-cell\">'
-            //+ '<img src=\"img\\' + allGroup[i].groupIcon + '\">'
-            + '<img src=\'img\\example1.jpg\'/>'
+            + '<img src=\'img\\icon\\' + allGroup[i].groupIcon + '\'/>'
             + '<div class=\"img-details\">'
             + '<div class="text-details">'
             + '<p>' + allGroup[i].groupName + '</p>'

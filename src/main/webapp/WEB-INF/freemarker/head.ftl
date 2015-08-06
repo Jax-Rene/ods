@@ -16,6 +16,7 @@
                         <div class="message-details"></div>
                     </div>
                 </li>
+                <li><a href="/loginOut">注销</a></li>
             </ul>
         </div>
     </nav>
