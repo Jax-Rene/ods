@@ -101,7 +101,7 @@
     </listener>
 
     <welcome-file-list>
-        <welcome-file>redirect_index.jsp</welcome-file>
+        <welcome-file>/WEB-INF/redirect_index.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>

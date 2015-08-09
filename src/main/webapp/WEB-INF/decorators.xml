@@ -12,5 +12,6 @@
         <!-- 默认目录下(/WEB-INF/freemarker) 的所有请求 -->
         <pattern>/inputLogin</pattern>
         <pattern>/getGroupInfo</pattern>
+        <pattern>/createGroup</pattern>
     </decorator>
 </decorators>

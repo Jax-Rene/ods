@@ -38,7 +38,6 @@ public class GroupController {
     public String createGroup(ModelMap model, HttpServletRequest request,
                               HttpSession httpSession)
             throws Exception {
-        //enctype="multipart/form-data"方式提交表单，获得参数的方法
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile icon = multipartRequest.getFile("newGroupIcon");
         /**获取文件的后缀**/
@@ -102,7 +101,7 @@ public class GroupController {
             model.addAttribute("group", curGroup);
             //标志为组长
             model.addAttribute("boss", "true");
-            model.addAttribute("nickName",user.getUserName());
+            model.addAttribute("nickName", user.getUserName());
             return "groupindex";
         }
     }
@@ -303,4 +302,27 @@ public class GroupController {
     }
 
 
+    @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
+    @ResponseBody
+    public String restoreTempPic(HttpServletRequest request) throws Exception {
+        System.out.println("da");
+
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        MultipartFile icon = multipartRequest.getFile("newGroupIcon");
+        String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
+        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif")))
+            return null;
+        /**得到图片保存目录的真实路径**/
+        String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/temp");
+        File logoSaveFile = new File(logoRealPathDir);
+        if (!logoSaveFile.exists()) {
+            logoSaveFile.mkdir();
+        }
+        String logImageName = UUID.randomUUID().toString() + suffix;//构建文件名称
+        /**拼成完整的文件保存路径加文件**/
+        String fileName = logoRealPathDir + File.separator + logImageName;
+        File file = new File(fileName);
+        icon.transferTo(file);
+        return logImageName;
+    }
 }
