@@ -1,5 +1,6 @@
 jQuery(function ($) {
 
+
     // Create variables (in this scope) to hold the API and image size
     var jcrop_api,
         boundx,
@@ -13,7 +14,7 @@ jQuery(function ($) {
         xsize = $pcnt.width(),
         ysize = $pcnt.height();
 
-    $('#target').Jcrop({
+    $('#target_img').Jcrop({
         onChange: updatePreview,
         onSelect: updatePreview,
         aspectRatio: 1
@@ -48,10 +49,6 @@ jQuery(function ($) {
         }
     };
 
-    $('#submitGroup').click(function () {
-        $('#crop_form').submit();
-    });
-
     $('#newGroupIcon').on('change', function () {
         $.ajaxFileUpload({
         url: 'restoreTempPic',//处理图片脚本
@@ -61,14 +58,20 @@ jQuery(function ($) {
         success: function (data) {
                 if(data!=null){
                     var url = 'img/temp/' + data.trim();
-                    $('#target').attr('src',url);
-                    $('#preview').attr('src',url);
+                    //A[I设置目标图片的显示
+                    jcrop_api.setImage(url,function(){
+                        $('#preview').attr('src',url);
+                    });
                 }
             },
             error: function (data) {
                 alert("失败!");
             }
         });
+    });
+
+    $('#target_img').click(function(){
+        $('#target_img').attr('src',$('#preview').attr('src'));
     });
 
 

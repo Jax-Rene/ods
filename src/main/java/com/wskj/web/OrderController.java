@@ -36,7 +36,7 @@ public class OrderController {
     UserDao userDao = (UserDao) ctx.getBean("userDao");
     GroupDao groupDao = (GroupDao) ctx.getBean("groupDao");
     MessageDao messageDao = (MessageDao) ctx.getBean("messageDao");
-    OrderDao orderDao = (OrderDao) ctx.getBean("orderDao");
+    OrderDao orderDao;
 
 
     /**

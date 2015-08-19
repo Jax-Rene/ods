@@ -118,7 +118,6 @@ public class UserDao {
             return false;
             String sql = "SELECT id, user_name, user_pass, location, valid_key, out_date FROM ods.test_register where user_name= ? ORDER BY id DESC";
             Boolean judge = jdbcTemplate.query(sql, new Object[]{username}, new ResultSetExtractor<Boolean>() {
-                @Override
                 public Boolean extractData(ResultSet rs) throws SQLException, DataAccessException {
                     if (rs.next()) {
                         //判断是否过期
@@ -154,7 +153,6 @@ public class UserDao {
     public boolean isChangePass(String email, final String validKey){
         String sql = "select * from ods.findpassword where email =?  order by out_date desc";
         return jdbcTemplate.query(sql,new Object[]{email},new ResultSetExtractor<Boolean>() {
-                @Override
                 public Boolean extractData(ResultSet rs) throws SQLException, DataAccessException {
                     if(rs.next()) {
                         //判断是否过期

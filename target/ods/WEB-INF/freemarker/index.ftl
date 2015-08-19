@@ -8,6 +8,8 @@
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery.Jcrop.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/ajaxfileupload.js"></script>
 
+
+
     <style>
         .jcrop-holder #preview-pane {
             display: block;
@@ -35,11 +37,6 @@
             width: 250px;
             height: 250px;
             overflow: hidden;
-        }
-
-        #big-pic{
-            width : 400px;
-            height: 400px;
         }
     </style>
 
@@ -118,25 +115,21 @@
         <input type="hidden" id="target_y" name="targetY" />
         <input type="hidden" id="target_w" name="targetW" />
         <input type="hidden" id="target_h" name="targetH" />
-
-
-        <div>
         请输入组名：<input type="text" name="newGroupName"/>${newGroupError !""}
+
+
         您可以选择是否上传小组头像:<input type="file" name="newGroupIcon" id="newGroupIcon"/><br/>
-            <div id="big-pic">
-                <img src="/img/no-img.png" alt="图片预览" width="100%" id="target"/>
-            </div>
+                <img src="/img/no-img.png" alt="图片预览"  id="target_img"/>
 
             <div id="preview-pane">
                 <div class="preview-container">
-                    <img src="/img/no-img.png" class="jcrop-preview" alt="图片预览" width="100%" id="preview"/>
+                    <img src="/img/no-img.png" class="jcrop-preview" alt="图片预览" id="preview"/>
                 </div>
             </div>
-        </div>
-        <#--<input type="button" id="submitGroup" value="确认提交"/>-->
-        <input type="submit"  value="确认提交"/>
+            <input type="button" id="submitGroup" value="确认提交"/>
     </form>
 </div>
+
 
 </body>
 </html>

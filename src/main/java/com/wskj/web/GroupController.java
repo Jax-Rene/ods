@@ -7,6 +7,7 @@ import com.wskj.dao.UserDao;
 import com.wskj.model.Group;
 import com.wskj.model.Message;
 import com.wskj.model.User;
+import com.wskj.tools.ImageUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -312,17 +313,19 @@ public class GroupController {
         String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
         if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif")))
             return null;
-        /**得到图片保存目录的真实路径**/
+        //得到图片保存目录的真实路径
         String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/temp");
         File logoSaveFile = new File(logoRealPathDir);
         if (!logoSaveFile.exists()) {
             logoSaveFile.mkdir();
         }
         String logImageName = UUID.randomUUID().toString() + suffix;//构建文件名称
-        /**拼成完整的文件保存路径加文件**/
+        //拼成完整的文件保存路径加文件
         String fileName = logoRealPathDir + File.separator + logImageName;
         File file = new File(fileName);
+        //缩放图片
         icon.transferTo(file);
+        ImageUtil.zoomImage(file);
         return logImageName;
     }
 }
