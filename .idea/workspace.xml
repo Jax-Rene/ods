@@ -2,64 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a4b38e6-aeef-4f10-a452-8f1f72fcf582" name="Default" comment="修复上传文件src bug">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\04145ee2-f34d-49e1-8efe-cc035a254f9e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\08ddefec-7cfa-4d13-bf59-5ab51286527d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\0afb36a4-bce9-4f5a-8b5b-c6dcdbed3a29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\0bb8dee8-6975-4c9b-9ca2-dd0064172e98.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\1a4199de-d247-4096-a308-0b097f20c7ae.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\2a363e7b-91c3-4d4f-8253-4fdf6afe1a5d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\2ab4b240-8c47-40f2-8a0c-c7d8600b0a0b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\2b9fdf4f-e5b7-44ee-8053-7edaf4a5a1f6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\32d6b8bf-6ef6-41a1-a9b1-14dbbccf6b8e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\349feeae-4274-40d4-be9c-4cba54fedaf7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\3ff7f2ca-1aeb-48d2-b2c9-c33a18181c63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\45219b60-743a-4c80-a92c-dbc8d91a8dc5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\4e3d0c32-1e1d-4b10-8759-c5971f28f12b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\4f8542ee-6c8c-44ea-a6e4-48eb745fefaf.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\4fe26b4a-14fd-4c9d-97dc-626f56a742b6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\59cd041c-d9ac-4ad9-93b5-9457d8795d83.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\6a779bb1-c860-4772-9af6-dd19c6c41d91.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\6bd8111e-2ba3-40c4-9e3e-28b033887598.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\7c64c44e-490b-430c-ac55-3d5b8632d81b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\7c6c490b-83e6-4d9e-9d5b-6ca016e86f80.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\81f9d796-d68c-409e-a0fa-ffcd98deed70.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\84ae7ed9-2fbe-4d1e-96bf-2e9bb51a0548.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\89ba1c6b-b9c1-4fcc-8037-e36e20ee156a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\90584979-80a8-4ee1-acbe-23fb7f0d2967.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\93dc62c2-d87e-4d47-8586-df986a4b2f9b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\a90c339e-f481-4ffa-9ccd-7951a686b59b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\a9204d88-e1c9-4fc0-a7cf-95a62fbe39f1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\ab4716be-c6e3-46d3-bcb4-b9cfc6e92497.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\ad5545ad-e6e3-41bc-bcb1-62f7d8f5a73f.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\bbb5d13d-cb5d-4e47-9549-41fe3f106466.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\c4d5b473-d128-416b-9866-9ad53302e6ed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\cbf6e923-9144-4dd7-af37-2d87e8e02934.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\cc1082db-a412-44d5-ac81-7206edfb26d8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\dc26e51e-0a14-4048-b26c-7fcafefc612b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\e1d880b2-217a-48c0-8bbe-7924be643bd6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\e5d70514-f0fc-42d8-aae3-db93e3bae391.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\f868dab2-11b6-40cc-9480-afcb9b87afa3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\fae9a491-7a0c-46f6-a3fb-33bfc36d97dc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\ods\target\ods\img\temp\fb01472a-69eb-42de-b504-3f5ded1e1d09.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/GroupController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/web/GroupController.class" />
-      <change type="MODIFICATION" beforePath="D:\projects\ods\target\classes\com\wskj\tools\ImageUtil.class" afterPath="D:\projects\ods\target\classes\com\wskj\tools\ImageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/ImageUtil.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/tools/ImageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/create_group.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/create_group.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/decorators.xml" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/decorators.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/index.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/index.js" afterPath="$PROJECT_DIR$/target/ods/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/jquery.Jcrop.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/jquery.Jcrop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/css/jquery.Jcrop.css" afterPath="$PROJECT_DIR$/target/ods/css/jquery.Jcrop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.Jcrop.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.Jcrop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/jquery.Jcrop.js" afterPath="$PROJECT_DIR$/target/ods/js/jquery.Jcrop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ods.iml" afterPath="$PROJECT_DIR$/ods.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ods_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ods_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ods.iws" />
@@ -140,8 +82,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7427056">
-              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.530504">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -959,7 +901,7 @@
       <workItem from="1440142825294" duration="2177000" />
       <workItem from="1440151948202" duration="1615000" />
       <workItem from="1440154533544" duration="201000" />
-      <workItem from="1440154882849" duration="4772000" />
+      <workItem from="1440154882849" duration="4943000" />
     </task>
     <task id="LOCAL-00001" summary="整合index中">
       <created>1438703282883</created>
@@ -973,11 +915,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439973515450</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修复上传文件src bug">
+      <created>1440160548857</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1440160548857</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85144000" />
+    <option name="totallyTimeSpent" value="85315000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -990,7 +938,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1004,7 +952,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20713201" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1509,8 +1457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7427056">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.530504">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
