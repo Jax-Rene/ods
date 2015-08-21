@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -36,75 +37,41 @@ public class GroupController {
     MessageDao messageDao = (MessageDao) ctx.getBean("messageDao");
 
     @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
-    public String createGroup(ModelMap model, HttpServletRequest request,
-                              HttpSession httpSession)
+    public String createGroup(ModelMap model, HttpServletRequest request, HttpSession session,
+                              int targetX, int targetY, int targetW, int targetH, String currentPic)
             throws Exception {
-        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-        MultipartFile icon = multipartRequest.getFile("newGroupIcon");
-        /**获取文件的后缀**/
-        String name = multipartRequest.getParameter("newGroupName");
-
+        String name = request.getParameter("newGroupName");
         Group newGroup = groupDao.getGroup(name);
-        if (newGroup != null) { //组名已经存在了
-            System.out.println("组名存在");
-            model.addAttribute("newGroupError", "对不起，组名已经存在，请输入新的组名");
-            return "index";
+        User user = (User) session.getAttribute("curUser");
+        Integer userId = user.getId();
+
+        //没有上传图片生成随机图片
+        if (StringUtils.isBlank(currentPic)) {
+            Random random = new Random(System.currentTimeMillis());
+            final int randomMax = 11;
+            int randomNumber = random.nextInt(randomMax);
+            String groupIcon = randomNumber + ".jpg";
+            Group curGroup = groupDao.createGroup(userId, name, groupIcon);
         } else {
-            //没有的话，就要通过session传过来的username，通过usertable查找到对应的id。
-            //即获得登录用户对应的id
-            User user = (User) httpSession.getAttribute("curUser");
-            Integer userId = user.getId();
-            //判断是否有没有上传头像，写一个上传文件的工具类，将它存在image-icon
-            //如果没有上传图片，直接将group_name，group_boss_id写入数据库
-            if (icon.isEmpty()) {
-                Random random = new Random(System.currentTimeMillis());
-                final int randomMax = 11;
-                int randomNumber = random.nextInt(randomMax);
-                String groupIcon = randomNumber + ".jpg";
-                Group curGroup = groupDao.createGroup(userId, name, groupIcon);
-            } else {
-                /**获取文件的后缀**/
-                String suffix = icon.getOriginalFilename().substring
-                        (icon.getOriginalFilename().lastIndexOf("."));
-                //如果有上传头像，将头像存在服务器中，并重命名，然后将group_name，group_boss_id，group_icon写入数据库
-                //限制上传的类型
-                if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif"))) {
-                    model.addAttribute("newGroupError", "请上传jpg、png、gif格式的图片");
-                    return "index";
-                } else {
-                    //开始上传文件
-                    /**得到图片保存目录的真实路径**/
-                    String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/icon");
-                    System.out.println("tomcat真实路径" + logoRealPathDir);
-                    /**根据真实路径创建目录,如果不存在，创建它**/
-                    File logoSaveFile = new File(logoRealPathDir);
-                    if (!logoSaveFile.exists()) {
-                        System.out.println("文件夹不存在");
-                        logoSaveFile.mkdir();
-                        System.out.println("创建文件夹成功!");
-                    }
-                    /**使用UUID生成随机文件名称**/
-                    String logImageName = UUID.randomUUID().toString() + suffix;//构建文件名称
-                    /**拼成完整的文件保存路径加文件**/
-                    String fileName = logoRealPathDir + File.separator + logImageName;
-                    File file = new File(fileName);
-                    icon.transferTo(file);
-                    //文件上传结束，写入数据库
-                    groupDao.createGroup(userId, name, logImageName);
-                }
+            //获取真实路径
+            String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/icon");
+            File logoSaveFile = new File(logoRealPathDir);
+            if (!logoSaveFile.exists()) {
+                logoSaveFile.mkdir();
             }
-            //创建组完将自己加入这个小组的关联默认nickname为用户名
-            Group curGroup = groupDao.getGroup(name);
-            groupDao.joinGroup(user.getId(), curGroup.getId(), user.getUserName());
-            //消息通知 - 创建成功
-            messageDao.createMessage(userId, "恭喜您创建小组<font color='red'>" + name + "</font>成功!", 0);
-            //获取group并且加入request中
-            model.addAttribute("group", curGroup);
-            //标志为组长
-            model.addAttribute("boss", "true");
-            model.addAttribute("nickName", user.getUserName());
-            return "groupindex";
+            String fileName = logoRealPathDir + File.separator + currentPic;
+            File file = new File(fileName);
+            ImageUtil.abscut(file, targetX, targetY, targetW, targetH);
+            //文件上传结束，写入数据库
+            groupDao.createGroup(userId, name, currentPic);
         }
+        Group curGroup = groupDao.getGroup(name);
+        groupDao.joinGroup(user.getId(), curGroup.getId(), user.getUserName());
+        messageDao.createMessage(userId, "恭喜您创建小组<font color='red'>" + name + "</font>成功!", 0);
+        model.addAttribute("group", curGroup);
+        model.addAttribute("boss", "true");
+        model.addAttribute("nickName", user.getUserName());
+        return "groupindex";
     }
 
 
@@ -115,7 +82,7 @@ public class GroupController {
         Group curGroup = groupDao.getGroup(gId);
         if (curGroup.getGroupBossId().equals(curUser.getId())) {
             model.addAttribute("boss", "true"); //是组长
-        } else { //不是组长判断是不是组员
+        } else { //不是组长判断是不是组 员
             if (groupDao.getMemberIds(gId).indexOf(curUser.getId()) != -1)
                 model.addAttribute("member", "true");
         }
@@ -306,15 +273,13 @@ public class GroupController {
     @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
     @ResponseBody
     public String restoreTempPic(HttpServletRequest request) throws Exception {
-        System.out.println("da");
-
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile icon = multipartRequest.getFile("newGroupIcon");
         String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
         if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif")))
             return null;
         //得到图片保存目录的真实路径
-        String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/temp");
+        String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/icon");
         File logoSaveFile = new File(logoRealPathDir);
         if (!logoSaveFile.exists()) {
             logoSaveFile.mkdir();
@@ -327,5 +292,10 @@ public class GroupController {
         icon.transferTo(file);
         ImageUtil.zoomImage(file);
         return logImageName;
+    }
+
+    @RequestMapping(value = "gotoCreateGroup", method = RequestMethod.GET)
+    public String gotoCreateGroup() {
+        return "create_group";
     }
 }

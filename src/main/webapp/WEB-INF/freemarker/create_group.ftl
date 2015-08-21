@@ -1,37 +1,73 @@
 <html>
 <head>
     <script src="${absoluteContextPath}/js/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" href="${absoluteContextPath}/css/jquery.Jcrop.css" type="text/css" />
+    <link rel="stylesheet" href="${absoluteContextPath}/css/jquery.Jcrop.css" type="text/css"/>
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery.Jcrop.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/ajaxfileupload.js"></script>
-<body>
 
-<div class="hide" id="group">
+    <style>
+        /* Apply these styles only when #preview-pane has
+         been placed within the Jcrop widget */
+        .jcrop-holder #preview-pane {
+            display: block;
+            position: absolute;
+            z-index: 2000;
+            top: 10px;
+            right: -280px;
+            padding: 6px;
+            border: 1px rgba(0, 0, 0, .4) solid;
+            background-color: white;
+
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+
+            -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* The Javascript code will set the aspect ratio of the crop
+           area based on the size of the thumbnail preview,
+           specified here */
+        #preview-pane .preview-container {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+    </style>
+<body>
+<br/><br/><br/><br/><br/><br/><br/>
+<div id="group">
     <form action="/createGroup" method="post" id="crop_form" enctype="multipart/form-data">
         <input type="hidden" id="target_x" name="targetX"/>
         <input type="hidden" id="target_y" name="targetY"/>
         <input type="hidden" id="target_w" name="targetW"/>
         <input type="hidden" id="target_h" name="targetH"/>
-        ÇëÊäÈë×éÃû£º<input type="text" name="newGroupName"/>${newGroupError !""}
+        è¯·è¾“å…¥ç»„åï¼š
+        <input type="text" name="newGroupName" id="newGroupName"/>${newGroupError !""}
 
-
-        Äú¿ÉÒÔÑ¡ÔñÊÇ·ñÉÏ´«Ğ¡×éÍ·Ïñ:<input type="file" name="newGroupIcon" id="newGroupIcon"/><br/>
-
-        <div id="big-pic">
-            <img src="/img/no-img.png" alt="ÉÏ´«µÄÍ¼Æ¬" width="100%" id="target_img"/>
-        </div>
-
+        æ‚¨å¯ä»¥é€‰æ‹©æ˜¯å¦ä¸Šä¼ å°ç»„å¤´åƒ:
+        <input type="file" name="newGroupIcon" id="newGroupIcon"/>
+        <input type="hidden" name="currentPic" id="currentPic"/>
+        <div id='upimg'>
+        <img id="target_img"/>
         <div id="preview-pane">
             <div class="preview-container">
-                <img src="/img/no-img.png" class="jcrop-preview" alt="Í¼Æ¬Ô¤ÀÀ" width="100%" id="preview"/>
+                <img class="jcrop-preview"   id="preview"/>
             </div>
         </div>
-        <input type="button" id="submitGroup" value="È·ÈÏÌá½»"/>
+        </div>
+        </div>
+        <input type="button" id="createGroup" value="ç¡®è®¤æäº¤"/>
     </form>
 </div>
 
 
 <script>
+
+    $('#upimg').hide();
 
     // Create variables (in this scope) to hold the API and image size
     var jcrop_api,
@@ -63,7 +99,7 @@
     });
 
     function updatePreview(c) {
-        //´æ´¢²Ã¼ôµÄ×ø±êÖµ´«µ½ºóÌ¨
+        //å­˜å‚¨è£å‰ªçš„åæ ‡å€¼ä¼ åˆ°åå°
         $("#target_x").val(c.x);
         $("#target_y").val(c.y);
         $("#target_w").val(c.w);
@@ -79,27 +115,41 @@
                 marginTop: '-' + Math.round(ry * c.y) + 'px'
             });
         }
-    };
+    }
+    ;
 
     $('#newGroupIcon').on('change', function () {
         $.ajaxFileUpload({
-            url: 'restoreTempPic',//´¦ÀíÍ¼Æ¬½Å±¾
-            secureuri: false,
-            fileElementId: 'newGroupIcon',//file¿Ø¼şid
+            url: 'restoreTempPic',//å¤„ç†å›¾ç‰‡è„šæœ¬
+            fileElementId: 'newGroupIcon',//fileæ§ä»¶id
             dataType: 'json',
             success: function (data) {
-                if(data!=null){
-                    var url = 'img/temp/' + data.trim();
-                    $("#target_img, #preview").html('<img src="img/temp/'+data.trim() +'">');
-
-                    $('#target_img').attr('src',url);
-                    $('#preview').attr('src',url);
+                if (data != null) {
+                    var url = 'img/icon/' + data.trim();
+                    //A[Iè®¾ç½®ç›®æ ‡å›¾ç‰‡çš„æ˜¾ç¤º
+                    jcrop_api.setImage(url, function () {
+                        $('#preview').attr('src', url);
+                    });
+                    $('#upimg').show();
                 }
             },
             error: function (data) {
-                alert("Ê§°Ü!");
+                alert("æœªçŸ¥å¤±è´¥è¯·è”ç³»ç®¡ç†å‘˜!");
             }
         });
+    });
+
+    $('#createGroup').click(function(){
+        alert($('#preview').attr('src'));
+        if($('#newGroupName').val() == ''){
+            alert('ç»„åä¸èƒ½ä¸ºç©º,è¯·é‡æ–°è¾“å…¥!');
+            return;
+        }else {
+            var url = 'createGroup?targetX=' + $("#target_x").val() + '&targetY=' + $("#target_y").val() + '&targetW=' +
+                    $("#target_w").val() + '&targetH=' + $("#target_h").val();
+            $('#currentPic').val($('#preview').attr('src'));
+            $('#crop_form').submit();
+        }
     });
 
 </script>

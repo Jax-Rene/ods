@@ -40,6 +40,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

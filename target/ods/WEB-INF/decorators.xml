@@ -13,6 +13,6 @@
         <pattern>/inputLogin</pattern>
         <pattern>/getGroupInfo</pattern>
         <pattern>/createGroup</pattern>
-        <!--<pattern>/gotoCreateGroup</pattern>-->
+        <pattern>/gotoCreateGroup</pattern>
     </decorator>
 </decorators>
