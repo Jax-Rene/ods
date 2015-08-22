@@ -125,8 +125,8 @@
             dataType: 'json',
             success: function (data) {
                 if (data != null) {
+                    debugger;
                     var url = 'img/icon/' + data.trim();
-                    //A[I设置目标图片的显示
                     jcrop_api.setImage(url, function () {
                         $('#preview').attr('src', url);
                     });
@@ -140,14 +140,13 @@
     });
 
     $('#createGroup').click(function(){
-        alert($('#preview').attr('src'));
         if($('#newGroupName').val() == ''){
             alert('组名不能为空,请重新输入!');
             return;
         }else {
             var url = 'createGroup?targetX=' + $("#target_x").val() + '&targetY=' + $("#target_y").val() + '&targetW=' +
                     $("#target_w").val() + '&targetH=' + $("#target_h").val();
-            $('#currentPic').val($('#preview').attr('src'));
+            $('#currentPic').val($('#preview').attr('src').substring(9));
             $('#crop_form').submit();
         }
     });

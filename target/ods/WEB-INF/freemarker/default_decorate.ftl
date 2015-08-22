@@ -4,7 +4,7 @@
     <title>${title}</title>
     <script src="${absoluteContextPath}/js/jquery-2.1.4.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-    <#--<script src="${absoluteContextPath}/js/bui.js"></script>-->
+    <script src="${absoluteContextPath}/js/bui.js"></script>
     <script src="${absoluteContextPath}/js/message.js"></script>
 
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/dpl.css">

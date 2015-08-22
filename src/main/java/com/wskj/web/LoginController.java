@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.MessagingException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -38,48 +37,41 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/inputLogin", method = RequestMethod.POST)
-    public String isLogin(@ModelAttribute User user, ModelMap model, HttpServletRequest request,
-                          HttpServletResponse response, String checkCode) {
-        HttpSession session = request.getSession();
-        String rightVerifyCode = (String) session.getAttribute("randCheckCode");
-
-        //检查是否存在cookie,存在cookie即不用判断验证码
-        Cookie[] cookies = request.getCookies();
-        Boolean existCookie = false;
-        for (Cookie t : cookies) {
-            if (t.getName().equals("username") || t.getName().equals("password")) {
-                existCookie = true;
-                break;
+    public String inputLogin(@ModelAttribute User user, ModelMap model, HttpSession session,
+                             String autoLogin, String checkCode) {
+        //自动登录
+        User curUser = (User) session.getAttribute("curUser");
+        if (curUser != null) {
+            user = userDao.judgeAccount(curUser.getUserName(), curUser.getPassWord());
+            if (user != null)
+                return "index";
+            else {
+                model.addAttribute("passError", "登录超时,请重新登录");
+                return "login";
             }
         }
 
-        if (!existCookie && !checkCode.equalsIgnoreCase(rightVerifyCode)) {
+        String rightVerifyCode = (String) session.getAttribute("randCheckCode");
+        if (!checkCode.equalsIgnoreCase(rightVerifyCode)) {
             model.addAttribute("passError", "验证码出错!");
+            model.addAttribute("userName",user.getUserName());
+            model.addAttribute("passWord",user.getPassWord());
             return "login";
         }
         user = userDao.judgeAccount(user.getUserName(), user.getPassWord());
         if (user != null) {
-            model.addAttribute("curUser", user); //加入seession
-            System.out.println("登录成功");
-            return "index"; //登陆成功返回首页
-        }
-
-        //密码错误清除cookie 返回首页
-        if (existCookie) {
-            for (Cookie t : cookies) {
-                if (t.getName().equals("username") || t.getName().equals("password")) {
-                    t.setMaxAge(0); //删除cookie
-                    response.addCookie(t); //要刷新response不然不起作用
-                }
+            //判断下次是否需要自动登录
+            session.setAttribute("curUser",user);
+            if (autoLogin != "") {
+                session.setMaxInactiveInterval(2592000);
             }
+            return "index"; //登陆成功返回首页
+        } else {
+            model.addAttribute("passError", "用户名、密码错误请重新输入!");
+            model.addAttribute("userName",user.getUserName());
+            model.addAttribute("passWord",user.getPassWord());
         }
-        model.addAttribute("passError", "用户名、密码错误请重新输入!");
         return "login";
-    }
-
-    @RequestMapping(value = "/gotoRegister", method = RequestMethod.GET)
-    public String getRegister() {
-        return "register"; //返回注册页面
     }
 
     @RequestMapping(value = "/inputRegister", method = RequestMethod.POST)
@@ -108,12 +100,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/activateAccount", method = RequestMethod.GET)
-    public String activateAccount(String uid, String validkey, ModelMap model) {
+    public String activateAccount(String uid, String validkey, ModelMap model,HttpSession session) {
         boolean judge = userDao.isAct(uid, validkey);
         if (judge) { //激活成功，并且获取加入session
             //获取用户
             User curUser = userDao.getUser(uid);
-            model.addAttribute("curUser", userDao.getUser(uid));
+            session.setAttribute("curUser",curUser);
             return "index";
         } else {
             model.addAttribute("content", "激活失败,请重新注册!");
@@ -184,17 +176,8 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginOut", method = RequestMethod.GET)
-    public String loginOut(HttpSession session,HttpServletRequest request,HttpServletResponse response){
+    public String loginOut(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         session.removeAttribute("curUser");
-        Cookie[] cookies = request.getCookies();
-        for(Cookie cookie:cookies){
-            if(cookie.getName().equals("username") || cookie.getName().equals("password")){
-                cookie.setMaxAge(0);
-                response.addCookie(cookie);
-                if(cookie.getName().equals("password"))
-                    return "login";
-            }
-        }
         return "login";
     }
 }

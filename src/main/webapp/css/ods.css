@@ -363,6 +363,9 @@ footer ul li {
 .register-form {
 	margin: 15px 0px;
 }
+.vaild-box{
+	margin:25px 0px;
+}
 .register-form input {
 	width: 90%;
 	padding-left:10px;

@@ -24,7 +24,6 @@ public class MessageController {
     @ResponseBody
     public int notifyMessage(HttpSession session){
         User curUser = (User)session.getAttribute("curUser");
-        System.out.println("userId : " + curUser.getId());
         int messageNum = messageDao.notifyMessage(curUser.getId());
         return messageNum;
     }

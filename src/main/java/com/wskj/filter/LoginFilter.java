@@ -8,7 +8,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -42,28 +41,7 @@ public class LoginFilter extends OncePerRequestFilter{
             HttpSession session = request.getSession();
             User user = (User) session.getAttribute("curUser");
             if (user == null) {
-                //判断是否存在cookie
-                Cookie[] cookies = request.getCookies();
-                String userName = null;
-                String passWord = null;
-
-                if(cookies != null) {
-                    for (Cookie cookie : cookies) {
-                        if (cookie.getName().equals("username"))
-                            userName = cookie.getValue();
-                        else if (cookie.getName().equals("password")) {
-                            passWord = cookie.getValue();
-                            break;
-                        }
-                    }
-                }
-                if (userName != null && passWord != null)
-                    user = userDao.judgeAccount(userName, passWord);
-
-                if(user == null)
                     response.sendRedirect("gotoLogin");
-                else
-                    session.setAttribute("curUser",user);
             }
         }
             filterChain.doFilter(request, response);
