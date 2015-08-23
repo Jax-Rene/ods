@@ -10,7 +10,7 @@
     <!-- 默认的装饰器 -->
     <decorator name="default_decorate" page="default_decorate.ftl">
         <!-- 默认目录下(/WEB-INF/freemarker) 的所有请求 -->
-        <pattern>/inputLogin</pattern>
+        <pattern>/gotoIndex</pattern>
         <pattern>/getGroupInfo</pattern>
         <pattern>/createGroup</pattern>
         <pattern>/gotoCreateGroup</pattern>

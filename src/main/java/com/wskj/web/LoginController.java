@@ -44,7 +44,7 @@ public class LoginController {
         if (curUser != null) {
             user = userDao.judgeAccount(curUser.getUserName(), curUser.getPassWord());
             if (user != null)
-                return "index";
+                return "redirect:/gotoIndex";
             else {
                 model.addAttribute("passError", "登录超时,请重新登录");
                 return "login";
@@ -65,13 +65,18 @@ public class LoginController {
             if (autoLogin != "") {
                 session.setMaxInactiveInterval(2592000);
             }
-            return "index"; //登陆成功返回首页
+            return "redirect:/gotoIndex";
         } else {
             model.addAttribute("passError", "用户名、密码错误请重新输入!");
             model.addAttribute("userName",user.getUserName());
             model.addAttribute("passWord",user.getPassWord());
         }
         return "login";
+    }
+
+    @RequestMapping(value = "/gotoIndex" , method = RequestMethod.GET)
+    public String gotoIndex(){
+        return "index";
     }
 
     @RequestMapping(value = "/inputRegister", method = RequestMethod.POST)
@@ -102,11 +107,10 @@ public class LoginController {
     @RequestMapping(value = "/activateAccount", method = RequestMethod.GET)
     public String activateAccount(String uid, String validkey, ModelMap model,HttpSession session) {
         boolean judge = userDao.isAct(uid, validkey);
-        if (judge) { //激活成功，并且获取加入session
-            //获取用户
+        if (judge) {
             User curUser = userDao.getUser(uid);
             session.setAttribute("curUser",curUser);
-            return "index";
+            return "redirect:/gotoIndex";
         } else {
             model.addAttribute("content", "激活失败,请重新注册!");
             return "transient";

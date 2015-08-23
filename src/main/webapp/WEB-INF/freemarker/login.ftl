@@ -1,32 +1,7 @@
-<#--<html>-->
-<#--<head>-->
-    <#--<title>登陆页面</title>-->
-    <#--<script src="${absoluteContextPath}/js/jquery-2.1.4.min.js"></script>-->
-    <#--<script src="${absoluteContextPath}/js/jquery.cookie.js"></script>-->
-    <#--<script src="${absoluteContextPath}/js/login.js" type="text/javascript"></script>-->
-<#--</head>-->
-<#--<body>-->
-<#--<form id="loginForm" action="/inputLogin"  method="post" id="form">-->
-    <#--密码:<input type="password" id="password" name="passWord" required="true"/>-->
-    <#--<input type="checkbox"  id="autologin"/>30天内自动登录-->
-    <#--验证码:<input type="text" name="checkCode" id="checkCode">-->
-    <#--<a href="javascript:void(0)"><img src="PictureCheckCode" id="validcheck"></a>-->
-<#--&lt;#&ndash; 如果账号密码错误输出如下 &ndash;&gt;-->
-    <#--<a href="/forgetPassword">忘记密码</a>-->
-    <#--<input type="submit" value="登录"/>-->
-    <#--<input type="button" value="注册" id="register"/>-->
-    <#--${passError!""}-->
-<#--</form>-->
-<#--</body>-->
-<#--</html>-->
-
-
-
 <html>
 <head>
     <title>欢迎光临ods系统</title>
     <script src="${absoluteContextPath}/js/jquery-2.1.4.min.js"></script>
-    <script src="${absoluteContextPath}/js/jquery.cookie.js"></script>
     <script src="${absoluteContextPath}/js/login.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/dpl.css">
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/bui.css">
@@ -77,6 +52,7 @@
                     <br/>
                     <button type="submit" class="button button-primary button-large">登录</button>
                 </form>
+                <font style="color:red"> ${passError!""}</font>
             </div>
         </div>
     </div>
