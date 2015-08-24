@@ -58,7 +58,7 @@ public class OrderController {
         String nickName = groupDao.getNickName(user.getId(), groupId);
         //创建订单
         orderDao.createOrder(orderType, new Timestamp(System.currentTimeMillis()),
-                orderUrl, orderMark, groupId, new GetTime().convertToTimeStamp(orderEnd));
+                orderUrl, orderMark, groupId, GetTime.convertToTimeStamp(orderEnd));
         //获取订单ID ： 通过获取该组最近的订单
         int orderId = orderDao.getLastOrderId(groupId);
 
@@ -159,9 +159,8 @@ public class OrderController {
     @RequestMapping(value = "/getOrder", method = RequestMethod.POST)
     @ResponseBody
     public List<Order> getOrder(String startTime, String endTime, String url, int groupId, int start, int limit) throws ParseException {
-        GetTime gt = new GetTime();
-        return orderDao.searchOrder(gt.convertToTimeStamp(startTime),
-                gt.convertToTimeStamp(endTime), groupId, url);
+        return orderDao.searchOrder(GetTime.convertToTimeStamp(startTime),
+                GetTime.convertToTimeStamp(endTime), groupId, url);
     }
 
 

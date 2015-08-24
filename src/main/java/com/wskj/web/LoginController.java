@@ -20,6 +20,7 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
 import java.util.Random;
 
 /**
@@ -46,14 +47,14 @@ public class LoginController {
             if (user != null)
                 return "redirect:/gotoIndex";
             else {
-                model.addAttribute("passError", "登录超时,请重新登录");
+                model.addAttribute("error", "登录超时,请重新登录");
                 return "login";
             }
         }
 
         String rightVerifyCode = (String) session.getAttribute("randCheckCode");
         if (!checkCode.equalsIgnoreCase(rightVerifyCode)) {
-            model.addAttribute("passError", "验证码出错!");
+            model.addAttribute("error", "验证码出错!");
             model.addAttribute("userName",user.getUserName());
             model.addAttribute("passWord",user.getPassWord());
             return "login";
@@ -67,7 +68,7 @@ public class LoginController {
             }
             return "redirect:/gotoIndex";
         } else {
-            model.addAttribute("passError", "用户名、密码错误请重新输入!");
+            model.addAttribute("error", "用户名、密码错误请重新输入!");
             model.addAttribute("userName",user.getUserName());
             model.addAttribute("passWord",user.getPassWord());
         }
@@ -80,27 +81,33 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/inputRegister", method = RequestMethod.POST)
-    public String Register(@ModelAttribute User user, ModelMap model) {
+    public String Register(@ModelAttribute User user, String password2,ModelMap model,HttpServletRequest request) {
         User t = userDao.getUser(user.getUserName());
-        //如果搜索到结果不为空则出错
         if (t != null) {
             model.addAttribute("error", "邮箱已被注册,请登录!");
-            return "register";
+            return "login";
+        }
+        if(!user.getPassWord().equals(password2)){
+            model.addAttribute("error","两次输入密码不一致!");
+            return "login";
         }
         SimpleMailSender sms = new SimpleMailSender("249602015@qq.com", "joy-zhuang");
         String recipient = user.getUserName();
-        java.sql.Timestamp ts = new GetTime().getOutTime();
+        Timestamp ts = GetTime.getOutTime();
         Random random = new Random();
         String key = user.getUserName() + "|" + ts + "|" + random.nextInt();
         String signature = MD5Util.MD5(key);
         userDao.insertAct(user.getUserName(), user.getPassWord(), signature, user.getLocation(), ts);
-        String url = "localhost:8080/activateAccount" + "?uid=" + user.getUserName() + "&amp;validkey=" + signature;
+        String absoluteContextPath = (String) request.getAttribute("absoluteContextPath");
+        String url = absoluteContextPath + "/activateAccount" + "?uid=" + user.getUserName() + "&amp;validkey=" + signature;
+
         try {
-            sms.send(recipient, "欢迎注册ods系统", url);
+            sms.send(recipient, "欢迎注册ods系统", "<p>恭喜您已经成功注册帐号,<a href='" + url  +
+                    "'>点击激活帐号</a> </p> <p>如果不是您本人操作,请忽略此消息</p>");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        model.addAttribute("content", "请登录邮箱点击链接激活该账户!该页面将在5秒后自动关闭!");
+        model.addAttribute("content", "请登录邮箱点击链接激活该账户!该页面将在5秒后自动关闭...");
         return "transient";
     }
 
@@ -131,18 +138,17 @@ public class LoginController {
 
     @RequestMapping(value = "/forgetPassword", method = RequestMethod.GET)
     public ModelAndView returnFindPassword() {
-        return new ModelAndView("findpassword");//返回找回密码页面
+        return new ModelAndView("findpassword");
     }
 
     @RequestMapping(value = "/findPassword", method = RequestMethod.GET)
     public String findPassword(String userName, ModelMap model) throws MessagingException {
-        System.out.println("用户名为:" + userName);
         //判断用户是否存在
         User user = userDao.getUser(userName);
         if (user != null) {
             SimpleMailSender sms = new SimpleMailSender("249602015@qq.com", "joy-zhuang");
             String recipient = user.getUserName();
-            java.sql.Timestamp ts = new GetTime().getOutTime();
+            java.sql.Timestamp ts = GetTime.getOutTime();
             Random random = new Random();
             String key = user.getUserName() + "|" + ts + "|" + random.nextInt();
             String signature = MD5Util.MD5(key);
@@ -166,7 +172,7 @@ public class LoginController {
             model.addAttribute("username", userName);
             return "resetpassword";
         } else {
-            model.addAttribute("passError", "您输入的链接有误");
+            model.addAttribute("error", "您输入的链接有误");
             return "login";
         }
     }
@@ -182,6 +188,8 @@ public class LoginController {
     @RequestMapping(value = "/loginOut", method = RequestMethod.GET)
     public String loginOut(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         session.removeAttribute("curUser");
+        request.removeAttribute("userName");
+        request.removeAttribute("passWord");
         return "login";
     }
 }

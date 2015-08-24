@@ -52,7 +52,7 @@
                     <br/>
                     <button type="submit" class="button button-primary button-large">登录</button>
                 </form>
-                <font style="color:red"> ${passError!""}</font>
+                <span id="error" style="color: red">${error!""}</span>
             </div>
         </div>
     </div>

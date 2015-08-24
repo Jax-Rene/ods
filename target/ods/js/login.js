@@ -11,4 +11,12 @@ $(document).ready(function () {
     $('#validcheck').click(function(){
         $('#validcheck').attr("src","PictureCheckCode?" + new Date());
     });
+
+    $('#register').on('submit',function(){
+       if($('#password').val() != $('#password2').val()){
+            $('#error').text('两次输入密码不一致!');
+           return false;
+       }
+        return true;
+    });
 });
