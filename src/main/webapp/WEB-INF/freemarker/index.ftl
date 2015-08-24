@@ -59,8 +59,8 @@
 </div>
 <div class="groups-header">
     <div class="container">
-        <h1>所有的小组</h1>
-        <span><a href="/gotoCreateGroup" id="createGroup">创建小组</a> </span>
+        <h1>所有小组</h1>
+        <span><a href="/gotoCreateGroup" id="createGroup">我要创建小组</a> </span>
     </div>
 </div>
 <div id="groups">

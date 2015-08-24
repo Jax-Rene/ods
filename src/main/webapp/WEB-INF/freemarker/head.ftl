@@ -2,8 +2,7 @@
     <nav class="navbar">
         <div class=" navbar-collapse">
             <ul >
-                <li><a href="index.html">今日订单</a></li>
-                <li class="active"><a href="#">我的小组</a></li>
+                <li class="active"><a href="/gotoIndex">首页</a></li>
             </ul>
             <ul class="navbar-right">
                 <li><input type="text" id="searchGroup" placeholder="输入搜索小组的名字"/>

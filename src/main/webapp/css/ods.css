@@ -9,7 +9,7 @@
 	top: 0px;
 	width: 100%;
 	/*opacity: 0.95;*/
-	font-family: "微软雅黑";
+	font-family: "微软雅黑","Yuppy TC Regular","幼圆","黑体";
 	font-size: 14px;
 	z-index: 3000;
 }
@@ -87,13 +87,14 @@
 	height: 320px;
 	position: absolute;
 	top: 0px;
-	background:#f7f7f7 url(../../img/noisy.png) repeat;
+	background:#f7f7f7 url(../img/noisy.png) repeat;
 	padding-top: 10px;
 }
 .orders .order-details h1 {
+	font-family: "微软雅黑","Yuppy TC Regular","幼圆","黑体";
 	color: #d7bd94;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	margin-bottom: 10px;
 }
 .orders .order{
@@ -133,9 +134,10 @@
 	padding: 20px;
 }
 .my-groups h1 {
-	font-size: 40px;
-	font-weight: 20px;
-	color: #d7bd94;
+	font-family: "微软雅黑","Yuppy TC Regular","幼圆","黑体";
+	font-size: 30px;
+	font-weight: 200;
+	color: white;
 	text-align: center;
 }
 .my-group {
@@ -160,8 +162,12 @@
 	line-height: 30px;
 }
 .groups-header h1 {
-	font-size: 48px;
-	font-weight: 20px;
+	font-size: 25px;
+	font-weight: 100;
+	margin-top:20px;
+	color: #d7bd94;
+}
+.groups-header a {
 	color: #d7bd94;
 }
 #groups {
@@ -182,7 +188,8 @@ footer {
 	margin-top: 40px;
 	height: 250px;
 	width: 100%;
-	background-color: rgba(0,0,0,0.7);
+	background-color: #A57F59;
+	opacity: 0.85;
 	position: relative;
 	font-size: 16px;
 	color: #ddd;
