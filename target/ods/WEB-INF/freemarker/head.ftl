@@ -8,8 +8,7 @@
             <ul class="navbar-right">
                 <li><input type="text" id="searchGroup" placeholder="输入搜索小组的名字"/>
                     <input type="button" id="search" value="搜索小组"/></li>
-                <li>您好,${curUser.userName!""}</li>
-                <li><a href="#">个人中心</a></li>
+                <li><a href='#'>${curUser.userName!""}</a></li>
                 <li class="message"><a href="javascript:void(0)">消息<span class="badge" id="newsMessageNum"></span></a>
                     <div class="message-show">
                         <div class="message-triangle"></div>

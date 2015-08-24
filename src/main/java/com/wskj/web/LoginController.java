@@ -81,13 +81,13 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/inputRegister", method = RequestMethod.POST)
-    public String Register(@ModelAttribute User user, String password2,ModelMap model,HttpServletRequest request) {
+    public String Register(@ModelAttribute User user, String passWord2,ModelMap model,HttpServletRequest request) {
         User t = userDao.getUser(user.getUserName());
         if (t != null) {
             model.addAttribute("error", "邮箱已被注册,请登录!");
             return "login";
         }
-        if(!user.getPassWord().equals(password2)){
+        if(!user.getPassWord().equals(passWord2)){
             model.addAttribute("error","两次输入密码不一致!");
             return "login";
         }

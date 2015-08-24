@@ -24,7 +24,7 @@
                         <input type="password" id="password" name="passWord" placeholder="密码大于6位小于14位" required="true"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password2"  placeholder="重新输入密码" required="true"/>
+                        <input type="password" id="password2" name="passWord2" placeholder="重新输入密码" required="true"/>
                     </div>
                     <button type="submit" class="button button-primary button-large">注册</button>
                 </form>

@@ -4,11 +4,12 @@
 }
 .navbar {
 	/*background-color: #222;*/
-	background-color: rgba(255,255,255,0.4);
+	background-color: #A57F59;
 	position: absolute;
 	top: 0px;
 	width: 100%;
 	/*opacity: 0.95;*/
+	font-family: "微软雅黑";
 	font-size: 14px;
 	z-index: 3000;
 }
@@ -30,13 +31,13 @@
 .navbar ul li.active {
 	background-color: #d7bd94;
 	/*border: 1px solid #d7bdff;*/
-	color: #fff;!important
+	color: #FAFAFA;!important
 }
 .navbar ul li.active a{
 	color: #fff;
 }
 .navbar a {
-	color: #9d9d9d;
+	color: #FFFFFF;
 	text-decoration: none;
 }
 .navbar a:hover {
@@ -54,8 +55,9 @@
 }
 #banner {
 	width: 100%;
-	height: 500px;
-	background: url(../../img/bg.jpg) center center fixed;
+	height: 550px;
+	background: url(../img/bg.jpg) center center fixed;
+	background-size: cover;
 	position: relative;
 }
 #orders {
