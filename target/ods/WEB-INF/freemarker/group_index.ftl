@@ -6,7 +6,7 @@
 <div class="wrapper">
     <h1>${group.groupName}</h1>
     <hr/>
-
+<form>
 <#if boss?exists>
     <input type="hidden" id="boss" value="true"/>
 </#if>
@@ -26,6 +26,8 @@
     </div>
 
     <input type="hidden" id="groupid" value="${group.id}"/>
+</form>
+
 <#if boss?exists>
     <hr/>
     <div>

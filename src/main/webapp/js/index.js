@@ -16,7 +16,8 @@ $('#search').click(function () {
     while (name == undefined || name == null || name == '') {
         name = prompt('请输入您要在该组中显示的昵称', '');
     }
-    var url = 'searchGroup?groupName=' + $('#searchGroup').val() + '&nickName=' + name;
+    var url = 'searchGrou' +
+        'p?groupName=' + $('#searchGroup').val() + '&nickName=' + name;
     $.get(url, function (data) {
         alert(data);
         if (data == 0) {

@@ -171,6 +171,7 @@ public class OrderService {
             String name = t.getOrderName();
             for (String n : orderNames) {
                 if (n.indexOf(name) != -1) {
+
                     map.put(n, (Integer) map.get(n) + t.getOrderNumber());
                 } else
                     map.put(n, 1);

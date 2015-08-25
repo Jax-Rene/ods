@@ -266,20 +266,18 @@ footer ul li {
 .message {
     position: relative;
 }
-
 .navbar .navbar-right .message .message-show {
     position: absolute;
     top: 60px;
-    left: -120px;
+    left:-120px;
     width: 300px;
     display: none;
     z-index: 1000;
 }
-
 .message-triangle {
     position: absolute;
     top: -18px;
-    left: 135px;
+    left:135px;
     margin: 0 auto;
     width: 1px;
     height: 0;
@@ -287,25 +285,23 @@ footer ul li {
     border-right: 15px solid transparent;
     border-bottom: 20px solid #fff;
 }
-
 .message-details {
-    width: auto;
+    width:  auto;
     min-height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(0,0,0,0.45);
     border-radius: 5px;
     background: #fff;
     padding: 10px;
     text-align: center;
 }
-
-.message-details div {
+.message-details tr{
     height: 40px;
     width: 100%;
     padding: 2px;
     border-bottom: 1px solid #e7e7e7;
     line-height: 40px;
 }
-
+.message-details tr {}
 .img-container {
     margin: 0;
     padding: 0;
