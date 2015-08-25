@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/dpl.css">
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/bui.css">
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/ods.css">
+    <script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+    <script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -15,7 +17,8 @@
                 <form id="register" action="inputRegister" method="post">
                     <div class="form-header">
                         <div class="left goto-register">注册</div>
-                        <div class="right goto-login">登录<span class="x-icon xicon-info icon-circle-arrow-right"></span></div>
+                        <div class="right goto-login">登录<span class="x-icon xicon-info icon-circle-arrow-right"></span>
+                        </div>
                     </div>
                     <div class="register-form">
                         <input type="email" id="username" name="userName" placeholder="输入邮箱账号" required="true"/>
@@ -28,16 +31,19 @@
                     </div>
                     <button type="submit" class="button button-primary button-large">注册</button>
                 </form>
-                <form id="login"  action="/inputLogin"  method="post">
+                <form id="login" action="/inputLogin" method="post">
                     <div class="form-header">
                         <div class="left goto-login">登录</div>
-                        <div class="right goto-register">注册<span class="x-icon xicon-info icon-circle-arrow-right"></span></div>
+                        <div class="right goto-register">注册<span
+                                class="x-icon xicon-info icon-circle-arrow-right"></span></div>
                     </div>
                     <div class="register-form">
-                        <input type="email" id="username" name="userName" required="true" placeholder="邮箱帐号" value="${userName!""}"/>
+                        <input type="email" id="username" name="userName" required="true" placeholder="邮箱帐号"
+                               value="${userName!""}"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password" name="passWord" required="true" placeholder="输入密码" value="${passWord!""}"/>
+                        <input type="password" id="password" name="passWord" required="true" placeholder="输入密码"
+                               value="${passWord!""}"/>
                     </div>
                     <div class="vaild-box">
                         <input type="text" name="checkCode" id="checkCode" placeholder="输入验证码">
@@ -47,7 +53,7 @@
                         <label class="checkbox">
                             <input type="checkbox" id="autologin" name="autoLogin" value="${curUser!""}">自动登录
                         </label>
-                        <a href="/forgetPassword" class="right">忘记密码？</a>
+                        <a href="javascript:void(0)" id="forgetPass" class="right">忘记密码？</a>
                     </div>
                     <br/>
                     <button type="submit" class="button button-primary button-large">登录</button>
@@ -60,15 +66,44 @@
 
 <script>
     $('#register .goto-login').on('click', function () {
-        $('#login').css('display','block');
-        $('#register').css('display','none');
+        $('#login').css('display', 'block');
+        $('#register').css('display', 'none');
     });
     $('#login .goto-register').on('click', function () {
-        $('#login').css('display','none');
-        $('#register').css('display','block');
+        $('#login').css('display', 'none');
+        $('#register').css('display', 'block');
+    });
+
+
+    //忘记密码找回窗口
+    BUI.use('bui/overlay', function (Overlay) {
+        var dialog = new Overlay.Dialog({
+            title: '找回密码',
+            width: 250,
+            height: 120,
+            bodyContent: '<div> <input type="text" id="eamilAddress" style="width: 100%" placeholder="请输入邮箱"/></div>',
+            success: function () {
+                if ($('#eamilAddress').val() == '')
+                    alert('输入不能为空!');
+                else {
+                    $.post('findPassword', {
+                        userName: $('#eamilAddress').val()
+                    }, function (data) {
+                        if (data == true) {
+                            alert('请登陆邮箱,点击链接找回密码!');
+                        } else {
+                            alert('输入邮箱地址错误!');
+                        }
+                    });
+                }
+                if ($('#eamilAddress').val() != '')
+                    this.close();
+            }
+        });
+        $('#forgetPass').on('click', function () {
+            dialog.show();
+        });
     });
 </script>
-
-
 </body>
 </html>

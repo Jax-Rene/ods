@@ -6,7 +6,6 @@
     <script src="${absoluteContextPath}/js/photo_wall.js" type="text/javascript"></script>
 
 
-
 </head>
 <body>
 <div id="banner">

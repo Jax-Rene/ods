@@ -3,7 +3,7 @@ package com.wskj.dao.handler;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.wskj.model.User;
+import com.wskj.domain.User;
 import org.springframework.jdbc.core.RowMapper;
 
 /**

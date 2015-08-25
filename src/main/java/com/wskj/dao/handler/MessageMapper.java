@@ -1,6 +1,6 @@
 package com.wskj.dao.handler;
 
-import com.wskj.model.Message;
+import com.wskj.domain.Message;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * Created by zhuangjy on 2015/7/17.
  */
 public class MessageMapper implements RowMapper<Message> {
-    public Message mapRow(ResultSet rs,int rowNum)throws SQLException{
+    public Message mapRow(ResultSet rs, int rowNum) throws SQLException {
         Message message = new Message();
         message.setMessageId(rs.getInt("message_id"));
         message.setUserId(rs.getInt("user_id"));

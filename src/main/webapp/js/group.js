@@ -38,7 +38,6 @@ $(document).ready(function () {
                     var orderType = i;
             }
             var url = "createOrder";
-            alert($('#orderend').val());
             $.post(url, {
                 groupId: $('#groupid').val(),
                 orderType: orderType,
@@ -259,12 +258,12 @@ $(document).ready(function () {
                     for (var i = 0; i < selections.length; i++) {
                         $.post('deletePersonOrder', {
                             id: selections[i].id,
-                            userId : selections[i].userId,
+                            userId: selections[i].userId,
                             orderId: selections[i].orderId
-                        },function(data){
-                            if(data==false){
+                        }, function (data) {
+                            if (data == false) {
                                 alert('您没有权限执行该删除操作!');
-                            }else{
+                            } else {
                                 store.remove(selections);
                             }
                         });

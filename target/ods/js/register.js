@@ -11,10 +11,10 @@ $(document).ready(function () {
     $('#registerForm').submit(function () { //注册前的判断
         var password = $('#password').val();
         var password2 = $('#password2').val();
-        if(password != password2) {
+        if (password != password2) {
             alert('密码和确认密码不一致请重新输入!');
             return false;
-        }else if(password.length < 6 || password.length > 14){
+        } else if (password.length < 6 || password.length > 14) {
             alert('密码输入不符合规请重新输入!');
             return false;
         }

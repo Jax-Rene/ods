@@ -2,8 +2,8 @@ package com.wskj.dao;
 
 import com.wskj.dao.handler.OrderMapper;
 import com.wskj.dao.handler.PersonOrderMapper;
-import com.wskj.model.Order;
-import com.wskj.model.PersonOrder;
+import com.wskj.domain.Order;
+import com.wskj.domain.PersonOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,9 +43,9 @@ public class OrderDao {
         return jdbcTemplate.queryForObject(sql, new Object[]{orderId}, new OrderMapper());
     }
 
-    public Double getOrderPrice(int orderId){
+    public Double getOrderPrice(int orderId) {
         String sql = "select order_price from ods.order where order_id = ?";
-        return jdbcTemplate.queryForObject(sql,new Object[]{orderId},Double.class);
+        return jdbcTemplate.queryForObject(sql, new Object[]{orderId}, Double.class);
     }
 
 
@@ -54,10 +53,11 @@ public class OrderDao {
     public int getLastOrderId(int groupId) {
         String sql = "select order_id from ods.order where order_group=? order by order_id desc";
         return jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Integer>() {
-            @Override
             public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {
-                rs.next();
-                return rs.getInt("order_id");
+                if(rs.next())
+                 return rs.getInt("order_id");
+                else
+                    return -1;
             }
         });
     }
@@ -69,9 +69,9 @@ public class OrderDao {
         return;
     }
 
-    public double getPersonPrice(int id){
+    public double getPersonPrice(int id) {
         String sql = "select order_price from ods.order_user where id = ?";
-        return jdbcTemplate.queryForObject(sql,new Object[]{id},Double.class);
+        return jdbcTemplate.queryForObject(sql, new Object[]{id}, Double.class);
     }
 
     /**
@@ -144,6 +144,9 @@ public class OrderDao {
 
     public List<PersonOrder> getLastOrder(int groupId) {
         int orderId = getLastOrderId(groupId);
+        //没有订单
+        if(orderId == -1)
+            return null;
         Order order = getOrder(orderId);
         if (order.getOrderEnd().getTime() > System.currentTimeMillis()) {
             return getDetailInfo(order.getOrderId());
@@ -154,12 +157,12 @@ public class OrderDao {
     /**
      * 编辑个人订单
      */
-    public void editPersonOrder(PersonOrder curOrder){
+    public void editPersonOrder(PersonOrder curOrder) {
         String sql = "update ods.order_user set user_id=? , order_name=? , order_number=? , order_price =? where id = ? ";
         double prePrice = getPersonPrice(curOrder.getId());
         //先更改总表的总价 ,先获取原来的价格然后
         updateOrderPrice(curOrder.getOrderId(), 0, curOrder.getOrderPrice() - prePrice);
-        jdbcTemplate.update(sql,curOrder.getUserId(),curOrder.getOrderName(),curOrder.getOrderNumber(),curOrder.getOrderPrice(),curOrder.getId());
+        jdbcTemplate.update(sql, curOrder.getUserId(), curOrder.getOrderName(), curOrder.getOrderNumber(), curOrder.getOrderPrice(), curOrder.getId());
         return;
     }
 
@@ -168,11 +171,11 @@ public class OrderDao {
      * 添加个人订单
      */
 
-    public void insertPersonOrder(PersonOrder order){
+    public void insertPersonOrder(PersonOrder order) {
         String sql = "insert into ods.order_user(order_id,user_id,order_name,order_number,order_price) values(?,?,?,?,?)";
         //更新总表的价格
-        updateOrderPrice(order.getOrderId(),0,order.getOrderPrice());
-        jdbcTemplate.update(sql,order.getOrderId(),order.getUserId(),order.getOrderName(),order.getOrderNumber(),order.
+        updateOrderPrice(order.getOrderId(), 0, order.getOrderPrice());
+        jdbcTemplate.update(sql, order.getOrderId(), order.getUserId(), order.getOrderName(), order.getOrderNumber(), order.
                 getOrderPrice());
         return;
     }
@@ -181,15 +184,14 @@ public class OrderDao {
      * 删除个人订单
      */
 
-    public void deletePersonOrder(int id,int orderId){
+    public void deletePersonOrder(int id, int orderId) {
         double orderPrice = getPersonPrice(id);
         //更新订单金额
-        updateOrderPrice(orderId,1,orderPrice);
+        updateOrderPrice(orderId, 1, orderPrice);
         String sql = "delete from ods.order_user where id=?";
-        jdbcTemplate.update(sql,id);
+        jdbcTemplate.update(sql, id);
         return;
     }
-
 
 
 }

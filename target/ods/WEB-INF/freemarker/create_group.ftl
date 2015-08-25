@@ -39,6 +39,7 @@
     </style>
 <body>
 <br/><br/><br/><br/><br/><br/><br/>
+
 <div id="group">
     <form action="/createGroup" method="post" id="crop_form" enctype="multipart/form-data">
         <input type="hidden" id="target_x" name="targetX"/>
@@ -51,17 +52,19 @@
         您可以选择是否上传小组头像:
         <input type="file" name="newGroupIcon" id="newGroupIcon"/>
         <input type="hidden" name="currentPic" id="currentPic"/>
+
         <div id='upimg'>
-        <img id="target_img"/>
-        <div id="preview-pane">
-            <div class="preview-container">
-                <img class="jcrop-preview"   id="preview"/>
+            <img id="target_img"/>
+
+            <div id="preview-pane">
+                <div class="preview-container">
+                    <img class="jcrop-preview" id="preview"/>
+                </div>
             </div>
         </div>
-        </div>
-        </div>
-        <input type="button" id="createGroup" value="确认提交"/>
-    </form>
+</div>
+<input type="button" id="createGroup" value="确认提交"/>
+</form>
 </div>
 
 
@@ -139,11 +142,11 @@
         });
     });
 
-    $('#createGroup').click(function(){
-        if($('#newGroupName').val() == ''){
+    $('#createGroup').click(function () {
+        if ($('#newGroupName').val() == '') {
             alert('组名不能为空,请重新输入!');
             return;
-        }else {
+        } else {
             var url = 'createGroup?targetX=' + $("#target_x").val() + '&targetY=' + $("#target_y").val() + '&targetW=' +
                     $("#target_w").val() + '&targetH=' + $("#target_h").val();
             $('#currentPic').val($('#preview').attr('src').substring(9));

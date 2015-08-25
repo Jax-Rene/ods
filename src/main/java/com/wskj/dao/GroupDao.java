@@ -1,7 +1,7 @@
 package com.wskj.dao;
 
 import com.wskj.dao.handler.GroupMapper;
-import com.wskj.model.Group;
+import com.wskj.domain.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -35,18 +35,6 @@ public class GroupDao {
         System.out.println(sql + groupId);
         return jdbcTemplate.queryForObject(sql, new Object[]{groupId}, String.class);
     }
-
-    public Group getGroup(String groupName) {
-        String sql = "select * from ods.group where group_name = ?";
-        try {
-            Group group = jdbcTemplate.queryForObject(sql,
-                    new Object[]{groupName}, new GroupMapper());
-            return group;
-        } catch (EmptyResultDataAccessException e) { //找不到组
-            return null;
-        }
-    }
-
 
     public Integer getGroupId(String groupName) {
         String sql = "select group_id from ods.group where group_name = ?";
@@ -94,13 +82,14 @@ public class GroupDao {
         return groups;
     }
 
-    public List<Group> getAllGroup(){
+    public List<Group> getAllGroup() {
         String sql = "select * from ods.group";
-        return jdbcTemplate.query(sql,new Object[]{},new GroupMapper());
+        return jdbcTemplate.query(sql, new Object[]{}, new GroupMapper());
     }
 
 
-    public Group getGroupByName(String groupName) { //由组名获取组
+    //由组名获取组
+    public Group getGroupByName(String groupName) {
         String sql = "select * from ods.group where group_name =?";
         try {
             return jdbcTemplate.queryForObject(sql, new Object[]{groupName}, new GroupMapper());
@@ -126,10 +115,10 @@ public class GroupDao {
     public boolean judgeNickNameExist(String nickName, int groupId) {
         List<Integer> userId = getMemberIds(groupId);
         List<String> nickNames = getNickNames(groupId);
-        if (nickNames.indexOf(nickName) != -1) { //已经存在
-            return false;
+        if (nickNames.indexOf(nickName) != -1) {
+            return true;
         }
-        return true;
+        return false;
     }
 
 
@@ -152,7 +141,7 @@ public class GroupDao {
             public Map<Integer, String> extractData(ResultSet rs) throws SQLException, DataAccessException {
                 Map<Integer, String> map = new HashMap<Integer, String>();
                 while (rs.next()) {
-                    System.out.println("hello:" +rs.getString("nick_name"));
+                    System.out.println("hello:" + rs.getString("nick_name"));
                     map.put(rs.getInt("user_id"), rs.getString("nick_name"));
                 }
                 return map;

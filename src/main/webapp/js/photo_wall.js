@@ -21,7 +21,7 @@ function setPictureWall() {
     /*img-show*/
     for (var i = 0; (i < col_num * row_num) && (i < groupNum); i++) {
         var content =
-            '<a href=\'getGroupInfo?groupId='+ allGroup[i].id + '\'><div class=\"img-cell\">'
+            '<a href=\'getGroupInfo?groupId=' + allGroup[i].id + '\'><div class=\"img-cell\">'
             + '<img src=\'img\\icon\\' + allGroup[i].groupIcon + '\'/>'
             + '<div class=\"img-details\">'
             + '<div class="text-details">'
@@ -78,7 +78,7 @@ function setPictureWall() {
                     + '<div class=\"img-details\">'
                     + '<div class="text-details">'
                     + '<p>小组：</p>'
-                    +  allGroup[i].groupName
+                    + allGroup[i].groupName
                     + '<p>组长：</p>'
                     + '<p>' + allBossName[i] + '</p>'
                     + '</div>'

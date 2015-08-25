@@ -5,6 +5,6 @@
         <li>意见反馈</li>
     </ul>
     <div class="copyright">
-        <p>Copyright ©  Ods</p>
+        <p>Copyright © Ods</p>
     </div>
 </footer>

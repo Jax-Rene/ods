@@ -1,7 +1,6 @@
 package com.wskj.dao.handler;
 
-import com.wskj.model.Message;
-import com.wskj.model.PersonOrder;
+import com.wskj.domain.PersonOrder;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -11,7 +10,7 @@ import java.sql.SQLException;
  * Created by zhuangjy on 2015/7/23.
  */
 public class PersonOrderMapper implements RowMapper<PersonOrder> {
-    public PersonOrder mapRow(ResultSet rs,int rowNum)throws SQLException {
+    public PersonOrder mapRow(ResultSet rs, int rowNum) throws SQLException {
         PersonOrder personOrder = new PersonOrder();
         personOrder.setId(rs.getInt("id"));
         personOrder.setOrderId(rs.getInt("order_id"));

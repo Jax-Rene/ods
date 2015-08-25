@@ -1,6 +1,6 @@
 package com.wskj.dao.handler;
 
-import com.wskj.model.Group;
+import com.wskj.domain.Group;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
