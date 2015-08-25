@@ -1,12 +1,13 @@
 .wrapper　 {
     margin: 0px;
     padding: 0px;
+    height: 50px;
 }
 
 .navbar {
     /*background-color: #222;*/
     background-color: #A57F59;
-    position: absolute;
+    position: relative;
     top: 0px;
     width: 100%;
     /*opacity: 0.95;*/

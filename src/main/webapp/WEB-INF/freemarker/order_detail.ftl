@@ -6,23 +6,39 @@
 <body>
 
 <div>
+    <div style="text-align: center;margin-top:40px">
+        <h1 style="color: #A57F59;font-size: 40px">${group.groupName!""}的订餐</h1>
+        订餐结束时间:${order.orderEnd!""}
+    </div>
+
     <form id="submitOrder">
-        套餐名:<input type="text" id="orderName"/>
-        单价:<input type="number" id="singlePrice" value="0" min="0" step="0.1"/>
-        数量:<input type="number" id="orderNumber" value="1" min="1" step="1"/>
+        <div style="font-size: 15px;
+        text-align: center">
+            套餐名:<input type="text" id="orderName"/>
+            单价:<input type="text" id="singlePrice" data-rules="{number:true}"/>
+            数量:<input type="text" id="orderNumber" data-rules="{number:true}"/>
+            <input type="submit" class="button button-primary button-middle" value="提交"/>
+        </div>
         <input type="hidden" id="orderPrice"/>
         <input type="hidden" value="${order.orderUrl}" id="orderUrl"/>
         <input type="hidden" value="${order.orderId}" id="orderId"/>
-        <input type="submit" value="提交"/>
     </form>
 </div>
 
-<hr/>
-<h1>今日订餐页面</h1>
+<h2 style="text-align: center">最新订餐页面</h2>
 
 <div>
-    <iframe id="orderContent" src="" scrolling="true" width="80%" height="80%"></iframe>
+    <iframe id="orderContent" src="${order.orderUrl}" scrolling="true" width="100%" height="80%"></iframe>
 </div>
 
+
+<script type="text/javascript">
+    BUI.use('bui/form', function (Form) {
+
+        new Form.Form({
+            srcNode: '#submitOrder'
+        }).render();
+    });
+</script>
 </body>
 </html>

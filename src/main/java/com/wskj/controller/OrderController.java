@@ -1,33 +1,21 @@
 package com.wskj.controller;
 
-import com.wskj.dao.GroupDao;
-import com.wskj.dao.MessageDao;
-import com.wskj.dao.OrderDao;
-import com.wskj.dao.UserDao;
 import com.wskj.domain.Group;
 import com.wskj.domain.Order;
 import com.wskj.domain.PersonOrder;
 import com.wskj.domain.User;
 import com.wskj.service.GroupService;
 import com.wskj.service.OrderService;
-import com.wskj.service.UserService;
-import com.wskj.util.GetTime;
-import com.wskj.util.SimpleMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.sql.Timestamp;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +27,8 @@ import java.util.Map;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private GroupService groupService;
 
 
     @RequestMapping(value = "/createOrder", method = RequestMethod.POST)
@@ -60,7 +50,10 @@ public class OrderController {
     @RequestMapping(value = "/startOrder", method = RequestMethod.GET)
     public String startOrder(int orderId, ModelMap model) {
         Order order = orderService.getOrder(orderId);
+        int groupId = order.getOrderGroup();
+        Group group = groupService.getGroupById(groupId);
         model.addAttribute("order", order);
+        model.addAttribute("group",group);
         return "order_detail";
     }
 

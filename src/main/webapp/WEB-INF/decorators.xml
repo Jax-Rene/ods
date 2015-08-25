@@ -14,5 +14,6 @@
         <pattern>/getGroupInfo</pattern>
         <pattern>/createGroup</pattern>
         <pattern>/gotoCreateGroup</pattern>
+        <pattern>/startOrder</pattern>
     </decorator>
 </decorators>
