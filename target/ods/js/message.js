@@ -22,11 +22,13 @@ $(document).ready(function () {
                 tr.appendTo(table);
                 var val = obj[index];
                 //加入信息内容
-                var td = $("<td>" + "<span style='color:#d7bd94'>" + "[" + val.messageFrom + "] " + "</span>"  + val.messageContent + "</td>");
+                var td = $("<td>" + "<span style='color:#d7bd94'>" + "[" + val.messageFrom + "] " + "</span>"  + val.messageTime + "</td>");
                 td.appendTo(tr);
                 //加入信息时间
-                td = $("<td>" + val.messageTime + "</td>");
-                td.appendTo(tr);
+                var tr2 = $("<tr class='tr2'></tr>");
+                tr2.appendTo(table);
+                td = $("<td>" + val.messageContent + "</td>");
+                td.appendTo(tr2);
                 //判断消息类型
                 if (val.messageType == 1) { //类型为邀请
                     //已处理的
@@ -39,9 +41,9 @@ $(document).ready(function () {
                         var messageId = val.messageId;
                         var hrefval1 = "acceptJoin?groupId=" + groupId + "&messageId=" + messageId;
                         var hrefval2 = "refuseJoin?groupId=" + groupId + "&messageId=" + messageId;
-                        td = $("<td><a href=" + hrefval1 + ">接受</a> &nbsp; <a href=" + hrefval2 + ">拒绝</a></td>");
+                        td = $("<td><a href='/" + hrefval1 + "'>接受</a> &nbsp; <a href='/" + hrefval2 + "'>拒绝</a></td>");
                     }
-                    td.appendTo(tr);
+                    td.appendTo(tr2);
                 } else if (val.messageType == 2) { //类型为请求
                     //已处理的
                     if (val.messageResult == 1)
@@ -53,124 +55,19 @@ $(document).ready(function () {
                         var messageId = val.messageId;
                         var hrefval1 = "agreeJoin?messageId=" + messageId;
                         var hrefval2 = "disagreeJoin?messageId=" + messageId;
-                        td = $("<td><a href=" + hrefval1 + ">接受</a> &nbsp; <a href=" + hrefval2 + ">拒绝</a></td>");
+                        td = $("<td><a href='/" + hrefval1 + "'><font color='#5cb85c'>接受</font></a>  &nbsp; " +
+                            "<a href='/" + hrefval2 + "'><font color='#d9534f'>拒绝</font></a></td>");
                     }
-                    td.appendTo(tr);
+                    td.appendTo(tr2);
                 }
             });
         });
 
     });
-    //$('.message').on('click', function () {
-    //    $('.message-show').empty(); //删除div内的表、重建
-    //    $('.message-show').slideToggle('fast');
-    //    var url = '/getRencentMessage';
-    //    $.get(url, function (data) {
-    //        var ul = $("<ul>");
-    //        ul.appendTo($(".message-show"));
-    //        var obj = eval(data); //解析json
-    //        $(obj).each(function (index) {
-    //            var li = $("<li></li>");
-    //            li.appendTo(ul);
-    //            var val = obj[index];
-    //            //加入信息内容
-    //            var div = $("<div></div>")
-    //            var Content = $( "[" + val.messageFrom + "] " + " " + val.messageContent );
-    //            Content.appendTo(div);
-    //            div.appendTo(li);
-    //            //加入信息时间
-    //            var div = $("<div></div>")
-    //            var Time  = $(val.messageTime);
-    //            Time.appendTo(div);
-    //            div.appendTo(li);
-    //            //判断消息类型
-    //            if (val.messageType == 1) { //类型为邀请
-    //                //已处理的
-    //                if (val.messageResult == 1)
-    //                    var  div  = $("<div color='grey'>已接受</div>");
-    //                else if (val.messageResult == -1)
-    //                    var div = $("<div color='grey'>已拒绝</div>");
-    //                else {
-    //                    var groupId = val.messageGroupId;
-    //                    var messageId = val.messageId;
-    //                    var hrefval1 = "acceptJoin?groupId=" + groupId + "&messageId=" + messageId;
-    //                    var hrefval2 = "refuseJoin?groupId=" + groupId + "&messageId=" + messageId;
-    //                    var div = $("<div><a href=" + hrefval1 + ">接受</a> &nbsp; <a href=" + hrefval2 + ">拒绝</a></div>");
-    //                }
-    //                div.appendTo(li);
-    //            } else if (val.messageType == 2) { //类型为请求
-    //                //已处理的
-    //                if (val.messageResult == 1)
-    //                    var div = $("<div color='grey'>已同意</div>");
-    //                else if (val.messageResult == -1)
-    //                    var div = $("<div color='grey'>已拒绝</div>");
-    //                else {
-    //                    var groupId = val.messageGroupId;
-    //                    var messageId = val.messageId;
-    //                    var hrefval1 = "agreeJoin?messageId=" + messageId;
-    //                    var hrefval2 = "disagreeJoin?messageId=" + messageId;
-    //                    var div = $("<div><a href=" + hrefval1 + ">接受</a> &nbsp; <a href=" + hrefval2 + ">拒绝</a></div>");
-    //                }
-    //                div.appendTo(li);
-    //            }
-    //        });
-    //    });
-    //
-    //});
 
-    $('#newsMessage').click(function(){
-        $('#message').empty(); //删除div内的表、重建
-        var url = '/getRencentMessage';
-        $.get(url,function(data){
-            var table=$("<table border=\"0\">");
-            table.appendTo($("#message"));
-            var obj = eval(data); //解析json
-            $(obj).each(function (index) {
-                var tr=$("<tr></tr>");
-                tr.appendTo(table);
-                var val = obj[index];
-                //加入信息内容
-                var td = $("<td>" + "[" + val.messageFrom +"] " + val.messageContent +"</td>");
-                td.appendTo(tr);
-                //加入信息时间
-                td = $("<td>" + val.messageTime +"</td>");
-                td.appendTo(tr);
-                //判断消息类型
-                if(val.messageType == 1) { //类型为邀请
-                    //已处理的
-                    if(val.messageResult == 1)
-                        td = $("<td><font color='grey'>已接受</font></td>");
-                    else if (val.messageResult == -1)
-                        td = $("<td><font color='grey'>已拒绝</font></td>");
-                    else{
-                        var groupId = val.messageGroupId;
-                        var messageId = val.messageId;
-                        var hrefval1 = "acceptJoin?groupId=" + groupId + "&messageId=" + messageId;
-                        var hrefval2 = "refuseJoin?groupId=" + groupId + "&messageId=" + messageId;
-                        td = $("<td><a href=" + hrefval1 +">接受</a> &nbsp; <a href=" + hrefval2 + ">拒绝</a>" );
-                    }
-                    td.appendTo(tr);
-                }else if(val.messageType == 2){ //类型为请求
-                    //已处理的
-                    if(val.messageResult == 1)
-                        td = $("<td><font color='grey'>已同意</font></td>");
-                    else if (val.messageResult == -1)
-                        td = $("<td><font color='grey'>已拒绝</font></td>");
-                    else{
-                        var groupId = val.messageGroupId;
-                        var messageId = val.messageId;
-                        var hrefval1 = "agreeJoin?messageId=" + messageId;
-                        var hrefval2 = "disagreeJoin?messageId=" + messageId;
-                        td = $("<td><a href=" + hrefval1 +">接受</a> &nbsp; <a href=" + hrefval2 + ">拒绝</a>" );
-                    }
-                    td.appendTo(tr);
-                }
-            });
-        });
-    });
 
     //监视接受、拒绝操作
-    $('#message a').on("click",function(){
+    $('.message-show').on("click" , "a" ,function(){
         //判断是接受的还是拒绝的
         var url = $(this).attr('href');
         if(url.indexOf('acceptJoin') == 0) { //这个方法必须要有昵称
@@ -186,11 +83,11 @@ $(document).ready(function () {
         }else{
             $.get(url, function (data) {
                 if(data==true){
-                    if(url.indexOf('agreeJoin') == 0)
+                    if(url.indexOf('agreeJoin') == 1)
                          alert('您已同意对方加入小组!');
-                    else if(url.indexOf('refuseJoin') == 0)
+                    else if(url.indexOf('refuseJoin') == 1)
                         alert('您已拒绝加入小组!');
-                    else if(url.indexOf('disagreeJoin') == 0)
+                    else if(url.indexOf('disagreeJoin') == 1)
                         alert('您已拒绝对方加入小组!');
                 }else
                     alert('未知错误,请联系管理员!');

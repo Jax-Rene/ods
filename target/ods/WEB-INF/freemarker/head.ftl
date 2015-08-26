@@ -10,7 +10,7 @@
                 <li><a href='#'>${curUser.userName!""}</a></li>
                 <li class="message"><a href="javascript:void(0)">消息<span class="badge" id="newsMessageNum"></span></a>
 
-                    <div class="message-show">
+                    <div class="message-show" id="message">
                         <div class="message-triangle"></div>
                         <div class="message-details"></div>
                     </div>
@@ -20,11 +20,4 @@
         </div>
     </nav>
 </div>
-<#-- 这里是消息模块 -->
-<#--<div id="message">-->
-<#--<a href="#" id="getallmessage">查看所有消息</a>-->
-<#--</div>-->
-
-
-
 
