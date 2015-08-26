@@ -5,14 +5,12 @@ import com.google.common.collect.Maps;
 import com.wskj.dao.GroupDao;
 import com.wskj.dao.MessageDao;
 import com.wskj.domain.Group;
-import com.wskj.domain.User;
 import com.wskj.util.ImageUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -143,5 +141,19 @@ public class GroupService {
         messageDao.createMessage(group.getGroupBossId(),nickName + "已经离开了" + group.getGroupName() , 0);
         messageDao.createMessage(userId,"您已经离开了" + group.getGroupName() , 0);
         return true;
+    }
+
+    public void deleteGroup(int groupId,int userId){
+        List<Integer> membersId = groupDao.getMemberIds(groupId);
+        String nickName = groupDao.getNickName(userId,groupId);
+        String groupName = groupDao.getGroupName(groupId);
+        groupDao.deleteGroup(groupId);
+        String content = nickName + "已经解散了" + groupName;
+        for(Integer id:membersId){
+            if(id!=userId)
+                messageDao.createMessage(id,content,0);
+        }
+        //组长的消息和别人不一样
+        messageDao.createMessage(userId,"您已经离开了" + groupName,0);
     }
 }

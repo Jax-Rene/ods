@@ -37,20 +37,19 @@
         }
 
     </style>
+</head>
 <body>
-<br/><br/><br/><br/><br/><br/><br/>
-
-<div id="group">
+<div id="group" style='padding-top: 50px;font-family: "微软雅黑", "Yuppy TC Regular", "幼圆", "黑体";font-size: 16px'>
     <form action="/createGroup" method="post" id="crop_form" enctype="multipart/form-data">
         <input type="hidden" id="target_x" name="targetX"/>
         <input type="hidden" id="target_y" name="targetY"/>
         <input type="hidden" id="target_w" name="targetW"/>
         <input type="hidden" id="target_h" name="targetH"/>
-        请输入组名：
-        <input type="text" name="newGroupName" id="newGroupName"/>${newGroupError !""}
-
-        您可以选择是否上传小组头像:
-        <input type="file" name="newGroupIcon" id="newGroupIcon"/>
+        <span style='text-align: center;'>
+            小组名称：<input type="text" name="newGroupName" id="newGroupName" class="input-normal"/>
+            <span style="color: red">${newGroupError !""}</span>
+        </span>
+        小组头像(可选)<input type="file" name="newGroupIcon" id="newGroupIcon"/>
         <input type="hidden" name="currentPic" id="currentPic"/>
 
         <div id='upimg'>
@@ -63,7 +62,7 @@
             </div>
         </div>
 </div>
-<input type="button" id="createGroup" value="确认提交"/>
+<input type="button" id="createGroup" class="button button-primary button-middle" value="确认提交"/>
 </form>
 </div>
 
@@ -158,5 +157,4 @@
 
 
 </body>
-</head>
 </html>

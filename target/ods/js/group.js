@@ -30,6 +30,7 @@ $(document).ready(function () {
                     var orderType = i;
             }
             var url = "createOrder";
+            alert($('#orderend').val())
             $.post(url, {
                 groupId: $('#groupid').val(),
                 orderType: orderType,
@@ -299,7 +300,6 @@ $(document).ready(function () {
 
     //离开小组
     $('#exitGroup').click(function(){
-        alert('sad');
        if(confirm('您确定要离开小组吗?')){
            $.post('exitGroup',{
                groupId:$('#groupid').val()
@@ -307,6 +307,18 @@ $(document).ready(function () {
                alert('退出小组,成功请刷新页面!');
            });
        }
+    });
+
+    //解散小组
+    $('#deleteGroup').click(function () {
+        if(confirm('解散小组将不能恢复您确定要解散小组吗?')){
+            $.post('deleteGroup',{
+                groupId:$('#groupid').val()
+            },function(){
+                alert('解散小组成功,即将为您跳转到首页...');
+                window.location.href ="/gotoIndex";
+            });
+        }
     });
 
 });

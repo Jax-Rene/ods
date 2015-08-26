@@ -1,12 +1,12 @@
 package com.wskj.controller;
 
-import com.google.common.collect.Maps;
 import com.wskj.domain.Group;
 import com.wskj.domain.User;
 import com.wskj.service.GroupService;
 import com.wskj.service.MessageService;
 import com.wskj.service.UserService;
 import com.wskj.util.ImageUtil;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,12 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -38,19 +36,17 @@ public class GroupController {
 
     @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(ModelMap model, HttpServletRequest request, HttpSession session,
-                              int targetX, int targetY, int targetW, int targetH, String currentPic)
+                              int targetX, int targetY, int targetW, int targetH, String currentPic,String newGroupName)
             throws Exception {
-        String newGroupName = request.getParameter("newGroupName");
-        Group newGroup = groupService.getGroupByName("newGroupName");
+        Group judgeName = groupService.getGroupByName("newGroupName");
+        if(judgeName != null){
+            model.addAttribute("newGroupError","该组名已经被占用!");
+            return "group_index";
+        }
+
         User user = (User) session.getAttribute("curUser");
         Group curGroup = groupService.createGroup(user.getId(), user.getUserName(), newGroupName, currentPic,
                 request, targetX, targetY, targetW, targetH);
-//        Map<String,String> members = Maps.newHashMap();
-//        members.put(user.getId() + "" , user.getUserName());
-//        model.addAttribute("members",members);
-//        model.addAttribute("group", curGroup);
-//        model.addAttribute("boss", "true");
-//        model.addAttribute("nickName", user.getUserName());
         return "redirect:/getGroupInfo?groupId=" + curGroup.getId();
     }
 
@@ -189,4 +185,9 @@ public class GroupController {
         return true;
     }
 
+    @RequestMapping(value = "/deleteGroup" , method = RequestMethod.POST)
+    public void deleteGroup(HttpSession session,int groupId){
+        User user = (User) session.getAttribute("curUser");
+        groupService.deleteGroup(groupId,user.getId());
+    }
 }

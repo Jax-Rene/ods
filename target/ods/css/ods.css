@@ -7,7 +7,7 @@
 .navbar {
     /*background-color: #222;*/
     background-color: #A57F59;
-    position: relative;
+    position: absolute;
     top: 0px;
     width: 100%;
     /*opacity: 0.95;*/
@@ -500,7 +500,9 @@ footer ul li {
 
 .right {
     float: right;
+    margin-right: 20px;
 }
+
 
 #index-banner {
     height: 400px;

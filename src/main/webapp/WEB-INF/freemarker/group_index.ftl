@@ -11,18 +11,20 @@
     您好,<span style="color: #A57F59;" id="nickName"> ${nickName}</span>(<a href="javascript:void(0)"
                                                                           id="changeName">更改昵称</a>)
     <br/>
+<form id="group-operator">
     <#if boss?exists><input type="button" id="deleteGroup" class="button button-danger button-middle" value="解散该小组"/>
     <#else><input type="button" id="exitGroup" class="button button-warning button-middle" value="离开该小组"/>
     </#if>
 <#else><input type="button" id="addGroup" class="button button-success button-middle" value="加入该小组"/>
 </#if>
+</form>
 </div>
 
-<div style="margin:0 auto">
-    <div>
+<div>
+    <div style="width: 50%;">
         <img src="${absoluteContextPath}/img/icon/${group.groupIcon}" style="border-radius:125px;"/>
     </div>
-    <div id="members" style="font-family: '微软雅黑', 'Yuppy TC Regular', '幼圆', '黑体'">
+    <div id="members" style="font-family: '微软雅黑', 'Yuppy TC Regular', '幼圆', '黑体';width 50%">
         <h2>小组成员</h2>
     <#list members?keys as memId>
         <a href="${memId}">${members[memId]}</a>
@@ -46,14 +48,14 @@
     <h2>发布新的订单</h2>
 
     <form id="order">
-        订餐网站URL:<input type="text" id="orderurl" name="orderUrl"/>
-        订餐消息备注:<input type="text" id="ordermark" name="orderMark"/>
-        订餐类型:<input type="radio" name="ordertype" checked="true"/>早餐
-        <input type="radio" name="ordertype"/>午餐
-        <input type="radio" name="ordertype"/>晚餐
-        <input type="radio" name="ordertype"/>其他
-        下单时间:<input type="text" id="orderend"/>
-        <input type="submit" value="提交"/>
+        订餐网站URL:<input type="text" id="orderurl" name="orderUrl" class="input-normal"/>
+        订餐消息备注:<input type="text" id="ordermark" name="orderMark" class="input-normal"/>
+        订餐类型:<input type="radio" name="ordertype" checked="true" class="radio"/>早餐
+        <input type="radio" name="ordertype" class="radio"/>午餐
+        <input type="radio" name="ordertype" class="radio"/>晚餐
+        <input type="radio" name="ordertype" class="radio"/>其他
+        下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
+        <input type="submit" value="提交" class="button button-primary"/>
     </form>
 </div>
 </#if>
@@ -173,8 +175,7 @@
             title: '更改昵称',
             width: 250,
             height: 120,
-            bodyContent: '<input type="text" id="newname" class="input-large"  style="width: ' +
-            '100%" placeholder="输入新的昵称"/>',
+            bodyContent: '<input type="text" id="newname" class="input-normal"  style="width: 190px" placeholder="输入新的昵称"/>',
             success: function () {
                 if ($('#newname').val() == '')
                     alert('输入不能为空!');
@@ -197,6 +198,26 @@
             dialog.show();
         });
     });
+
+
+    BUI.use('bui/calendar', function (Calendar) {
+        var datepicker = new Calendar.DatePicker({
+            trigger: '.calendar',
+            minDate: '2015-06-01',
+            maxDate: '2017-12-25',
+            autoRender: true
+        });
+    });
+
+
+    BUI.use('bui/calendar', function (Calendar) {
+        var datepicker = new Calendar.DatePicker({
+            trigger: '.calendar-time',
+            showTime: true,
+            autoRender: true
+        });
+    });
+
 </script>
 </body>
 </html>

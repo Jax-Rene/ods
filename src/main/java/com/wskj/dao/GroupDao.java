@@ -151,4 +151,11 @@ public class GroupDao {
         String sql = "delete from ods.user_group where user_id = ? and group_id = ?";
         jdbcTemplate.update(sql,userId,groupId);
     }
+
+    public void deleteGroup(int groupId){
+        String sql = "delete from ods.group where group_id = ?";
+        jdbcTemplate.update(sql,groupId);
+        sql = "delete from ods.user_group where group_id = ?";
+        jdbcTemplate.update(sql,groupId);
+    }
 }
