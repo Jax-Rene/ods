@@ -6,15 +6,7 @@ $(document).ready(function () {
     var member = {};
     var memberId = [];
 
-    $('#changename').click(function () {
-        var url = 'changeNickName?newName=' + $('#newname').val() + '&groupId=' + $('#groupid').val();
-        $.get(url, function (data) {
-            if (data == true) {
-                alert('恭喜您,修改昵称成功!');
-            } else
-                alert('修改失败!小组中存在重复的昵称');
-        });
-    });
+
 
 
     $('#addmember').click(function () {
@@ -304,4 +296,17 @@ $(document).ready(function () {
             }
         });
     });
+
+    //离开小组
+    $('#exitGroup').click(function(){
+        alert('sad');
+       if(confirm('您确定要离开小组吗?')){
+           $.post('exitGroup',{
+               groupId:$('#groupid').val()
+           },function(){
+               alert('退出小组,成功请刷新页面!');
+           });
+       }
+    });
+
 });

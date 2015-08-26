@@ -6,11 +6,10 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
     <script src="${absoluteContextPath}/js/bui.js"></script>
     <script src="${absoluteContextPath}/js/message.js"></script>
-    <script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
-    <script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+    <script src="${absoluteContextPath}/js/list_member.js"></script>
 
-    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
-    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/dpl.css">
+    <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/bui.css">
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/ods.css">
 ${head}
 </head>

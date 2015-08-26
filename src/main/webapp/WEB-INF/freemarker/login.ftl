@@ -21,15 +21,17 @@
                         </div>
                     </div>
                     <div class="register-form">
-                        <input type="email" id="username" name="userName" placeholder="输入邮箱账号" required="true"/>
+                        <input type="text" id="username" name="userName" data-rules="{email:true}" placeholder="邮箱账号"
+                               required="true"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password" name="passWord" placeholder="密码大于6位小于14位" required="true"/>
+                        <input type="password" id="password" name="passWord" placeholder="密码6位-14位"  data-rules="{minlength:5}"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password2" name="passWord2" placeholder="重新输入密码" required="true"/>
+                        <input type="password" id="password2" name="passWord2" placeholder="重新输入密码"
+                               data-rules="{minlength:5}"/>
                     </div>
-                    <button type="submit" class="button button-primary button-large">注册</button>
+                    <button type="submit" class="button button-primary button-large" style="width: 207px">注册</button>
                 </form>
                 <form id="login" action="/inputLogin" method="post">
                     <div class="form-header">
@@ -38,15 +40,18 @@
                                 class="x-icon xicon-info icon-circle-arrow-right"></span></div>
                     </div>
                     <div class="register-form">
-                        <input type="email" id="username" name="userName" required="true" placeholder="邮箱帐号"
+                        <input type="text" id="username" name="userName" data-rules="{email:true}"
+                               placeholder="邮箱帐号"
                                value="${userName!""}"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password" name="passWord" required="true" placeholder="输入密码"
+                        <input type="password" id="password" name="passWord" placeholder="输入密码"
+                               data-rules="{minlength:5}"
                                value="${passWord!""}"/>
                     </div>
                     <div class="vaild-box">
-                        <input type="text" name="checkCode" id="checkCode" placeholder="输入验证码">
+                        <input type="text" name="checkCode" id="checkCode" placeholder="输入验证码"
+                               style="height: 25px;width: 50%">
                         <a href="javascript:void(0)"><img src="PictureCheckCode" id="validcheck"></a>
                     </div>
                     <div class="rem-passwd">
@@ -56,7 +61,7 @@
                         <a href="javascript:void(0)" id="forgetPass" class="right">忘记密码？</a>
                     </div>
                     <br/>
-                    <button type="submit" class="button button-primary button-large">登录</button>
+                    <button type="submit" class="button button-primary button-large" style="width: 207px">登录</button>
                 </form>
                 <span id="error" style="color: red">${error!""}</span>
             </div>
@@ -104,6 +109,25 @@
             dialog.show();
         });
     });
+
+    <!-- script start -->
+    BUI.use('bui/form', function (Form) {
+
+        new Form.Form({
+            srcNode: '#register'
+        }).render();
+
+    });
+
+    <!-- script start -->
+    BUI.use('bui/form', function (Form) {
+
+        new Form.Form({
+            srcNode: '#login'
+        }).render();
+
+    });
+
 </script>
 </body>
 </html>

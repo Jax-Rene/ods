@@ -33,7 +33,7 @@ public class MessageService {
         messageDao.createMessage(userId, messageContent, messageType);
     }
 
-    public void setMessageResult(int result, int messageId) {
+    public void setMessageResult(int messageId,int result) {
         messageDao.setResult(messageId, result);
     }
 

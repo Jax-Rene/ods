@@ -1,7 +1,7 @@
-.wrapper　 {
+.ods-wrapper {
     margin: 0px;
     padding: 0px;
-    height: 50px;
+    height:50px;
 }
 
 .navbar {
@@ -271,7 +271,7 @@ footer ul li {
     position: absolute;
     top: 60px;
     left:-120px;
-    width: 300px;
+    width: 360px;
     display: none;
     z-index: 1000;
 }
@@ -295,14 +295,17 @@ footer ul li {
     padding: 10px;
     text-align: center;
 }
+.message-details table {width:100%;}
 .message-details tr{
     height: 40px;
     width: 100%;
     padding: 2px;
-    border-bottom: 1px solid #e7e7e7;
     line-height: 40px;
+    width:100%;
 }
-.message-details tr {}
+.message-details .tr2 {
+    border-bottom: 1px solid #e7e7e7;
+}
 .img-container {
     margin: 0;
     padding: 0;

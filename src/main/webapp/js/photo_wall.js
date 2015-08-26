@@ -21,13 +21,13 @@ function setPictureWall() {
     /*img-show*/
     for (var i = 0; (i < col_num * row_num) && (i < groupNum); i++) {
         var content =
-            '<a href=\'getGroupInfo?groupId=' + allGroup[i].id + '\'><div class=\"img-cell\">'
-            + '<img src=\'img\\icon\\' + allGroup[i].groupIcon + '\'/>'
-            + '<div class=\"img-details\">'
+            '<a href="/getGroupInfo?groupId=' + allGroup[i].id + '"><div class="img-cell">'
+            + '<img src="img/icon/' + allGroup[i].groupIcon + '"/>'
+            + '<div class="img-details">'
             + '<div class="text-details">'
             + '<p>小组:' + allGroup[i].groupName + '</p>'
             + '<div>'
-            + '<span class=\"congratulation\">组长:' + allBossName[i] + '</span>'
+            + '<span class="congratulation">组长:' + allBossName[i] + '</span>'
             + '</div>'
             + '</div>'
             + '</div>'
@@ -72,10 +72,10 @@ function setPictureWall() {
             $('.img-cell').remove();
             for (var i = current; (i < (current + col_num * row_num) && (i < groupNum)); i++) {
                 var content =
-                    '<div class=\"img-cell\">'
-                    + '<div class=\"cover\">' + '</div>'
-                    + '<img src=\"' + allGroup[i].img_url + '\">'
-                    + '<div class=\"img-details\">'
+                    '<div class="img-cell">'
+                    + '<div class="cover">' + '</div>'
+                    + '<img src="img/icon/' + allGroup[i].groupIcon + '"/>'
+                    + '<div class="img-details">'
                     + '<div class="text-details">'
                     + '<p>小组：</p>'
                     + allGroup[i].groupName
@@ -106,14 +106,13 @@ function setPictureWall() {
         $('.img-cell').remove();
         for (var i = current; i < (current + (row_num * col_num)); i++) {
             var content =
-                '<div class=\"img-cell\">'
-                + '<div class=\"cover\">' + '</div>'
-                + '<img src=\"' + allGroup[i].img_url + '\">'
-                + '<div class=\"img-details\">'
+                '<div class="img-cell">'
+                + '<div class="cover">' + '</div>'
+                + '<img src="img/icon/' + allGroup[i].groupIcon + '"/>'
+                + '<div class="img-details">'
                 + '<div class="text-details">'
                 + '<p>姓名：' + allGroup[i].name + '</p>'
                 + '<p>组长：' + allGroup[i].company + '</p>'
-                + '<div><img  class=\"dot\" src=\"./img/dot.jpg\">' + '<span class=\"congratulation\">' + allGroup[i].congratulation + '</span>' + '<img src=\"./img/dot.jpg\"></div>'
                 + '</div>'
                 + '</div>'
                 + '</div>';
