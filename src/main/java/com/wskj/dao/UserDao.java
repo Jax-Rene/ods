@@ -26,7 +26,6 @@ public class UserDao {
     public void create(String username, String password, String location) {
         String sql = "INSERT INTO ods.user(user_name, user_pass, location) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, username, password, location);
-        System.out.println("创建成功!");
         return;
     }
 

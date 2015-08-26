@@ -49,9 +49,9 @@ public class LoginController {
             return "login";
         }
 
-        user = userService.judgeAccount(user);
-        if (user != null) {
-            session.setAttribute("curUser", user);
+        User findUser = userService.judgeAccount(user);
+        if (findUser != null) {
+            session.setAttribute("curUser", findUser);
             //判断下次是否需要自动登录
             if (autoLogin != "") {
                 session.setMaxInactiveInterval(2592000);
@@ -61,8 +61,8 @@ public class LoginController {
             model.addAttribute("error", "用户名、密码错误请重新输入!");
             model.addAttribute("userName", user.getUserName());
             model.addAttribute("passWord", user.getPassWord());
+            return "login";
         }
-        return "login";
     }
 
     @RequestMapping(value = "/gotoIndex", method = RequestMethod.GET)

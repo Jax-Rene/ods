@@ -51,7 +51,6 @@ public class GroupDao {
     public Group createGroup(Integer groupBossId, String groupName, String groupIcon) {
         String sql = "insert into ods.group (group_name, group_boss_id,group_icon) values (?,?,?)";
         jdbcTemplate.update(sql, groupName, groupBossId, groupIcon);
-        System.out.println("创建小组(插入图片)成功!返回小组");
         return getGroupByName(groupName);
     }
 
@@ -135,17 +134,21 @@ public class GroupDao {
         return userIds;
     }
 
-    public Map<Integer, String> getMemberIdAndName(int groupId) {
+    public Map<String , String> getMemberIdAndName(int groupId) {
         String sql = "select user_id,nick_name from ods.user_group where group_id = ?";
-        return jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Map<Integer, String>>() {
-            public Map<Integer, String> extractData(ResultSet rs) throws SQLException, DataAccessException {
-                Map<Integer, String> map = new HashMap<Integer, String>();
+        return jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Map<String, String>>() {
+            public Map<String, String> extractData(ResultSet rs) throws SQLException, DataAccessException {
+                Map<String, String> map = new HashMap<String, String>();
                 while (rs.next()) {
-                    System.out.println("hello:" + rs.getString("nick_name"));
-                    map.put(rs.getInt("user_id"), rs.getString("nick_name"));
+                    map.put(rs.getInt("user_id") + "", rs.getString("nick_name"));
                 }
                 return map;
             }
         });
+    }
+
+    public void exitGroup(int userId,int groupId){
+        String sql = "delete from ods.user_group where user_id = ? and group_id = ?";
+        jdbcTemplate.update(sql,userId,groupId);
     }
 }

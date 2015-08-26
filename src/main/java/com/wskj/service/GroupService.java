@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -130,8 +131,17 @@ public class GroupService {
     }
 
 
-    public Map<Integer, String> getMemberIdAndName(int groupId) {
+    public Map<String, String> getMemberIdAndName(int groupId) {
         return groupDao.getMemberIdAndName(groupId);
     }
 
+    public boolean exitGroup(int groupId,int userId){
+        String nickName = groupDao.getNickName(userId,groupId);
+        groupDao.exitGroup(userId,groupId);
+        //通知组长
+        Group group = groupDao.getGroup(groupId);
+        messageDao.createMessage(group.getGroupBossId(),nickName + "已经离开了" + group.getGroupName() , 0);
+        messageDao.createMessage(userId,"您已经离开了" + group.getGroupName() , 0);
+        return true;
+    }
 }

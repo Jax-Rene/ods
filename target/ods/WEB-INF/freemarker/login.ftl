@@ -25,10 +25,10 @@
                                required="true"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password" name="passWord" placeholder="密码6位-14位" required="true" data-rules="{minlength:5}"/>
+                        <input type="password" id="password" name="passWord" placeholder="密码6位-14位"  data-rules="{minlength:5}"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password2" name="passWord2" placeholder="重新输入密码" required="true"
+                        <input type="password" id="password2" name="passWord2" placeholder="重新输入密码"
                                data-rules="{minlength:5}"/>
                     </div>
                     <button type="submit" class="button button-primary button-large" style="width: 207px">注册</button>
@@ -40,12 +40,12 @@
                                 class="x-icon xicon-info icon-circle-arrow-right"></span></div>
                     </div>
                     <div class="register-form">
-                        <input type="text" id="username" name="userName" data-rules="{email:true}" required="true"
+                        <input type="text" id="username" name="userName" data-rules="{email:true}"
                                placeholder="邮箱帐号"
                                value="${userName!""}"/>
                     </div>
                     <div class="register-form">
-                        <input type="password" id="password" name="passWord" required="true" placeholder="输入密码"
+                        <input type="password" id="password" name="passWord" placeholder="输入密码"
                                data-rules="{minlength:5}"
                                value="${passWord!""}"/>
                     </div>

@@ -1,5 +1,6 @@
 package com.wskj.controller;
 
+import com.google.common.collect.Maps;
 import com.wskj.domain.Group;
 import com.wskj.domain.User;
 import com.wskj.service.GroupService;
@@ -19,6 +20,7 @@ import org.apache.commons.lang.StringUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -43,10 +45,13 @@ public class GroupController {
         User user = (User) session.getAttribute("curUser");
         Group curGroup = groupService.createGroup(user.getId(), user.getUserName(), newGroupName, currentPic,
                 request, targetX, targetY, targetW, targetH);
-        model.addAttribute("group", curGroup);
-        model.addAttribute("boss", "true");
-        model.addAttribute("nickName", user.getUserName());
-        return "group_index";
+//        Map<String,String> members = Maps.newHashMap();
+//        members.put(user.getId() + "" , user.getUserName());
+//        model.addAttribute("members",members);
+//        model.addAttribute("group", curGroup);
+//        model.addAttribute("boss", "true");
+//        model.addAttribute("nickName", user.getUserName());
+        return "redirect:/getGroupInfo?groupId=" + curGroup.getId();
     }
 
 
@@ -71,14 +76,9 @@ public class GroupController {
             model.addAttribute("nickName", nickName);
         }
         model.addAttribute("group", group);
-//        //获取组内成员
-//        List<Integer> userIds = groupDao.getMemberIds(gId);
-//        List<User> users = new ArrayList<User>();
-//        List<String> nickNames = new ArrayList<String>();
-//        for (Integer t : userIds) {
-//            users.add(userDao.getUser(t));
-//            nickNames.add(groupDao.getNickName(t, gId));
-//        }
+        //获取组内成员
+        Map<String,String> members = groupService.getMemberIdAndName(groupId);
+        model.addAttribute("members",members);
         return "group_index";
     }
 
@@ -143,7 +143,6 @@ public class GroupController {
         if (!groupService.judgeNickNameExist(nickName, groupId)) {
             User user = (User) session.getAttribute("curUser");
             Group group = groupService.getGroupById(groupId);
-            groupService.joinGroup(user.getId(), groupId, nickName);
             //将加入小组的请求发向组长
             messageService.createMessage(group.getGroupBossId(), "请求加入您的小组:" + group.getGroupName(), 2, group.getId(),
                     nickName, user.getId());
@@ -177,14 +176,17 @@ public class GroupController {
         return logImageName;
     }
 
-    @RequestMapping(value = "gotoCreateGroup", method = RequestMethod.GET)
+    @RequestMapping(value = "/gotoCreateGroup", method = RequestMethod.GET)
     public String gotoCreateGroup() {
         return "create_group";
     }
 
-    @RequestMapping(value = "/getMemberIdAndName", method = RequestMethod.GET)
+    @RequestMapping(value = "/exitGroup" , method = RequestMethod.POST)
     @ResponseBody
-    public Map<Integer, String> getMemberIdAndName(int groupId) {
-        return groupService.getMemberIdAndName(groupId);
+    public boolean exitGroup(HttpSession session,int groupId){
+        User user = (User)session.getAttribute("curUser");
+        groupService.exitGroup(user.getId(),groupId);
+        return true;
     }
+
 }
