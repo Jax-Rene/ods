@@ -2,37 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a4b38e6-aeef-4f10-a452-8f1f72fcf582" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/login-index.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.Jcrop.min.js" />
-      <change type="MODIFICATION" beforePath="D:\projects\ods\target\classes\com\wskj\controller\GroupController.class" afterPath="D:\projects\ods\target\classes\com\wskj\controller\GroupController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/controller/GroupController.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/controller/GroupController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/wskj/util/ImageUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/wskj/util/ImageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/util/ImageUtil.class" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/classes/com/wskj/util/ImageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/util/ImageRunnable.java" />
+      <change type="MODIFICATION" beforePath="D:\projects\ods\target\classes\com\wskj\service\GroupService.class" afterPath="D:\projects\ods\target\classes\com\wskj\service\GroupService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/util/ImageUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/util/ImageUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wskj/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wskj/controller/MessageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/create_group.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/create_group.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/create_group.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/create_group.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/decorators.xml" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/decorators.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/default_decorate.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/default_decorate.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/group.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/group.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/group_index.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/group_index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/group_index.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/group_index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/index.js" afterPath="$PROJECT_DIR$/target/ods/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.Jcrop.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.Jcrop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/js/jquery.Jcrop.js" afterPath="$PROJECT_DIR$/target/ods/js/jquery.Jcrop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/login.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/login.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/login.ftl" afterPath="$PROJECT_DIR$/target/ods/WEB-INF/freemarker/login.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/ods.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/ods.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ods/css/ods.css" afterPath="$PROJECT_DIR$/target/ods/css/ods.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ods.iws" />
@@ -65,71 +38,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="5.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/5.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="6.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/6.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="7.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/7.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="8.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/8.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="9.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/9.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/0.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GroupService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38666666">
-              <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="63" column="53" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#891#892#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1040#1041#0" expanded="true" />
+                <element signature="e#3011#3012#0" expanded="true" />
+                <element signature="e#3088#3089#0" expanded="true" />
+                <element signature="e#3146#3147#0" expanded="true" />
+                <element signature="e#3206#3207#0" expanded="true" />
+                <element signature="e#3549#3550#0" expanded="true" />
+                <element signature="e#3610#3611#0" expanded="true" />
+                <element signature="e#4641#4642#0" expanded="true" />
+                <element signature="e#4700#4701#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/1.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/ods/img/icon/2.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="ImageRunnable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/util/ImageRunnable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -137,7 +79,27 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+              <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.965517">
+              <caret line="13" column="56" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default_decorate.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2919708">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -168,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/wskj/tools/ImageUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/web/GroupController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/jquery.Jcrop.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/web/MessageController.java" />
@@ -212,13 +173,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/group.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/index.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/create_group.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/dao/GroupDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/group_index.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wskj/util/ImageRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl" />
       </list>
     </option>
   </component>
@@ -326,7 +288,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -442,12 +406,34 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
+              <option name="myItemId" value="ods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ods" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wskj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -469,62 +455,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="freemarker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="wskj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -538,7 +478,7 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="group_in&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;create&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/create_group.ftl&#10;defa&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl&#10;group.js&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/group.js&#10;head.f&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/head.ftl&#10;login&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/filter/LoginFilter.java&#10;login.f&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/login.ftl&#10;logi&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/filter/LoginFilter.java&#10;Cont&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;groupI&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;ods&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/css/ods.css&#10;de&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl&#10;dec&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/decorators.xml&#10;index&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/index.js&#10;gr&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/group.js&#10;index.ftl&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/index.ftl&#10;index.f&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;Gr&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;GroupDa&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/dao/GroupDao.java&#10;GroupSe&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/GroupService.java&#10;message.js&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/message.js&#10;GroupCOn&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;li&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/list_member.js&#10;ods.c&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/css/ods.css&#10;hea&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/head.ftl&#10;log&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/login.ftl&#10;Grou&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/GroupService.java&#10;Group&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;head&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/head.ftl&#10;group&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;wall&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/photo_wall.js&#10;index.js&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/index.js&#10;message&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/dao/MessageDao.java&#10;mess&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/message.js&#10;group_i&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;ods.cs&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/css/ods.css&#10;grou&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/group.js&#10;GroupCon&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;user&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/UserService.java&#10;Login&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/LoginController.java&#10;pom.&#9;FILE&#9;file://D:/projects/ods/pom.xml&#10;pom.xl&#9;null&#9;null&#10;MESSAGE&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/message.js&#10;loginC&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/web/LoginController.java&#10;find&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/findpassword.ftl&#10;wal&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/photo_wall.js&#10;deco&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/WEB-INF/decorators.xml&#10;Lo&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/java/com/wskj/web/LoginController.java&#10;register.js&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/js/register.js&#10;regis&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/WEB-INF/freemarker/register.ftl" />
+    <property name="SearchEverywhereHistoryKey" value="defa&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl&#10;head&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/head.ftl&#10;index&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/index.js&#10;groupSE&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/GroupService.java&#10;group_in&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;create&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/create_group.ftl&#10;group.js&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/group.js&#10;head.f&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/head.ftl&#10;login&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/filter/LoginFilter.java&#10;login.f&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/login.ftl&#10;logi&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/filter/LoginFilter.java&#10;Cont&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;groupI&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;ods&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/css/ods.css&#10;de&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl&#10;dec&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/decorators.xml&#10;gr&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/group.js&#10;index.ftl&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/index.ftl&#10;index.f&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;Gr&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;GroupDa&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/dao/GroupDao.java&#10;GroupSe&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/GroupService.java&#10;message.js&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/message.js&#10;GroupCOn&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;li&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/list_member.js&#10;ods.c&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/css/ods.css&#10;hea&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/head.ftl&#10;log&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/login.ftl&#10;Grou&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/GroupService.java&#10;Group&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;group&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;wall&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/photo_wall.js&#10;index.js&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/index.js&#10;message&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/dao/MessageDao.java&#10;mess&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/message.js&#10;group_i&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/group_index.ftl&#10;ods.cs&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/css/ods.css&#10;grou&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/group.js&#10;GroupCon&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/GroupController.java&#10;user&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/service/UserService.java&#10;Login&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/controller/LoginController.java&#10;pom.&#9;FILE&#9;file://D:/projects/ods/pom.xml&#10;pom.xl&#9;null&#9;null&#10;MESSAGE&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/message.js&#10;loginC&#9;FILE&#9;file://D:/projects/ods/src/main/java/com/wskj/web/LoginController.java&#10;find&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/WEB-INF/freemarker/findpassword.ftl&#10;wal&#9;FILE&#9;file://D:/projects/ods/src/main/webapp/js/photo_wall.js&#10;deco&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/WEB-INF/decorators.xml&#10;Lo&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/java/com/wskj/web/LoginController.java&#10;register.js&#9;FILE&#9;file:///Users/johnny/GitHub/ods/src/main/webapp/js/register.js" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/WorkStation1" />
     <property name="options.lastSelected" value="reference.projectsettings.compiler.javacompiler" />
@@ -1093,6 +1033,7 @@
       <workItem from="1440568086792" duration="16504000" />
       <workItem from="1440638991241" duration="10869000" />
       <workItem from="1440656436006" duration="13031000" />
+      <workItem from="1440669739962" duration="2674000" />
     </task>
     <task id="LOCAL-00001" summary="整合index中">
       <created>1438703282883</created>
@@ -1128,7 +1069,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192578000" />
+    <option name="totallyTimeSpent" value="195252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1148,24 +1089,23 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37711865" sideWeight="0.5032415" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5180921" sideWeight="0.5060698" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65296054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2124431" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2124431" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942164" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33223686" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5180921" sideWeight="0.49675852" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5180921" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1176,6 +1116,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33223686" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1183,7 +1124,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37711865" sideWeight="0.5032415" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5180921" sideWeight="0.5060698" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1192,7 +1133,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46546054" sideWeight="0.49675852" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5180921" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1201,15 +1142,15 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.65296054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65296054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2124431" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2124431" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33223686" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33223686" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1248,13 +1189,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
-          <line>136</line>
+          <line>137</line>
           <properties />
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
-          <line>137</line>
+          <line>138</line>
           <properties />
           <option name="timeStamp" value="124" />
         </line-breakpoint>
@@ -1269,24 +1210,6 @@
           <line>46</line>
           <properties />
           <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java</url>
@@ -1306,11 +1229,29 @@
           <properties />
           <option name="timeStamp" value="146" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wskj/util/ImageRunnable.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="147" />
+      <option name="time" value="151" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1319,14 +1260,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/list_member.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1388,15 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.797227">
           <caret line="1537" column="42" selection-start-line="1537" selection-start-column="41" selection-end-line="1537" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/util/ImageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6932409">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1429,7 +1353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33275563">
           <caret line="715" column="1" selection-start-line="715" selection-start-column="1" selection-end-line="715" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-40.0">
           <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1450,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="215" column="16" selection-start-line="215" selection-start-column="11" selection-end-line="215" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1458,7 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64">
           <caret line="46" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,25 +1386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8965516">
           <caret line="16" column="51" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1440658950298" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.862069">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1492,7 +1393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="274" column="8" selection-start-line="274" selection-start-column="8" selection-end-line="274" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1512,19 +1412,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.241379">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2666667">
           <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1556,11 +1447,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6896552">
           <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1576,11 +1463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1603,13 +1485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.137931">
           <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1440669074571" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1617,27 +1492,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="109" column="12" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
-          <folding>
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select group..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select group..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="update ods.u..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select group..user_group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select * fro..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select nick_..user_group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select nick_..user_group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select group..group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select user_..user_group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="select user_..user_group..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1440668329380" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1686,26 +1541,81 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/util/ImageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69496024">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/target/ods/img/icon/9.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/util/ImageRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-          <folding />
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/service/GroupService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38666666">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="53" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#3011#3012#0" expanded="true" />
+            <element signature="e#3088#3089#0" expanded="true" />
+            <element signature="e#3146#3147#0" expanded="true" />
+            <element signature="e#3206#3207#0" expanded="true" />
+            <element signature="e#3549#3550#0" expanded="true" />
+            <element signature="e#3610#3611#0" expanded="true" />
+            <element signature="e#4641#4642#0" expanded="true" />
+            <element signature="e#4700#4701#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3812825">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wskj/controller/GroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/head.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.965517">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/freemarker/default_decorate.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2919708">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

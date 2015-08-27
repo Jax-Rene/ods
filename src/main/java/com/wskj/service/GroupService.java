@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.wskj.dao.GroupDao;
 import com.wskj.dao.MessageDao;
 import com.wskj.domain.Group;
+import com.wskj.util.ImageRunnable;
 import com.wskj.util.ImageUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,7 @@ public class GroupService {
             }
             String fileName = logoRealPathDir + File.separator + currentPic;
             File file = new File(fileName);
-            ImageUtil.abscut(file, targetX, targetY, targetW, targetH);
+            new Thread(new ImageRunnable(file,targetX,targetY,targetW,targetH)).start();
             group = groupDao.createGroup(userId, groupName, currentPic);
         }
         int groupId = groupDao.getGroupId(groupName);
