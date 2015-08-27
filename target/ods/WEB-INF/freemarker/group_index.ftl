@@ -1,6 +1,7 @@
 <html>
 <head>
     <script src="${absoluteContextPath}/js/group.js" type="text/javascript"></script>
+    <script src="${absoluteContextPath}/js/list_member.js"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 
 <div>
     <div style="width: 50%;">
-        <img src="${absoluteContextPath}/img/icon/${group.groupIcon}" style="border-radius:125px;"/>
+        <img src="${absoluteContextPath}/img/icon/${group.groupIcon}" style="width:200px;height:200px;border-radius:125px;"/>
     </div>
     <div id="members" style="font-family: '微软雅黑', 'Yuppy TC Regular', '幼圆', '黑体';width 50%">
         <h2>小组成员</h2>

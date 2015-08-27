@@ -39,12 +39,12 @@ public class GroupService {
     }
 
     public Group createGroup(int userId, String userName, String groupName, String currentPic, HttpServletRequest request,
-                             int targetX, int targetY, int targetW, int targetH) {
+                             Integer targetX, Integer targetY, Integer targetW, Integer targetH) {
         Group group = null;
         //没有上传图片生成随机图片
         if (StringUtils.isBlank(currentPic)) {
             Random random = new Random(System.currentTimeMillis());
-            final int randomMax = 11;
+            final int randomMax = 10;
             int randomNumber = random.nextInt(randomMax);
             String groupIcon = randomNumber + ".jpg";
             group = groupDao.createGroup(userId, groupName, groupIcon);

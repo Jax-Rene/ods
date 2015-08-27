@@ -40,36 +40,37 @@
 </head>
 <body>
 <div id="group" style='padding-top: 50px;font-family: "微软雅黑", "Yuppy TC Regular", "幼圆", "黑体";font-size: 16px'>
-    <form action="/createGroup" method="post" id="crop_form" enctype="multipart/form-data">
-        <input type="hidden" id="target_x" name="targetX"/>
-        <input type="hidden" id="target_y" name="targetY"/>
-        <input type="hidden" id="target_w" name="targetW"/>
-        <input type="hidden" id="target_h" name="targetH"/>
-        <span style='text-align: center;'>
-            小组名称：<input type="text" name="newGroupName" id="newGroupName" class="input-normal"/>
+    <form id="crop_form" action="createGroup" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="target_x" name="targetX" value=""/>
+        <input type="hidden" id="target_y" name="targetY" value=""/>
+        <input type="hidden" id="target_w" name="targetW" value=""/>
+        <input type="hidden" id="target_h" name="targetH" value=""/>
+
+        <div style='text-align: center'>
+            小组名称：<input type="text" name="newGroupName" id="newGroupName" class="input-normal"
+                        value="${newGroupName!""}"/>
             <span style="color: red">${newGroupError !""}</span>
-        </span>
+        </div>
         小组头像(可选)<input type="file" name="newGroupIcon" id="newGroupIcon"/>
         <input type="hidden" name="currentPic" id="currentPic"/>
 
+    <#if fileSrc?exists>
         <div id='upimg'>
-            <img id="target_img"/>
+            <img id="target_img" src="${fileSrc!""}"/>
 
             <div id="preview-pane">
                 <div class="preview-container">
-                    <img class="jcrop-preview" id="preview"/>
+                    <img class="jcrop-preview" id="preview" src="${fileSrc!""}"/>
                 </div>
             </div>
         </div>
-</div>
-<input type="button" id="createGroup" class="button button-primary button-middle" value="确认提交"/>
-</form>
+    </#if>
+        <input type="button" id="createGroup" class="button button-primary button-middle" value="确认提交"/>
+    </form>
 </div>
 
 
 <script>
-
-    $('#upimg').hide();
 
     // Create variables (in this scope) to hold the API and image size
     var jcrop_api,
@@ -87,6 +88,8 @@
     $('#target_img').Jcrop({
         onChange: updatePreview,
         onSelect: updatePreview,
+        allowResize: false,
+        allowMove: true,
         aspectRatio: 1
     }, function () {
         // Use the API to get the real image size
@@ -120,34 +123,42 @@
     }
     ;
 
+    //    $('#newGroupIcon').on('change', function () {
+    //            $.ajaxFileUpload({
+    //                url: 'restoreTempPic',//处理图片脚本
+    //                fileElementId: 'newGroupIcon',//file控件id
+    //                dataType: 'json',
+    //                success: function (data) {
+    //                    if (data != null) {
+    //                        debugger;
+    //                        var url = 'img/icon/' + data.trim();
+    //                        jcrop_api.setImage(url, function () {
+    //
+    //                        });
+    //
+    //                        $('#upimg').show();
+    //                    }
+    //                },
+    //                error: function (data) {
+    //                    alert("未知失败请联系管理员!");
+    //                }
+    //            });
+    //    });
+
     $('#newGroupIcon').on('change', function () {
-        $.ajaxFileUpload({
-            url: 'restoreTempPic',//处理图片脚本
-            fileElementId: 'newGroupIcon',//file控件id
-            dataType: 'json',
-            success: function (data) {
-                if (data != null) {
-                    debugger;
-                    var url = 'img/icon/' + data.trim();
-                    jcrop_api.setImage(url, function () {
-                        $('#preview').attr('src', url);
-                    });
-                    $('#upimg').show();
-                }
-            },
-            error: function (data) {
-                alert("未知失败请联系管理员!");
-            }
-        });
+        $('#crop_form').attr('action', 'restoreTempPic');
+        $('#crop_form').submit();
     });
+
 
     $('#createGroup').click(function () {
         if ($('#newGroupName').val() == '') {
             alert('组名不能为空,请重新输入!');
-            return;
+        } else if ($('#target_img').attr('src') == undefined) {
+            //没有图片直接上传
+            $('#crop_form').attr('action', 'createGroup');
+            $('#crop_form').submit();
         } else {
-            var url = 'createGroup?targetX=' + $("#target_x").val() + '&targetY=' + $("#target_y").val() + '&targetW=' +
-                    $("#target_w").val() + '&targetH=' + $("#target_h").val();
             $('#currentPic').val($('#preview').attr('src').substring(9));
             $('#crop_form').submit();
         }

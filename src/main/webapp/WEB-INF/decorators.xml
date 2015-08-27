@@ -15,5 +15,6 @@
         <pattern>/createGroup</pattern>
         <pattern>/gotoCreateGroup</pattern>
         <pattern>/startOrder</pattern>
+        <pattern>/restoreTempPic</pattern>
     </decorator>
 </decorators>

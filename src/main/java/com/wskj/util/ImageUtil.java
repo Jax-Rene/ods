@@ -30,7 +30,6 @@ public class ImageUtil {
     public static void abscut(File srcImageFile, int x, int y, int destWidth,
                               int destHeight) {
         try {
-            System.out.println("开始执行");
             Image img;
             ImageFilter cropFilter;
             // 读取源图像
@@ -41,25 +40,21 @@ public class ImageUtil {
                 Image image = bi.getScaledInstance(srcWidth, srcHeight,
                         Image.SCALE_DEFAULT);
 
-               /* ****************************************
-                *  判断原图的宽高和DIV宽高的大小
-                *  若srcWidth>DIV宽，则【w=destWidth*srcWidth/420】
-                *  若srcWidth<DIV宽，则【w=destWidth】
-                *  若srcHeight>DIVœ高，则【h=destHeight*srcHeight/420】
-                *  若srcHeight<DIV高，则【h=destHeight】
-                *************************************** */
-                int x1 = x * srcWidth / 400;
-                int y1 = y * srcWidth / 400;
-                int w = destWidth * srcWidth / 400;
-                int h = destHeight * srcWidth / 400;
+                /**
+                 * 若有放大功能想考虑放大倍数
+                 * int x1 = x * srcWidth / 238;
+                 * int y1 = y * srcWidth / 238;
+                 * int w = destWidth * srcWidth / 238;
+                 * int h = destHeight * srcWidth / 238;
+                 */
 
                 // 改进的想法:是否可用多线程加快切割速度
                 // 四个参数分别为图像起点坐标和宽高
                 // 即: CropImageFilter(int x,int y,int width,int height)
-                cropFilter = new CropImageFilter(x1, y1, w, h);
+                cropFilter = new CropImageFilter(x, y, destWidth, destWidth);
                 img = Toolkit.getDefaultToolkit().createImage(
                         new FilteredImageSource(image.getSource(), cropFilter));
-                BufferedImage tag = new BufferedImage(w, h,
+                BufferedImage tag = new BufferedImage(destWidth, destWidth,
                         BufferedImage.TYPE_INT_RGB);
                 Graphics g = tag.getGraphics();
                 g.drawImage(img, 0, 0, null); // 绘制缩小后的图

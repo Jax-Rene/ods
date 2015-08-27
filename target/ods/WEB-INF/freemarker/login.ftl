@@ -15,9 +15,9 @@
         <div class="container">
             <div class="span6 offset16">
                 <form id="register" action="inputRegister" method="post">
-                    <div class="form-header">
-                        <div class="left goto-register">注册</div>
-                        <div class="right goto-login">登录<span class="x-icon xicon-info icon-circle-arrow-right"></span>
+                    <div class="form-header" style="color: white">
+                        <div class="login-left goto-register">注册</div>
+                        <div class="login-right goto-login">登录<span class="x-icon xicon-info icon-circle-arrow-right"></span>
                         </div>
                     </div>
                     <div class="register-form">
@@ -34,9 +34,9 @@
                     <button type="submit" class="button button-primary button-large" style="width: 207px">注册</button>
                 </form>
                 <form id="login" action="/inputLogin" method="post">
-                    <div class="form-header">
-                        <div class="left goto-login">登录</div>
-                        <div class="right goto-register">注册<span
+                    <div class="form-header" style="color: white">
+                        <div class="login-left goto-login">登录</div>
+                        <div class="login-right goto-register">注册<span
                                 class="x-icon xicon-info icon-circle-arrow-right"></span></div>
                     </div>
                     <div class="register-form">
@@ -55,10 +55,10 @@
                         <a href="javascript:void(0)"><img src="PictureCheckCode" id="validcheck"></a>
                     </div>
                     <div class="rem-passwd">
-                        <label class="checkbox">
+                        <label class="checkbox" style="color: white">
                             <input type="checkbox" id="autologin" name="autoLogin" value="${curUser!""}">自动登录
                         </label>
-                        <a href="javascript:void(0)" id="forgetPass" class="right">忘记密码？</a>
+                        <a href="javascript:void(0)" id="forgetPass" class="login-right">忘记密码？</a>
                     </div>
                     <br/>
                     <button type="submit" class="button button-primary button-large" style="width: 207px">登录</button>

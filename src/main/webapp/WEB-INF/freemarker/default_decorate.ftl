@@ -6,7 +6,6 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
     <script src="${absoluteContextPath}/js/bui.js"></script>
     <script src="${absoluteContextPath}/js/message.js"></script>
-    <script src="${absoluteContextPath}/js/list_member.js"></script>
     <script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
     <script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
 
@@ -20,5 +19,16 @@ ${head}
 <#include "head.ftl"/>
 ${body}
 <#include "foot.ftl"/>
+<script>
+    //搜索小组
+    $('#search').click(function () {
+        $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
+            if(data!=-1)
+                window.location.href = '/getGroupInfo?groupId=' + data;
+            else
+                alert('没有找到该组,请检查输入是否正确!');
+        });
+    });
+</script>
 </body>
 </html>

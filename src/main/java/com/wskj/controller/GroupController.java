@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -36,7 +37,11 @@ public class GroupController {
 
     @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(ModelMap model, HttpServletRequest request, HttpSession session,
-                              int targetX, int targetY, int targetW, int targetH, String currentPic,String newGroupName)
+                              @RequestParam(defaultValue = "0",required = false) Integer targetX,
+                              @RequestParam(defaultValue = "0",required = false) Integer targetY,
+                              @RequestParam(defaultValue = "0",required = false) Integer targetW,
+                              @RequestParam(defaultValue = "0",required = false) Integer targetH,
+                              String currentPic,String newGroupName)
             throws Exception {
         Group judgeName = groupService.getGroupByName("newGroupName");
         if(judgeName != null){
@@ -117,18 +122,19 @@ public class GroupController {
      * 判断搜索的小组信息,如果找到了跳转到搜索页面
      *
      * @param groupName 小组名称
-     * @param session
-     * @return 搜索的页面
+     * @return 搜索小组ID
      */
     @RequestMapping(value = "/searchGroup", method = RequestMethod.GET)
     @ResponseBody
-    public boolean searchGroup(String groupName, HttpSession session, String nickName) {
-        if (StringUtils.isBlank(groupName))
-            return false;
-        Group group = groupService.getGroupByName(groupName);
-        if (group == null)
-            return false;
-        return true;
+    public Integer searchGroup(String groupName) {
+        if(StringUtils.isEmpty(groupName)){
+            return  -1;
+        }
+        Group group = groupService.getGroupByName(groupName.trim());
+        if(group==null)
+            return -1;
+        else
+            return group.getId();
     }
 
 
@@ -147,10 +153,33 @@ public class GroupController {
             return false;
     }
 
+//
+//    @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
+//    @ResponseBody
+//    public String restoreTempPic(HttpServletRequest request) throws Exception {
+//        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+//        MultipartFile icon = multipartRequest.getFile("newGroupIcon");
+//        String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
+//        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif")))
+//            return null;
+//        //得到图片保存目录的真实路径
+//        String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/icon");
+//        File logoSaveFile = new File(logoRealPathDir);
+//        if (!logoSaveFile.exists()) {
+//            logoSaveFile.mkdir();
+//        }
+//        String logImageName = UUID.randomUUID().toString() + suffix;//构建文件名称
+//        //拼成完整的文件保存路径加文件
+//        String fileName = logoRealPathDir + File.separator + logImageName;
+//        File file = new File(fileName);
+//        //缩放图片
+//        icon.transferTo(file);
+//        ImageUtil.zoomImage(file);
+//        return logImageName;
+//    }
 
     @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
-    @ResponseBody
-    public String restoreTempPic(HttpServletRequest request) throws Exception {
+    public String restoreTempPic(String newGroupName , HttpServletRequest request,ModelMap modelMap) throws Exception {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile icon = multipartRequest.getFile("newGroupIcon");
         String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
@@ -169,7 +198,10 @@ public class GroupController {
         //缩放图片
         icon.transferTo(file);
         ImageUtil.zoomImage(file);
-        return logImageName;
+        logImageName = "img/icon/" + logImageName;
+        modelMap.addAttribute("fileSrc", logImageName);
+        modelMap.addAttribute("newGroupName",newGroupName);
+        return "create_group";
     }
 
     @RequestMapping(value = "/gotoCreateGroup", method = RequestMethod.GET)
@@ -188,6 +220,6 @@ public class GroupController {
     @RequestMapping(value = "/deleteGroup" , method = RequestMethod.POST)
     public void deleteGroup(HttpSession session,int groupId){
         User user = (User) session.getAttribute("curUser");
-        groupService.deleteGroup(groupId,user.getId());
+        groupService.deleteGroup(groupId, user.getId());
     }
 }

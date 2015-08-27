@@ -31,7 +31,10 @@ public class MessageController {
     @ResponseBody
     public int notifyMessage(HttpSession session) {
         User curUser = (User) session.getAttribute("curUser");
+        if(curUser != null)
         return messageService.getMessageUnReadNumber(curUser.getId());
+        else
+            return 0;
     }
 
     @RequestMapping(value = "/getRencentMessage")

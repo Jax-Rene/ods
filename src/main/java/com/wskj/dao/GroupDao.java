@@ -134,7 +134,7 @@ public class GroupDao {
         return userIds;
     }
 
-    public Map<String , String> getMemberIdAndName(int groupId) {
+    public Map<String, String> getMemberIdAndName(int groupId) {
         String sql = "select user_id,nick_name from ods.user_group where group_id = ?";
         return jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Map<String, String>>() {
             public Map<String, String> extractData(ResultSet rs) throws SQLException, DataAccessException {
@@ -147,15 +147,15 @@ public class GroupDao {
         });
     }
 
-    public void exitGroup(int userId,int groupId){
+    public void exitGroup(int userId, int groupId) {
         String sql = "delete from ods.user_group where user_id = ? and group_id = ?";
-        jdbcTemplate.update(sql,userId,groupId);
+        jdbcTemplate.update(sql, userId, groupId);
     }
 
-    public void deleteGroup(int groupId){
+    public void deleteGroup(int groupId) {
         String sql = "delete from ods.group where group_id = ?";
-        jdbcTemplate.update(sql,groupId);
+        jdbcTemplate.update(sql, groupId);
         sql = "delete from ods.user_group where group_id = ?";
-        jdbcTemplate.update(sql,groupId);
+        jdbcTemplate.update(sql, groupId);
     }
 }

@@ -185,6 +185,7 @@
 }
 
 .my-group:hover {
+
     font-size: 28px;
     width: 240px;
     height: 30px;
@@ -494,20 +495,20 @@ footer ul li {
 
 }
 
-.left {
+.login-left {
     float: left;
 }
 
-.right {
+.login-right {
     float: right;
     margin-right: 20px;
 }
 
 
 #index-banner {
-    height: 400px;
+    height: 100%;
     background: #e8edf1 center center no-repeat;
-    /*background: url(../../img/index2.jpg) center center no-repeat;*/
+    background: url(../img/login-index.jpg) center center no-repeat;
 }
 
 #index-banner button {
@@ -516,12 +517,12 @@ footer ul li {
 
 #register {
     display: block;
-    padding-top: 50px;
+    padding-top:170px;
 }
 
 #login {
     display: none;
-    padding-top: 50px;
+    padding-top: 170px;
 }
 
 .goto-login {

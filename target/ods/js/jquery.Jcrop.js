@@ -1528,6 +1528,7 @@
         //}}}
         function setImage(src, callback) //{{{
         {
+            debugger;
             Selection.release();
             disableCrop();
             var img = new Image();

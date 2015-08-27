@@ -7,8 +7,6 @@ $(document).ready(function () {
     var memberId = [];
 
 
-
-
     $('#addmember').click(function () {
         var url = 'inviteMember?memberName=' + $('#membername').val() + '&groupId=' + $('#groupid').val();
         $.get(url, function (data) {
@@ -274,12 +272,13 @@ $(document).ready(function () {
         });
     }
 
-    $.get('getMemberIdAndName?groupId=' + $('#groupid').val(), function (data) {
-        $.each(data, function (key, value) {
-            member[key] = value;
-        });
-        showCurrentOrder();
-    });
+    //统计
+    //$.get('getMemberIdAndName?groupId=' + $('#groupid').val(), function (data) {
+    //    $.each(data, function (key, value) {
+    //        member[key] = value;
+    //    });
+    //    showCurrentOrder();
+    //});
 
 
     //加入小组
