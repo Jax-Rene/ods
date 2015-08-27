@@ -39,23 +39,24 @@
     </style>
 </head>
 <body>
-<div id="group" style='padding-top: 50px;font-family: "微软雅黑", "Yuppy TC Regular", "幼圆", "黑体";font-size: 16px'>
+<div id="group" style='padding-top: 50px;font-family: "微软雅黑", "Yuppy TC Regular", "幼圆", "黑体";font-size: 16px;height:300px'>
     <form id="crop_form" action="createGroup" method="post" enctype="multipart/form-data">
         <input type="hidden" id="target_x" name="targetX" value=""/>
         <input type="hidden" id="target_y" name="targetY" value=""/>
         <input type="hidden" id="target_w" name="targetW" value=""/>
         <input type="hidden" id="target_h" name="targetH" value=""/>
 
-        <div style='text-align: center'>
+        <div class="offset11" style="width: 30%;line-height: 50px">
             小组名称：<input type="text" name="newGroupName" id="newGroupName" class="input-normal"
                         value="${newGroupName!""}"/>
             <span style="color: red">${newGroupError !""}</span>
+            <span>小组头像(可选)<input type="file" name="newGroupIcon" style="width: 270px" id="newGroupIcon"/></span>
+            <input type="button" id="createGroup" class="button button-primary button-middle" value="确认提交"/>
         </div>
-        小组头像(可选)<input type="file" name="newGroupIcon" id="newGroupIcon"/>
         <input type="hidden" name="currentPic" id="currentPic"/>
 
     <#if fileSrc?exists>
-        <div id='upimg'>
+        <div id='upimg' class="offset8">
             <img id="target_img" src="${fileSrc!""}"/>
 
             <div id="preview-pane">
@@ -65,7 +66,6 @@
             </div>
         </div>
     </#if>
-        <input type="button" id="createGroup" class="button button-primary button-middle" value="确认提交"/>
     </form>
 </div>
 
