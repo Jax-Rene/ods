@@ -3,7 +3,7 @@
     padding: 0px;
     height:50px;
 }
-
+nav {height:50px;}
 .navbar {
     /*background-color: #222;*/
     background-color: #A57F59;
@@ -564,4 +564,56 @@ footer ul li {
     content: '';
     clear: both;
     display: block;
+}
+#searchGroup {
+    /*background: url(search-white.png) no-repeat 10px 6px #444;*/
+    max-width: 150px;
+    height: 10px;
+    border: 0 none; font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #d7d7d7; width:100px; padding: 5px 0px 5px 20px;
+    -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -webkit-transition: all 0.7s ease 0s; -moz-transition:all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s; transition: all 0.7s ease 0s;
+}
+#searchGroup:hover {
+    /*background: url(search-dark.png) no-repeat 10px 6px #fcfcfc;*/
+    color: #6a6f75; width: 150px;
+}
+.group-avater-wrapper {
+    margin:0 auto;
+    width:50%;
+}
+.group-avater-wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.group-avater {
+    float: left;
+    width:200px;
+    padding:30px;
+    margin-right:30px;
+    border-right:2px solid #ddd;
+}
+.group-header {
+    font-size: 28px;
+}
+#member {
+    margin-left: 50%;
+    height: 260px;
+}
+.search-results {
+    text-align: center;
+}
+.new-order div {
+    margin:10px auto;
+}
+.new-order-time {
+    margin-left:150px;
+}
+.new-order-remark {
+    margin-left: 120px;
 }

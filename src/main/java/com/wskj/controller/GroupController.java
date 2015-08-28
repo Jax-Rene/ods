@@ -153,7 +153,7 @@ public class GroupController {
             return false;
     }
 
-//
+
 //    @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
 //    @ResponseBody
 //    public String restoreTempPic(HttpServletRequest request) throws Exception {
@@ -218,6 +218,7 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/deleteGroup" , method = RequestMethod.POST)
+    @ResponseBody
     public void deleteGroup(HttpSession session,int groupId){
         User user = (User) session.getAttribute("curUser");
         groupService.deleteGroup(groupId, user.getId());

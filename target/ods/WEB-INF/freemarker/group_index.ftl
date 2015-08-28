@@ -21,12 +21,13 @@
 </form>
 </div>
 
-<div>
-    <div style="width: 50%;">
-        <img src="${absoluteContextPath}/img/icon/${group.groupIcon}" style="width:200px;height:200px;border-radius:125px;"/>
+<div class="group-avater-wrapper">
+    <div class="group-avater">
+        <img src="${absoluteContextPath}/img/icon/${group.groupIcon}"
+             style="width:200px;height:200px;border-radius:125px;"/>
     </div>
     <div id="members" style="font-family: '微软雅黑', 'Yuppy TC Regular', '幼圆', '黑体';width 50%">
-        <h2>小组成员</h2>
+        <div class="group-header">小组成员</div>
     <#list members?keys as memId>
         <a href="${memId}">${members[memId]}</a>
     </#list>
@@ -45,18 +46,29 @@
 <#if boss?exists>
 <input type="hidden" id="boss" value="true"/>
 <hr/>
-<div>
-    <h2>发布新的订单</h2>
+<div class="new-order container">
+    <h1>发布新的订单</h1>
 
     <form id="order">
-        订餐网站URL:<input type="text" id="orderurl" name="orderUrl" class="input-normal"/>
-        订餐消息备注:<input type="text" id="ordermark" name="orderMark" class="input-normal"/>
-        订餐类型:<input type="radio" name="ordertype" checked="true" class="radio"/>早餐
-        <input type="radio" name="ordertype" class="radio"/>午餐
-        <input type="radio" name="ordertype" class="radio"/>晚餐
-        <input type="radio" name="ordertype" class="radio"/>其他
-        下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
-        <input type="submit" value="提交" class="button button-primary"/>
+        <div>
+            <span>
+               订餐网站URL:<input type="text" id="orderurl" name="orderUrl" class="input-normal"/>
+            </span>
+            <span class="new-order-remark">
+               订餐消息备注:<input type="text" id="ordermark" name="orderMark" class="input-normal"/>
+            </span>
+        </div>
+        <div>
+            订餐类型:<input type="radio" name="ordertype" checked="true" class="radio"/>早餐
+            <input type="radio" name="ordertype" class="radio"/>午餐
+            <input type="radio" name="ordertype" class="radio"/>晚餐
+            <input type="radio" name="ordertype" class="radio"/>其他
+            <span class="new-order-time">
+                下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
+                <input type="submit" value="提交" class="button button-primary"/>
+            </span>
+        </div>
+
     </form>
 </div>
 </#if>

@@ -21,14 +21,26 @@ ${body}
 <#include "foot.ftl"/>
 <script>
     //搜索小组
-    $('#search').click(function () {
-        $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
-            if(data!=-1)
-                window.location.href = '/getGroupInfo?groupId=' + data;
-            else
-                alert('没有找到该组,请检查输入是否正确!');
-        });
-    });
+//    $('#search').click(function () {
+//        $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
+//            if(data!=-1)
+//                window.location.href = '/getGroupInfo?groupId=' + data;
+//            else
+//                alert('没有找到该组,请检查输入是否正确!');
+//        });
+//    });
+    $('#searchGroup').hover(function () {
+        $('#searchGroup').keydown(function (event) {
+            if(event.keyCode==13) {
+                $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
+                    if(data!=-1)
+                        window.location.href = '/getGroupInfo?groupId=' + data;
+                    else
+                        alert('没有找到该组,请检查输入是否正确!');
+                });
+            }
+        })
+    })
 </script>
 </body>
 </html>

@@ -23,7 +23,7 @@ $(document).ready(function () {
     for (len = obj.length, i = len; i--;) {
         obj[i].className = "color" + rand(5);
         obj[i].style.zIndex = rand(5);
-        obj[i].style.fontSize = rand(35) + 12 + "px";
+        obj[i].style.fontSize = rand(20) + 10 + "px";
         // obj[i].style.background="#"+randomcolor();
         obj[i].style.color = "#" + randomcolor();
         obj[i].onmouseover = function () {
