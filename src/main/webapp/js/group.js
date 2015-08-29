@@ -239,7 +239,6 @@ $(document).ready(function () {
             function addFunction() {
                 var newData = {};
                 store.addAt(newData, 0);
-                debugger;
                 editing.edit(newData, 'userId'); //添加记录后，直接编辑
             }
 
@@ -250,7 +249,7 @@ $(document).ready(function () {
                     for (var i = 0; i < selections.length; i++) {
                         $.post('deletePersonOrder', {
                             id: selections[i].id,
-                            userId: selections[i].userId,
+                            targetUserId: selections[i].userId,
                             orderId: selections[i].orderId
                         }, function (data) {
                             if (data == false) {
@@ -276,10 +275,13 @@ $(document).ready(function () {
     //统计结果
     $('#getDetail').click(function () {
         $.get('currentOrderCount?groupId=' + $('#groupid').val(), function (data) {
+            $('#total-count').empty();
             $.each(data, function (key, value) {
-                var text = $('#total-count').text();
-                $('#total-count').html("<p>" + text + key + "* " + value + "</p>");
+                debugger;
+                var text = $('#total-count').html();
+                $('#total-count').html(text + "<p>" + key + "* " + value + "</p>");
             });
+            $('#total-count').slideToggle();
         });
     });
 

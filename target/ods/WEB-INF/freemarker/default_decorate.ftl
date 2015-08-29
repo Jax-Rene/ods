@@ -7,7 +7,7 @@
     <script src="${absoluteContextPath}/js/bui.js"></script>
     <script src="${absoluteContextPath}/js/message.js"></script>
     <script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
-    <script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+    <#--<script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>-->
 
     <link rel="stylesheet" type="text/css" href="${absoluteContextPath}/css/ods.css">
     <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
@@ -31,6 +31,7 @@ ${body}
 //    });
     $('#searchGroup').hover(function () {
         $('#searchGroup').keydown(function (event) {
+            data = -1;
             if(event.keyCode==13) {
                 $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
                     if(data!=-1)
@@ -39,7 +40,7 @@ ${body}
                         alert('没有找到该组,请检查输入是否正确!');
                 });
             }
-        })
+        });
     })
 </script>
 </body>

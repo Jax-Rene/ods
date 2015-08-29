@@ -8,14 +8,10 @@ $.get(url, function (data, status) {
         allGroup = obj.allGroup;
         allBossName = obj.allBossName;
         setPictureWall();
+        myGroup = obj.myGroup;
+        
     }
 });
 
-
-
-
-    $('#createGroup').click(function () {
-        $('#toggleCreateGroup').fadeToggle();
-    });
 
 });
