@@ -73,7 +73,7 @@ function setPictureWall() {
             for (var i = current; (i < (current + col_num * row_num) && (i < groupNum)); i++) {
                 var content =
                     '<div class="img-cell">'
-                    + '<div class="cover">' + '</div>'
+                        //+ '<div class="cover">' + '</div>'
                     + '<img src="img/icon/' + allGroup[i].groupIcon + '"/>'
                     + '<div class="img-details">'
                     + '<div class="text-details">'
@@ -107,7 +107,7 @@ function setPictureWall() {
         for (var i = current; i < (current + (row_num * col_num)); i++) {
             var content =
                 '<div class="img-cell">'
-                + '<div class="cover">' + '</div>'
+                    //+ '<div class="cover">' + '</div>'
                 + '<img src="img/icon/' + allGroup[i].groupIcon + '"/>'
                 + '<div class="img-details">'
                 + '<div class="text-details">'
@@ -116,7 +116,7 @@ function setPictureWall() {
                 + '</div>'
                 + '</div>'
                 + '</div>';
-            $('.img-table').append(content);
+            $('.img-table').append(content);s
         }
         current = i;
     });
