@@ -9,7 +9,6 @@ import com.wskj.dao.UserDao;
 import com.wskj.domain.Group;
 import com.wskj.domain.Order;
 import com.wskj.domain.PersonOrder;
-import com.wskj.domain.User;
 import com.wskj.util.GetTime;
 import com.wskj.util.SimpleMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +16,8 @@ import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -171,10 +167,11 @@ public class OrderService {
             String name = t.getOrderName();
             for (String n : orderNames) {
                 if (n.indexOf(name) != -1) {
-
-                    map.put(n, (Integer) map.get(n) + t.getOrderNumber());
-                } else
-                    map.put(n, 1);
+                    if(map.containsKey(n)){
+                        map.put(n, (Integer) map.get(n) + t.getOrderNumber());
+                    }else
+                        map.put(n,t.getOrderNumber());
+                }
             }
         }
         return map;

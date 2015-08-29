@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -116,7 +117,8 @@ public class OrderController {
     @RequestMapping(value = "/currentOrder", method = RequestMethod.GET)
     @ResponseBody
     public List<PersonOrder> currentOrder(int groupId) {
-        return orderService.currentOrder(groupId);
+        List<PersonOrder> currentOrder = orderService.currentOrder(groupId);
+        return currentOrder==null?new ArrayList<PersonOrder>():currentOrder;
     }
 
 

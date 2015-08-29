@@ -83,6 +83,12 @@ public class GroupController {
         return "group_index";
     }
 
+    @RequestMapping(value = "/getMemberIdAndName",method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String,String> getMemberIdAndName(int groupId){
+        return groupService.getMemberIdAndName(groupId);
+    }
+
 
     @RequestMapping(value = "/changeNickName", method = RequestMethod.GET)
     @ResponseBody

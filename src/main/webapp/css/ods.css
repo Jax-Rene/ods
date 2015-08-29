@@ -593,13 +593,14 @@ footer ul li {
 }
 .group-avater {
     float: left;
-    width:200px;
+    width:245px;
     padding:30px;
     margin-right:30px;
     border-right:2px solid #ddd;
 }
 .group-header {
-    font-size: 28px;
+    text-align: center;
+    font-size: 24px;
 }
 #member {
     margin-left: 50%;

@@ -22,16 +22,15 @@ public class LoginFilter extends OncePerRequestFilter {
     UserDao userDao = (UserDao) ctx.getBean("userDao");
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String uri = request.getRequestURI(); // 获取URI
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {String uri = request.getRequestURI(); // 获取URI
         //设置不过滤的URI
-        String[] unFilter = {"/", "/gotoLogin", "redirect_index.jsp", "/inputLogin", "/gotoRegister",
+        String[] unFilter = {"/gotoLogin", "redirect_index.jsp", "/inputLogin", "/gotoRegister",
                 "/inputRegister", "/activateAccount", "/PictureCheckCode", "/forgetPassword",
                 "/findPassword", "/gotoResetPassword", "/resetPassWord", "/js/", "/img/", "/css/"
         };
         boolean flag = true; //判断是否过滤
         for (String s : unFilter) {
-            if (uri.indexOf(s) != -1) {
+            if (uri.indexOf(s) != -1 || uri.equals("/")) {
                 flag = false;
                 break;
             }

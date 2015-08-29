@@ -6,7 +6,6 @@ import com.wskj.dao.GroupDao;
 import com.wskj.dao.MessageDao;
 import com.wskj.domain.Group;
 import com.wskj.util.ImageRunnable;
-import com.wskj.util.ImageUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -157,4 +156,6 @@ public class GroupService {
         //组长的消息和别人不一样
         messageDao.createMessage(userId,"您已经离开了" + groupName,0);
     }
+
+
 }
