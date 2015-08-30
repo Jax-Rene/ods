@@ -60,7 +60,7 @@
             <input type="radio" name="ordertype" class="radio"/>午餐
             <input type="radio" name="ordertype" class="radio"/>晚餐
             <input type="radio" name="ordertype" class="radio"/>其他
-            下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
+            截止时间:<input type="text" id="orderend" class="calendar calendar-time"/>
             <input type="submit" value="提交" class="button button-primary"/>
         </div>
     </form>
@@ -71,10 +71,9 @@
 <div id="group-orders" class="container">
     <div class="today-order">
         <h1>当前订单</h1>
-
         <div id="today-order"></div>
-        <a href="javascript:void(0)" id="getDetail">查看详情</a>
-        <span id="total-count"></span>
+        <a href="javascript:void(0)" id="getDetail">统计详情</a>
+        <div id="total-count" class="show-count-result"></div>
     </div>
     <hr/>
 
