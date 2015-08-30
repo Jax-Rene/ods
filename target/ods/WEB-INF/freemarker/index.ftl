@@ -46,12 +46,11 @@
         <div id="my_groups">
             <div class="my-groups span8 offset14">
                 <h1>我的小组</h1>
-
-                <div class="my-group"><a href="#">我的第1个小组</a></div>
-                <div class="my-group"><a href="#">我的第2个小组</a></div>
-                <div class="my-group"><a href="#">我的第3个小组</a></div>
-                <div class="my-group"><a href="#">我的第4个小组</a></div>
-                <div class="my-group"><a href="#">我的第5个小组</a></div>
+                <div class="my-groups-content">
+                    <div class="next"><img src="/img/right.png"></div>
+                    <div class="pre"><img src="/img/left.png"></div>
+                    <div class="page">
+                </div>
             </div>
         </div>
     </div>
