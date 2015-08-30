@@ -60,7 +60,7 @@
             <input type="radio" name="ordertype" class="radio"/>午餐
             <input type="radio" name="ordertype" class="radio"/>晚餐
             <input type="radio" name="ordertype" class="radio"/>其他
-            下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
+            截止时间:<input type="text" id="orderend" class="calendar calendar-time"/>
             <input type="submit" value="提交" class="button button-primary"/>
         </div>
     </form>

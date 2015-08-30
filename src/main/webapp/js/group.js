@@ -319,7 +319,6 @@ $(document).ready(function () {
             $.post('deleteGroup', {
                 groupId: $('#groupid').val()
             }, function () {
-                alert($('#groupid').val());
                 alert('解散小组成功,即将为您跳转到首页...');
                 window.location.href = "/gotoIndex";
             });

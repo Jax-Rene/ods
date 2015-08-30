@@ -189,8 +189,11 @@ public class GroupController {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile icon = multipartRequest.getFile("newGroupIcon");
         String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
-        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif")))
-            return null;
+        suffix = suffix.toLowerCase();
+        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif"))){
+            modelMap.put("fileError","上传文件格式不正确,目前只支持jpg,png,gif图片");
+            return "create_group";
+        }
         //得到图片保存目录的真实路径
         String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/icon");
         File logoSaveFile = new File(logoRealPathDir);

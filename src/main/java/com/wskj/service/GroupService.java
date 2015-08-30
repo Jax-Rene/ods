@@ -4,7 +4,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.wskj.dao.GroupDao;
 import com.wskj.dao.MessageDao;
+import com.wskj.dao.OrderDao;
 import com.wskj.domain.Group;
+import com.wskj.domain.PersonOrder;
 import com.wskj.util.ImageRunnable;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class GroupService {
     private GroupDao groupDao;
     @Autowired
     private MessageDao messageDao;
+    @Autowired
+    private OrderDao orderDao;
+
 
     public Group getGroupByName(String groupName) {
         return groupDao.getGroupByName(groupName);
@@ -114,6 +119,7 @@ public class GroupService {
     public Map<String, Object> getIndexGroupInformation(int userId) {
         List<Group> myGroup = groupDao.getMyGroup(userId);
         List<Group> allGroup = groupDao.getAllGroup();
+        PersonOrder lastOrder = orderDao.getMyLastOrder(userId);
         Map<String, Object> map = Maps.newHashMap();
         List<String> myGroupBossName = Lists.newArrayList();
         List<String> allGroupBossName = Lists.newArrayList();
@@ -125,6 +131,7 @@ public class GroupService {
         map.put("allBossName", allGroupBossName);
         map.put("myGroup", myGroup);
         map.put("allGroup", allGroup);
+        map.put("lastOrder",lastOrder);
         return map;
     }
 
@@ -133,7 +140,7 @@ public class GroupService {
         return groupDao.getMemberIdAndName(groupId);
     }
 
-    public boolean exitGroup(int groupId,int userId){
+    public boolean exitGroup(int userId,int groupId){
         String nickName = groupDao.getNickName(userId,groupId);
         groupDao.exitGroup(userId,groupId);
         //通知组长

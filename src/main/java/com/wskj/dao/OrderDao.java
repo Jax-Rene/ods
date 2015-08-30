@@ -54,8 +54,8 @@ public class OrderDao {
         String sql = "select order_id from ods.order where order_group=? order by order_id desc";
         return jdbcTemplate.query(sql, new Object[]{groupId}, new ResultSetExtractor<Integer>() {
             public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {
-                if(rs.next())
-                 return rs.getInt("order_id");
+                if (rs.next())
+                    return rs.getInt("order_id");
                 else
                     return -1;
             }
@@ -145,7 +145,7 @@ public class OrderDao {
     public List<PersonOrder> getLastOrder(int groupId) {
         int orderId = getLastOrderId(groupId);
         //没有订单
-        if(orderId == -1)
+        if (orderId == -1)
             return null;
         Order order = getOrder(orderId);
         if (order.getOrderEnd().getTime() > System.currentTimeMillis()) {
@@ -191,6 +191,41 @@ public class OrderDao {
         String sql = "delete from ods.order_user where id=?";
         jdbcTemplate.update(sql, id);
         return;
+    }
+
+    public PersonOrder getMyLastOrder(int userId) {
+        String sql = "select ods.order.order_id from ods.order left join ods.order_user on ods.order.order_id = ods.order_user.order_id and user_id=? order by order_time desc";
+        Integer orderId = jdbcTemplate.query(sql, new Object[]{userId}, new ResultSetExtractor<Integer>() {
+            public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {
+                if (rs.next())
+                    return rs.getInt("order_id");
+                else
+                    return null;
+            }
+        });
+        if (orderId == null)
+            return null;
+        else
+            return getPersonOrder(orderId, userId);
+    }
+
+    public PersonOrder getPersonOrder(int orderId, int userId) {
+        String sql = "select * from ods.order_user where order_id=? and user_id=?";
+        return jdbcTemplate.query(sql, new Object[]{orderId, userId}, new ResultSetExtractor<PersonOrder>(){
+            public PersonOrder extractData(ResultSet rs) throws SQLException, DataAccessException {
+                if(rs.next()){
+                    PersonOrder personOrder = new PersonOrder();
+                    personOrder.setId(rs.getInt("id"));
+                    personOrder.setOrderId(rs.getInt("order_id"));
+                    personOrder.setUserId(rs.getInt("user_id"));
+                    personOrder.setOrderName(rs.getString("order_name"));
+                    personOrder.setOrderNumber(rs.getInt("order_number"));
+                    personOrder.setOrderPrice(rs.getDouble("order_price"));
+                    return personOrder;
+                }else
+                    return null;
+            }
+        });
     }
 
 
