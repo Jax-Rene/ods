@@ -220,6 +220,7 @@ public class OrderService {
         if (personOrder.getOrderId() == 0) {
             personOrder.setOrderId(orderDao.getLastOrderId(groupId));
         }
+        String nickName = groupDao.getNickName(userId,groupId);
         Order order = orderDao.getOrder(personOrder.getOrderId());
         int bossId = groupDao.getBossId(order.getOrderGroup());
         //只能创建自己的订单
@@ -228,6 +229,7 @@ public class OrderService {
         } else {
             //删除订单名存在的空格
             personOrder.setOrderName(personOrder.getOrderName().trim());
+            personOrder.setNickName(nickName);
             //获取目标用户的userId
             orderDao.insertPersonOrder(personOrder);
             return true;

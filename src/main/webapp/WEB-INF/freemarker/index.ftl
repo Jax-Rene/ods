@@ -15,7 +15,8 @@
                 <div class="order-header">
                     <div class="order-details">
                         <h1>今日订单</h1>
-                        <div class="order-content"></div>
+                        <div class="order-content">
+                        </div>
 						<span>
 								<div class="triangle"></div>
 								<div class="triangle"></div>
