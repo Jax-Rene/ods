@@ -1,14 +1,11 @@
 package com.wskj.controller;
 
-import com.wskj.dao.MessageDao;
 import com.wskj.domain.Group;
 import com.wskj.domain.Message;
 import com.wskj.domain.User;
 import com.wskj.service.GroupService;
 import com.wskj.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -46,12 +43,12 @@ public class MessageController {
 
     @RequestMapping(value = "/acceptJoin", method = RequestMethod.GET)
     @ResponseBody
-    public boolean acceptJohn(HttpSession session, int groupId, String nickName, int messageId) {
+    public boolean acceptJohn(HttpSession session, int groupId, int messageId) {
         User user = (User) session.getAttribute("curUser");
-        groupService.joinGroup(user.getId(), groupId, nickName);
+        groupService.joinGroup(user.getId(), groupId, user.getUserName());
         messageService.setMessageResult(messageId, 1);
         Group group = groupService.getGroupById(groupId);
-        messageService.createMessage(group.getGroupBossId(), nickName + "已经加入" + group.getGroupName() + "了", 0);
+        messageService.createMessage(group.getGroupBossId(), user.getUserName() + "已经加入" + group.getGroupName() + "了", 0);
         return true;
     }
 

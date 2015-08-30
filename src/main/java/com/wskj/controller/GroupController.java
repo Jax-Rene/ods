@@ -105,7 +105,7 @@ public class GroupController {
      * @param session
      * @return 2 - 不存在的用户 1 - 已经在组内 0 - 成功
      */
-    @RequestMapping(value = "/inviteMember", method = RequestMethod.GET)
+    @RequestMapping(value = "/inviteMember", method = RequestMethod.POST)
     @ResponseBody
     public Integer inviteMember(String memberName, int groupId, HttpSession session) {
         User curUser = (User) session.getAttribute("curUser");

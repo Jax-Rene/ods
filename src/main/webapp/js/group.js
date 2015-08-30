@@ -324,4 +324,24 @@ $(document).ready(function () {
             });
         }
     });
+
+    //邀请成员
+    $('#inviteMember').click(function () {
+        var userName = prompt('请输入您要邀请人的用户名');
+        if (userName == '')
+            alert('邀请人不能为空');
+        else
+            $.post('inviteMember', {
+                memberName: userName,
+                groupId: $('#groupid').val()
+            }, function (data) {
+                if (data == 2) {
+                    alert('不存在该用户请检查输入是否正确!');
+                } else if (data == 1) {
+                    alert('该成员已经在小组中请勿重新邀请!');
+                } else {
+                    alert('邀请成功,请等待对方操作!');
+                }
+            });
+    });
 });
