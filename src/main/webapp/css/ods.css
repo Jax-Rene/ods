@@ -275,7 +275,7 @@ footer ul li {
     position: absolute;
     top: 60px;
     left:-120px;
-    width: 360px;
+    width: 370px;
     display: none;
     z-index: 1000;
 }
@@ -519,12 +519,12 @@ footer ul li {
 }
 
 #register {
-    display: block;
+    display: none;
     padding-top:170px;
 }
 
 #login {
-    display: none;
+    display: block;
     padding-top: 170px;
 }
 

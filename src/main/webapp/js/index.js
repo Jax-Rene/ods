@@ -8,6 +8,13 @@ $.get(url, function (data, status) {
         allGroup = obj.allGroup;
         allBossName = obj.allBossName;
         setPictureWall();
+        console.log(obj.lastOrder);
+        console.log(obj.myGroup);
+
+        lastOrder = obj.lastOrder;
+        myGroup = obj.myGroup;
+
+
     }
 });
 

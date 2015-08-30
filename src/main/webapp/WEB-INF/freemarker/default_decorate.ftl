@@ -29,16 +29,21 @@ ${body}
 //                alert('没有找到该组,请检查输入是否正确!');
 //        });
 //    });
+    data = -1;
     $('#searchGroup').hover(function () {
         $('#searchGroup').keydown(function (event) {
-            data = -1;
             if(event.keyCode==13) {
-                $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
-                    if(data!=-1)
-                        window.location.href = '/getGroupInfo?groupId=' + data;
-                    else
-                        alert('没有找到该组,请检查输入是否正确!');
-                });
+                var isFocus=$("#searchGroup").is(":focus");
+                if(isFocus) {
+                    $.get('searchGroup?groupName=' + $('#searchGroup').val(), function (data) {
+                        if (data > 0)
+                            window.location.href = '/getGroupInfo?groupId=' + data;
+                        else if (data == -1) {
+                            alert('没有找到该组,请检查输入是否正确!');
+                            data = -2;
+                        }
+                    });
+                }
             }
         });
     })
