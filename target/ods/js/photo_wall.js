@@ -88,8 +88,8 @@ function setPictureWall() {
             }
         }
         current = i;
-        if (current > 0)    $('.pre').css("display", "block");
-        if (current == groupNum) $('.next').css("display", "none");
+        if (cur_page > 0)    $('.pre').css("display", "block");
+        if (cur_page == page_num - 1) $('.next').css("display", "none");
     });
 
     /*previous page event listener*/
@@ -101,7 +101,7 @@ function setPictureWall() {
             $(page_circle[cur_page]).addClass('circle');
         }
         current = cur_page * (row_num * col_num);
-        if (current == 0) $('.pre').css("display", "none");
+        if (cur_page == 0) $('.pre').css("display", "none");
         if (cur_page < (page_num - 1)) $('.next').css("display", "block");
         $('.img-cell').remove();
         for (var i = current; i < (current + (row_num * col_num)); i++) {

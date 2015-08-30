@@ -28,6 +28,7 @@
     </div>
     <div id="members" style="font-family: '微软雅黑', 'Yuppy TC Regular', '幼圆', '黑体';width 50%">
         <div class="group-header">小组成员</div>
+        <br/>
     <#list members?keys as memId>
         <a href="${memId}">${members[memId]}</a>
     </#list>
@@ -46,29 +47,22 @@
 <#if boss?exists>
 <input type="hidden" id="boss" value="true"/>
 <hr/>
-<div class="new-order container">
+<div class="new-order container" style="height:100px">
     <h1>发布新的订单</h1>
 
     <form id="order">
-        <div>
-            <span>
-               订餐网站URL:<input type="text" id="orderurl" name="orderUrl" class="input-normal"/>
-            </span>
-            <span class="new-order-remark">
-               订餐消息备注:<input type="text" id="ordermark" name="orderMark" class="input-normal"/>
-            </span>
+        <div style="text-align:center">
+            订餐网站URL:<input type="text" id="orderurl" name="orderUrl" class="input-normal"/>
+            订餐消息备注:<input type="text" id="ordermark" name="orderMark" class="input-normal"/>
         </div>
-        <div>
+        <div style="text-align:center">
             订餐类型:<input type="radio" name="ordertype" checked="true" class="radio"/>早餐
             <input type="radio" name="ordertype" class="radio"/>午餐
             <input type="radio" name="ordertype" class="radio"/>晚餐
             <input type="radio" name="ordertype" class="radio"/>其他
-            <span class="new-order-time">
-                下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
-                <input type="submit" value="提交" class="button button-primary"/>
-            </span>
+            下单时间:<input type="text" id="orderend" class="calendar calendar-time"/>
+            <input type="submit" value="提交" class="button button-primary"/>
         </div>
-
     </form>
 </div>
 </#if>
@@ -76,9 +70,10 @@
 
 <div id="group-orders" class="container">
     <div class="today-order">
-        <h1>今日订单</h1>
+        <h1>当前订单</h1>
 
         <div id="today-order"></div>
+        <a href="javascript:void(0)" id="getDetail">查看详情</a>
         <span id="total-count"></span>
     </div>
     <hr/>

@@ -30,6 +30,7 @@ ${body}
 //        });
 //    });
     $('#searchGroup').hover(function () {
+
         $('#searchGroup').keydown(function (event) {
             data = -1;
             if(event.keyCode==13) {
@@ -37,7 +38,10 @@ ${body}
                     if(data!=-1)
                         window.location.href = '/getGroupInfo?groupId=' + data;
                     else
+                    {
                         alert('没有找到该组,请检查输入是否正确!');
+                        $('#banner').hover();
+                    }
                 });
             }
         });
