@@ -186,13 +186,59 @@ nav {height:50px;}
     text-decoration: none;
     color: #fff;
 }
-
+.my-groups-content {position:relative;}
 .my-group:hover {
 
     font-size: 28px;
     width: 240px;
     height: 30px;
     line-height: 30px;
+}
+.my-groups-content .pre {
+    position: absolute;
+    width: 4%;
+    height: 100%;
+    left: 0px;
+    background: #000;
+    z-index: 100;
+    display: none;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.my-groups-content .pre img {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 100%;
+}
+
+.my-groups-content .pre:hover div {
+    color: #000;
+}
+
+.my-groups-content .next {
+    position: absolute;
+    width: 4%;
+    height: 100%;
+    right: 0px;
+    background: #000;
+    z-index: 100;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.my-groups-content .next img {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 100%;
+}
+
+.my-groups-content .next:hover div {
+    color: #000;
 }
 
 .groups-header h1 {
@@ -478,6 +524,20 @@ footer ul li {
     display: inline-block;
     border: 2px solid #fd972c;
 }
+.my-groups-content .ring {
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.my-groups-content .circle {
+    background: #fff;
+    display: inline-block;
+    border: 2px solid #fff;
+}
 
 .diamond {
     width: 10px;
@@ -519,12 +579,12 @@ footer ul li {
 }
 
 #register {
-    display: block;
+    display: none;
     padding-top:170px;
 }
 
 #login {
-    display: none;
+    display: block;
     padding-top: 170px;
 }
 
