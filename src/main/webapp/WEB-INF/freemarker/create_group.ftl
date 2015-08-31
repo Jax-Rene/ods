@@ -54,7 +54,7 @@
                 <span style="color: red">${newGroupError !""}</span>
             </div>
             <div>
-            <span>小组头像(可选)<input type="file" name="newGroupIcon" style="width: 70px" id="newGroupIcon"/></span>
+            <span>小组头像(可选)<input type="file" name="newGroupIcon" style="width: 80px" id="newGroupIcon"/></span>
             <input type="button" id="createGroup" class="button button-primary button-middle" value="确认提交"/>
             </div>
             <div>

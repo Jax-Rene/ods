@@ -41,7 +41,7 @@ $(document).ready(function () {
                         var messageId = val.messageId;
                         var hrefval1 = "acceptJoin?groupId=" + groupId + "&messageId=" + messageId;
                         var hrefval2 = "refuseJoin?groupId=" + groupId + "&messageId=" + messageId;
-                        td = $("<td><a href='/" + hrefval1 + "'>接受</a> &nbsp; <a href='/" + hrefval2 + "'>拒绝</a></td>");
+                        td = $("<td><a href='/" + hrefval1 + "'><font color='#5cb85c'>接受</font></a> &nbsp; <a href='/" + hrefval2 + "'><font color='#d9534f'>拒绝</font></a></td>");
                     }
                     td.appendTo(tr2);
                 } else if (val.messageType == 2) { //类型为请求
@@ -70,16 +70,13 @@ $(document).ready(function () {
     $('.message-show').on("click" , "a" ,function(){
         //判断是接受的还是拒绝的
         var url = $(this).attr('href');
-        if(url.indexOf('acceptJoin') == 0) { //这个方法必须要有昵称
-            var name = prompt('请输入您要在该组中显示的昵称', '');
-            if(name != ''){
-                url += '&nickName=' + name;
+        debugger;
+        if(url.indexOf('acceptJoin') == 1) {
                 $.get(url, function (data) {
                     if(data==true){
                         alert('恭喜您,加入小组成功!');
                     }
                 });
-            }
         }else{
             $.get(url, function (data) {
                 if(data==true){

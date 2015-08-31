@@ -172,11 +172,11 @@ public class OrderDao {
      */
 
     public void insertPersonOrder(PersonOrder order) {
-        String sql = "insert into ods.order_user(order_id,user_id,order_name,order_number,order_price) values(?,?,?,?,?)";
+        String sql = "insert into ods.order_user(order_id,user_id,order_name,order_number,order_price,nick_name) values(?,?,?,?,?,?)";
         //更新总表的价格
         updateOrderPrice(order.getOrderId(), 0, order.getOrderPrice());
         jdbcTemplate.update(sql, order.getOrderId(), order.getUserId(), order.getOrderName(), order.getOrderNumber(), order.
-                getOrderPrice());
+                getOrderPrice(),order.getNickName());
         return;
     }
 
