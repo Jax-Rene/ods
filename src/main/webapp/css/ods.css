@@ -118,7 +118,11 @@ nav {height:50px;}
     display: none;
 }
 .orders .order-content {text-align: center;}
-.orders .order-details a {  color: #d7bd94; text-decoration: none;height:20px; }
+.orders .order-details a {
+    color: #d7bd94;
+    text-decoration: none;
+    height:20px;
+}
 .orders .order-details a:hover {color: #A57F59}
 .orders .order-details table {text-align: center;}
 .orders .order-details table tr {width:287px;display: block;margin:10px 0px;}
