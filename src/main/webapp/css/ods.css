@@ -103,25 +103,34 @@ nav {height:50px;}
     margin: 0px 4%;
     width: 92%;
     background: #eee;
-    height: 320px;
+    height: 20px;
     position: absolute;
     top: 0px;
     background: #f7f7f7 url(../img/noisy.png) repeat;
     padding-top: 10px;
 }
-
 .orders .order-details h1 {
     font-family: "微软雅黑", "Yuppy TC Regular", "幼圆", "黑体";
     color: #d7bd94;
     text-align: center;
     font-size: 25px;
     margin-bottom: 10px;
+    display: none;
 }
-
+.orders .order-content {text-align: center;}
+.orders .order-details a {  color: #d7bd94; text-decoration: none;height:20px; }
+.orders .order-details a:hover {color: #A57F59}
+.orders .order-details table {text-align: center;}
+.orders .order-details table tr {width:287px;display: block;margin:10px 0px;}
+.orders .order-details table tr.title{color:#d7bd94;font-size:22px;font-weight: bold;}
+.orders .order-details table td {width:95px;display: inline-block;}
+.orders .order-details table td.order-name {font-weight: bold;color:#F5AB5D;}
+.orders .order-content {display: none;}
 .orders .order {
     padding: 10px 30px 10px 30px;
     height: 20px;
 }
+
 
 .orders .order-name {
     font-size: 20px;
