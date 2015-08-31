@@ -13,7 +13,9 @@
                                                                           id="changeName">更改昵称</a>)
     <br/>
 <form id="group-operator">
-    <#if boss?exists><input type="button" id="deleteGroup" class="button button-danger button-middle" value="解散该小组"/>
+    <#if boss?exists>
+        <input type="button" id="inviteMember" class="button button-success button-middle" value="邀请好友"/>
+        <input type="button" id="deleteGroup" class="button button-danger button-middle" value="解散该小组"/>
     <#else><input type="button" id="exitGroup" class="button button-warning button-middle" value="离开该小组"/>
     </#if>
 <#else><input type="button" id="addGroup" class="button button-success button-middle" value="加入该小组"/>

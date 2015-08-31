@@ -221,7 +221,6 @@ public class OrderDao {
                     personOrder.setOrderName(rs.getString("order_name"));
                     personOrder.setOrderNumber(rs.getInt("order_number"));
                     personOrder.setOrderPrice(rs.getDouble("order_price"));
-                    personOrder.setNickName(rs.getString("nick_name"));
                     return personOrder;
                 }else
                     return null;

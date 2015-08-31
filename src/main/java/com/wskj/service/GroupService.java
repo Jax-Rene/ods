@@ -127,6 +127,12 @@ public class GroupService {
             myGroupBossName.add(groupDao.getNickName(group.getGroupBossId(), group.getId()));
         for (Group group : allGroup)
             allGroupBossName.add(groupDao.getNickName(group.getGroupBossId(), group.getId()));
+        //获取最新的订单的小组
+        if(lastOrder!=null){
+            int groupId = groupDao.getGroupByOrderId(lastOrder.getOrderId());
+            map.put("groupId",groupId);
+        }
+
         map.put("myBossName", myGroupBossName);
         map.put("allBossName", allGroupBossName);
         map.put("myGroup", myGroup);

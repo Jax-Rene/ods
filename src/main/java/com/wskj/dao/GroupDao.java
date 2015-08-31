@@ -30,6 +30,11 @@ public class GroupDao {
         return group;
     }
 
+    public int getGroupByOrderId(Integer orderId){
+        String sql = "select order_group from ods.order where order_id=?";
+        return jdbcTemplate.queryForObject(sql,new Object[]{orderId},Integer.class);
+    }
+
     public String getGroupName(Integer groupId) {
         String sql = "select group_name from ods.group where group_id = ?";
         System.out.println(sql + groupId);
