@@ -73,8 +73,12 @@
 <div id="group-orders" class="container">
     <div class="today-order">
         <h1>当前订单</h1>
-        <div id="today-order"></div>
-        <a href="javascript:void(0)" id="getDetail">统计详情</a>
+        <input type="hidden" id="current-order" value="${currentOrder}"/>
+
+        <div id="count">
+            <div id="today-order"></div>
+            <a href="javascript:void(0)" id="getDetail">统计详情</a>
+        </div>
         <div id="total-count" class="show-count-result"></div>
     </div>
     <hr/>

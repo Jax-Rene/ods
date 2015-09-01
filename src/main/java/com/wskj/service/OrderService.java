@@ -12,6 +12,7 @@ import com.wskj.domain.PersonOrder;
 import com.wskj.util.GetTime;
 import com.wskj.util.SimpleMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
@@ -167,10 +168,10 @@ public class OrderService {
             String name = t.getOrderName();
             for (String n : orderNames) {
                 if (n.indexOf(name) != -1) {
-                    if(map.containsKey(n)){
+                    if (map.containsKey(n)) {
                         map.put(n, (Integer) map.get(n) + t.getOrderNumber());
-                    }else
-                        map.put(n,t.getOrderNumber());
+                    } else
+                        map.put(n, t.getOrderNumber());
                 }
             }
         }
@@ -185,6 +186,7 @@ public class OrderService {
                 t.setNickName(groupDao.getNickName(t.getUserId(), groupId));
         return personOrders;
     }
+
 
     public int getLastOrderId(int groupId) {
         return orderDao.getLastOrderId(groupId);
@@ -220,7 +222,7 @@ public class OrderService {
         if (personOrder.getOrderId() == 0) {
             personOrder.setOrderId(orderDao.getLastOrderId(groupId));
         }
-        String nickName = groupDao.getNickName(userId,groupId);
+        String nickName = groupDao.getNickName(userId, groupId);
         Order order = orderDao.getOrder(personOrder.getOrderId());
         int bossId = groupDao.getBossId(order.getOrderGroup());
         //只能创建自己的订单
@@ -236,5 +238,17 @@ public class OrderService {
         }
     }
 
+    public boolean existCurrentOrder(int groupId) {
+        int orderId = orderDao.getLastOrderId(groupId);
+        try {
+            Order order = orderDao.getOrder(orderId);
+            if (order.getOrderEnd().compareTo(GetTime.getCurrentTime()) <= 0) {
+                return false;
+            } else
+                return true;
+        }catch (EmptyResultDataAccessException e){
+            return false;
+        }
+    }
 
 }

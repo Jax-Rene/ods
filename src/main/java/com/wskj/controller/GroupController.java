@@ -4,6 +4,7 @@ import com.wskj.domain.Group;
 import com.wskj.domain.User;
 import com.wskj.service.GroupService;
 import com.wskj.service.MessageService;
+import com.wskj.service.OrderService;
 import com.wskj.service.UserService;
 import com.wskj.util.ImageUtil;
 import org.apache.commons.lang.StringUtils;
@@ -34,6 +35,8 @@ public class GroupController {
     private UserService userService;
     @Autowired
     private MessageService messageService;
+    @Autowired
+    private OrderService orderService;
 
     @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(ModelMap model, HttpServletRequest request, HttpSession session,
@@ -76,7 +79,9 @@ public class GroupController {
             String nickName = groupService.getNickName(curUser.getId(), groupId);
             model.addAttribute("nickName", nickName);
         }
+        boolean existCurrentOrder = orderService.existCurrentOrder(groupId);
         model.addAttribute("group", group);
+        model.addAttribute("currentOrder",existCurrentOrder?"true":"false");
         //获取组内成员
         Map<String,String> members = groupService.getMemberIdAndName(groupId);
         model.addAttribute("members",members);

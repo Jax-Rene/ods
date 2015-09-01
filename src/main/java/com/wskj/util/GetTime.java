@@ -19,24 +19,21 @@ public class GetTime {
     public static Timestamp convertToTimeStamp(String time) throws ParseException {
         if (time == null || time.equals(""))
             return null;
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//        try {
-//            Date date = sdf.parse(time);
-//            Timestamp ts = new Timestamp(date.getTime());
-//            return ts;
-//        } catch (Exception e) {
-//            sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//            Date date = sdf.parse(time);
-//            Timestamp ts = new Timestamp(date.getTime());
-//            return ts;
-//        }
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = sdf.parse(time);
         Timestamp timestamp = new Timestamp(date.getTime());
         return timestamp;
     }
 
+
+    public static Timestamp getCurrentTime(){
+        Date time = new Date(System.currentTimeMillis());
+        Timestamp ts = new Timestamp(time.getTime());
+        return ts;
+    }
+
     private GetTime() {
+
     }
 
 }

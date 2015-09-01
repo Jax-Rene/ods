@@ -269,7 +269,11 @@ $(document).ready(function () {
         $.each(data, function (key, value) {
             member[key] = value;
         });
-        showCurrentOrder();
+        if($('#current-order').val() == 'true'){
+            showCurrentOrder();
+        }else{
+            $('#count').html('当前没有正在进行中的订单');
+        }
     });
 
     //统计结果
