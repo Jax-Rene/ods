@@ -32,6 +32,13 @@ public class GetTime {
         return ts;
     }
 
+    public static String formatTime(Timestamp timestamp){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = formatter.format(new Date(timestamp.getTime()));
+        return formattedDate;
+    }
+
+
     private GetTime() {
 
     }

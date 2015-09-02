@@ -128,30 +128,8 @@
                 marginTop: '-' + Math.round(ry * c.y) + 'px'
             });
         }
-    }
-    ;
+    };
 
-    //    $('#newGroupIcon').on('change', function () {
-    //            $.ajaxFileUpload({
-    //                url: 'restoreTempPic',//处理图片脚本
-    //                fileElementId: 'newGroupIcon',//file控件id
-    //                dataType: 'json',
-    //                success: function (data) {
-    //                    if (data != null) {
-    //                        debugger;
-    //                        var url = 'img/icon/' + data.trim();
-    //                        jcrop_api.setImage(url, function () {
-    //
-    //                        });
-    //
-    //                        $('#upimg').show();
-    //                    }
-    //                },
-    //                error: function (data) {
-    //                    alert("未知失败请联系管理员!");
-    //                }
-    //            });
-    //    });
 
     $('#newGroupIcon').on('change', function () {
         $('#crop_form').attr('action', 'restoreTempPic');

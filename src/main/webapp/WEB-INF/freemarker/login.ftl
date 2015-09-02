@@ -46,7 +46,6 @@
                     </div>
                     <div class="register-form">
                         <input type="password" id="password" name="passWord" placeholder="输入密码"
-                               data-rules="{minlength:5}"
                                value="${passWord!""}"/>
                     </div>
                     <div class="vaild-box">

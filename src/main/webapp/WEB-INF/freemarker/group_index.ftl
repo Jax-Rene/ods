@@ -76,6 +76,7 @@
         <input type="hidden" id="current-order" value="${currentOrder}"/>
 
         <div id="count">
+            截止时间:<span id="endTime" style="color: red">&nbsp;${endTime!""}</span>
             <div id="today-order"></div>
             <a href="javascript:void(0)" id="getDetail">统计详情</a>
         </div>

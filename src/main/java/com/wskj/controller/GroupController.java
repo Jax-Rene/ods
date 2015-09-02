@@ -6,6 +6,7 @@ import com.wskj.service.GroupService;
 import com.wskj.service.MessageService;
 import com.wskj.service.OrderService;
 import com.wskj.service.UserService;
+import com.wskj.util.GetTime;
 import com.wskj.util.ImageUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.Map;
 import java.util.UUID;
 
@@ -40,15 +42,15 @@ public class GroupController {
 
     @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(ModelMap model, HttpServletRequest request, HttpSession session,
-                              @RequestParam(defaultValue = "0",required = false) Integer targetX,
-                              @RequestParam(defaultValue = "0",required = false) Integer targetY,
-                              @RequestParam(defaultValue = "0",required = false) Integer targetW,
-                              @RequestParam(defaultValue = "0",required = false) Integer targetH,
-                              String currentPic,String newGroupName)
+                              @RequestParam(defaultValue = "0", required = false) Integer targetX,
+                              @RequestParam(defaultValue = "0", required = false) Integer targetY,
+                              @RequestParam(defaultValue = "0", required = false) Integer targetW,
+                              @RequestParam(defaultValue = "0", required = false) Integer targetH,
+                              String currentPic, String newGroupName)
             throws Exception {
         Group judgeName = groupService.getGroupByName("newGroupName");
-        if(judgeName != null){
-            model.addAttribute("newGroupError","该组名已经被占用!");
+        if (judgeName != null) {
+            model.addAttribute("newGroupError", "该组名已经被占用!");
             return "group_index";
         }
 
@@ -81,16 +83,23 @@ public class GroupController {
         }
         boolean existCurrentOrder = orderService.existCurrentOrder(groupId);
         model.addAttribute("group", group);
-        model.addAttribute("currentOrder",existCurrentOrder?"true":"false");
+        if (existCurrentOrder) {
+            model.addAttribute("currentOrder", "true");
+            int lastOrderId = orderService.getLastOrderId(groupId);
+            Timestamp endTime = orderService.getOrder(lastOrderId).getOrderEnd();
+            model.addAttribute("endTime", GetTime.formatTime(endTime));
+        } else {
+            model.addAttribute("currentOrder", "false");
+        }
         //获取组内成员
-        Map<String,String> members = groupService.getMemberIdAndName(groupId);
-        model.addAttribute("members",members);
+        Map<String, String> members = groupService.getMemberIdAndName(groupId);
+        model.addAttribute("members", members);
         return "group_index";
     }
 
-    @RequestMapping(value = "/getMemberIdAndName",method = RequestMethod.GET)
+    @RequestMapping(value = "/getMemberIdAndName", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,String> getMemberIdAndName(int groupId){
+    public Map<String, String> getMemberIdAndName(int groupId) {
         return groupService.getMemberIdAndName(groupId);
     }
 
@@ -138,11 +147,11 @@ public class GroupController {
     @RequestMapping(value = "/searchGroup", method = RequestMethod.GET)
     @ResponseBody
     public Integer searchGroup(String groupName) {
-        if(StringUtils.isEmpty(groupName)){
-            return  -1;
+        if (StringUtils.isEmpty(groupName)) {
+            return -1;
         }
         Group group = groupService.getGroupByName(groupName.trim());
-        if(group==null)
+        if (group == null)
             return -1;
         else
             return group.getId();
@@ -164,39 +173,14 @@ public class GroupController {
             return false;
     }
 
-
-//    @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
-//    @ResponseBody
-//    public String restoreTempPic(HttpServletRequest request) throws Exception {
-//        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-//        MultipartFile icon = multipartRequest.getFile("newGroupIcon");
-//        String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
-//        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif")))
-//            return null;
-//        //得到图片保存目录的真实路径
-//        String logoRealPathDir = request.getSession().getServletContext().getRealPath("/img/icon");
-//        File logoSaveFile = new File(logoRealPathDir);
-//        if (!logoSaveFile.exists()) {
-//            logoSaveFile.mkdir();
-//        }
-//        String logImageName = UUID.randomUUID().toString() + suffix;//构建文件名称
-//        //拼成完整的文件保存路径加文件
-//        String fileName = logoRealPathDir + File.separator + logImageName;
-//        File file = new File(fileName);
-//        //缩放图片
-//        icon.transferTo(file);
-//        ImageUtil.zoomImage(file);
-//        return logImageName;
-//    }
-
     @RequestMapping(value = "/restoreTempPic", method = RequestMethod.POST)
-    public String restoreTempPic(String newGroupName , HttpServletRequest request,ModelMap modelMap) throws Exception {
+    public String restoreTempPic(String newGroupName, HttpServletRequest request, ModelMap modelMap) throws Exception {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile icon = multipartRequest.getFile("newGroupIcon");
         String suffix = icon.getOriginalFilename().substring(icon.getOriginalFilename().lastIndexOf("."));
         suffix = suffix.toLowerCase();
-        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif"))){
-            modelMap.put("fileError","上传文件格式不正确,目前只支持jpg,png,gif图片");
+        if (!(suffix.equals(".jpg") || suffix.equals(".png") || suffix.equals(".gif"))) {
+            modelMap.put("fileError", "上传文件格式不正确,目前只支持jpg,png,gif图片");
             return "create_group";
         }
         //得到图片保存目录的真实路径
@@ -214,7 +198,7 @@ public class GroupController {
         ImageUtil.zoomImage(file);
         logImageName = "img/icon/" + logImageName;
         modelMap.addAttribute("fileSrc", logImageName);
-        modelMap.addAttribute("newGroupName",newGroupName);
+        modelMap.addAttribute("newGroupName", newGroupName);
         return "create_group";
     }
 
@@ -223,17 +207,17 @@ public class GroupController {
         return "create_group";
     }
 
-    @RequestMapping(value = "/exitGroup" , method = RequestMethod.POST)
+    @RequestMapping(value = "/exitGroup", method = RequestMethod.POST)
     @ResponseBody
-    public boolean exitGroup(HttpSession session,int groupId){
-        User user = (User)session.getAttribute("curUser");
-        groupService.exitGroup(user.getId(),groupId);
+    public boolean exitGroup(HttpSession session, int groupId) {
+        User user = (User) session.getAttribute("curUser");
+        groupService.exitGroup(user.getId(), groupId);
         return true;
     }
 
-    @RequestMapping(value = "/deleteGroup" , method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteGroup", method = RequestMethod.POST)
     @ResponseBody
-    public void deleteGroup(HttpSession session,int groupId){
+    public void deleteGroup(HttpSession session, int groupId) {
         User user = (User) session.getAttribute("curUser");
         groupService.deleteGroup(groupId, user.getId());
     }
