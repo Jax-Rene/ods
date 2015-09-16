@@ -2,13 +2,15 @@
 <head>
     <title>提交我的订餐信息</title>
     <script src="${absoluteContextPath}/js/order.js"></script>
+    <script src="${absoluteContextPath}/js/count_time.js"></script>
 </head>
 <body>
 
 <div>
     <div style="text-align: center;margin-top:40px">
         <h1 style="color: #A57F59;font-size: 40px">${group.groupName!""}的订餐</h1>
-        订餐结束时间:${order.orderEnd!""}
+        订餐倒计时:&nbsp;<span id="restTime" style="color: red"></span>
+        <input type="hidden" id="endTime" value="${order.orderEnd!""}"/>
     </div>
 
     <form id="submitOrder">

@@ -39,7 +39,7 @@
 								<div class="triangle"></div>
 								<div class="triangle"></div>
 								<div class="triangle"></div>
-							</span>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -12,43 +12,41 @@ $(document).ready(function () {
             lastOrder = obj.lastOrder;
             myGroup = obj.myGroup;
 
-            //today order
-            var table = $('<table></table>');
-            var tr = $('<tr class="title"></tr>');
 
-            //设置标题
-            tr.append($('<td>套餐名称</td>'))
-                .append($('<td>数量</td>'))
-                .append($('<td>总价</td>'));
-            tr.appendTo(table);
+            //当前没有订单
+            if(lastOrder != null){
+                //today order
+                var table = $('<table></table>');
+                var tr = $('<tr class="title"></tr>');
 
-            //订单内容
-            var tr2 = $('<tr></tr>');
-            tr2.appendTo(table);
-            var orderNumber = lastOrder.orderNumber,
-                orderName = lastOrder.orderName,
-                orderPrice = lastOrder.orderPrice;
-            var tdOrderName = $('<td class="order-name">' + orderName + '</td>'),
-                tdOrderNumber = $('<td>*' + orderNumber + '</td>'),
-                tdOrderPrice = $('<td>' + orderPrice + '</td>');
-            tdOrderName.appendTo(tr2);
-            tdOrderNumber.appendTo(tr2);
-            tdOrderPrice.appendTo(tr2);
+                //设置标题
+                tr.append($('<td>套餐名称</td>'))
+                    .append($('<td>数量</td>'))
+                    .append($('<td>总价</td>'));
+                tr.appendTo(table);
 
-            $('.order-details').animate({"height":"320px"}, 2000);
-            $('.order-details h1').css("display","block");
-            $('.order-content').css("display","block");
-            //var tr3 = $('<tr></tr>');
-            //tr3.appendTo(table);
-            //var groupId = lastOrder.groupId;
-            //var td = $('<td><a href="getGroupInfo?groupId=' + groupId + '>查看详情</a></td>');
-            //td.appendTo(tr2);
-            //td.appendTo(tr2);
-            //td.appendTo(tr2);
-            if(obj.groupId != undefined)
-                $('#currentOrder').attr('href','getGroupInfo?groupId=' + obj.groupId);
-            table.appendTo($(".order-content"));
 
+                //订单内容
+                var tr2 = $('<tr></tr>');
+                tr2.appendTo(table);
+                var orderNumber = lastOrder.orderNumber,
+                    orderName = lastOrder.orderName,
+                    orderPrice = lastOrder.orderPrice;
+                var tdOrderName = $('<td class="order-name">' + orderName + '</td>'),
+                    tdOrderNumber = $('<td>' + orderNumber + '</td>'),
+                    tdOrderPrice = $('<td>' + orderPrice + '</td>');
+                tdOrderName.appendTo(tr2);
+                tdOrderNumber.appendTo(tr2);
+                tdOrderPrice.appendTo(tr2);
+
+                $('.order-details').animate({"height": "320px"}, 2000);
+                $('.order-details h1').css("display", "block");
+                $('.order-content').css("display", "block");
+
+                if (obj.groupId != undefined)
+                    $('#currentOrder').attr('href', 'getGroupInfo?groupId=' + obj.groupId);
+                table.appendTo($(".order-content"));
+            }
 
 
             ////我的小组信息

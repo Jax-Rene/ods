@@ -2,6 +2,7 @@
 <head>
     <script src="${absoluteContextPath}/js/group.js" type="text/javascript"></script>
     <script src="${absoluteContextPath}/js/list_member.js"></script>
+    <script src="${absoluteContextPath}/js/count_time.js"></script>
 </head>
 <body>
 
@@ -76,7 +77,8 @@
         <input type="hidden" id="current-order" value="${currentOrder}"/>
 
         <div id="count">
-            截止时间:<span id="endTime" style="color: red">&nbsp;${endTime!""}</span>
+            <input type="hidden" id="endTime" value="${endTime!''}"/>
+            剩余时间:&nbsp;<span id="restTime" style="color:red"></span>
             <div id="today-order"></div>
             <a href="javascript:void(0)" id="getDetail">统计详情</a>
         </div>

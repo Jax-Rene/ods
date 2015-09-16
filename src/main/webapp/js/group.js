@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    //倒计时时间
+
+
+
+
     /**
      * 定义全局变量用于存储小组成员
      * @type {{}}
